@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <title th:text="#{title}">Praca dyplomowa</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/main.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<div id="content">
+    <h1 class="mt-2 text-xl" th:text="Test">Bramka logiczna - AND</h1>
+    <form>
+        <div id="visualization">
+            <div>
+                <input id="a" type="number" min="0" max="1" value="0" onKeyDown="return false" required/>
+                <input id="b" type="number" min="0" max="1" value="0" onKeyDown="return false" required/>
+            </div>
+            <object id="and-gate" data="../static/svg/and-gate.svg" th:data="@{/svg/and-gate.svg}"
+                    type="image/svg+xml"></object>
+            <input id="c" readonly/>
+        </div>
+        <div>
+            <input type="button" value="Losuj" onclick="randomInputs()"/>
+            <input type="button" value="Generuj" onclick="andGateOutput()"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
