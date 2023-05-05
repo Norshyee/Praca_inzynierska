@@ -1,3 +1,73 @@
 <div>
-  <h1>And gate</h1>
+  <div>
+    <span class="text-xl font-bold">Bramka logiczna OR</span>
+
+    <form class="grid grid-cols-4" onsubmit="return false;">
+      <div class="grid grid-flow-row place-items-center justify-items-end">
+        <input id="a" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+               type="number" placeholder="A" min="0" max="1" required pattern="[01]">
+        <input id="b" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+               type="number" placeholder="B" min="0" max="1" required pattern="[01]">
+      </div>
+
+      <div class="flex justify-center">
+        <object id="or-gate" class="w-60" data="/svg/or-gate.svg" type="image/svg+xml"></object>
+      </div>
+
+      <div class="grid grid-flow-row place-items-center justify-items-start">
+        <input id="q" class="text-center border border-2 border-gray-400 rounded w-14" type="text" placeholder="Q"
+               readonly>
+      </div>
+
+      <div class="flex justify-center">
+        <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto text-center">
+          <thead>
+          <tr>
+            <th class="border border-slate-300 w-10">A</th>
+            <th class="border border-slate-300 w-10">B</th>
+            <th class="border border-slate-300 w-10">Q</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr>
+            <td class="border border-slate-300">0</td>
+            <td class="border border-slate-300">0</td>
+            <td class="border border-slate-300">0</td>
+          </tr>
+          <tr>
+            <td class="border border-slate-300">1</td>
+            <td class="border border-slate-300">0</td>
+            <td class="border border-slate-300">1</td>
+          </tr>
+          <tr>
+            <td class="border border-slate-300">0</td>
+            <td class="border border-slate-300">1</td>
+            <td class="border border-slate-300">1</td>
+          </tr>
+          <tr>
+            <td class="border border-slate-300">1</td>
+            <td class="border border-slate-300">1</td>
+            <td class="border border-slate-300">1</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-span-4 flex gap-4 justify-center mt-2">
+        <button type="button" class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50" onclick="randomInputs()">
+          Losuj
+        </button>
+        <button class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50" onclick="orGateOutput()">
+          Generuj
+        </button>
+      </div>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <p>
+      Bramka OR (ang. OR gate) to jedna z podstawowych bramek logicznych, która ma dwa lub więcej wejść oraz jedno wyjście. Wyjście bramki OR jest ustawione na stan wysoki (1), gdy co najmniej jedno z jej wejść jest ustawione na stan wysoki (1). Wyjście bramki OR przyjmuje stan niski (0), tylko wtedy gdy wszystkie jej wejścia są ustawione na stan niski (0).
+    </p>
+  </div>
 </div>
