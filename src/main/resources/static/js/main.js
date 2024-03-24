@@ -1,3 +1,14 @@
+function loadContent(fragmentUrl) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById('contentArea').innerHTML = xhr.responseText
+        }
+    };
+    xhr.open('GET', fragmentUrl, true);
+    xhr.send();
+}
+
 function andGateOutput() {
     var a = document.getElementById("a").value;
     var b = document.getElementById("b").value;

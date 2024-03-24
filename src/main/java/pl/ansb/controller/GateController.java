@@ -10,44 +10,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class GateController {
 
     @GetMapping("/not")
-    public String notGate(Model model){
-        model.addAttribute("title","Bramka NOT");
-        model.addAttribute("modelType","not-gate");
-        return "index";
+    public String notGate(Model model) {
+        return "/gate/not-gate :: not-gate-fragment";
     }
 
     @GetMapping("/and")
-    public String andGate(Model model){
-        model.addAttribute("title","Bramka AND");
-        model.addAttribute("modelType","and-gate");
-        return "index";
+    public String andGate(Model model) {
+        return "/gate/and-gate :: and-gate-fragment";
     }
 
     @GetMapping("/nand")
-    public String nandGate(Model model){
-        model.addAttribute("title","Bramka NAND");
-        model.addAttribute("modelType","nand-gate");
-        return "index";
+    public String nandGate(Model model) {
+        return "/gate/nand-gate :: nand-gate-fragment";
     }
 
     @GetMapping("/or")
-    public String orGate(Model model){
-        model.addAttribute("title","Bramka OR");
-        model.addAttribute("modelType","or-gate");
-        return "index";
+    public String orGate(Model model) {
+        return "/gate/or-gate :: or-gate-fragment";
     }
 
     @GetMapping("/nor")
-    public String norGate(Model model){
-        model.addAttribute("title","Bramka NOR");
-        model.addAttribute("modelType","nor-gate");
-        return "index";
+    public String norGate(Model model) {
+        return "/gate/nor-gate :: nor-gate-fragment";
     }
 
     @GetMapping("/xor")
-    public String xorGate(Model model){
-        model.addAttribute("title","Bramka XOR");
-        model.addAttribute("modelType","xor-gate");
-        return "index";
+    public String xorGate(Model model) {
+        return "/gate/xor-gate :: xor-gate-fragment";
     }
 }

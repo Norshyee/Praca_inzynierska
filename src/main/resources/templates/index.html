@@ -66,7 +66,7 @@
                 </button>
                 <ul id="gates" class="py-2 space-y-2">
                     <li class="ml-4">
-                        <a href="#" th:href="@{/gate/not}"
+                        <a onclick="loadContent('/gate/not')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                  class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -81,7 +81,7 @@
                         </a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/gate/and}"
+                        <a onclick="loadContent('/gate/and')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                  class="flex w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -96,7 +96,7 @@
                         </a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/gate/nand}"
+                        <a onclick="loadContent('/gate/nand')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                  class="flex w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -111,7 +111,7 @@
                         </a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/gate/or}"
+                        <a onclick="loadContent('/gate/or')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                  class="flex w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -126,7 +126,7 @@
                         </a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/gate/nor}"
+                        <a onclick="loadContent('/gate/nor')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                  class="flex w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -141,7 +141,7 @@
                         </a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/gate/xor}"
+                        <a onclick="loadContent('/gate/xor')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                  class="flex w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
@@ -184,46 +184,46 @@
                 </button>
                 <ul id="schema" class="py-2 space-y-2">
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/semi_summator}"
+                        <a onclick="loadContent('/schema/semi_summator')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Półsumator</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/1_bit_summator}"
+                        <a onclick="loadContent('/schema/1_bit_summator')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1-bit
                             sumator</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/4_bit_serial_transfer_summator}"
+                        <a onclick="loadContent('/schema/4_bit_serial_transfer_summator')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4-bit
                             sumator z przeniesieniem szeregowym</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/d_type_switch}"
+                        <a onclick="loadContent('/schema/d_type_switch')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Przerzutnik
                             typu D</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/rs_type_synchronous_switch}"
+                        <a onclick="loadContent('/schema/rs_type_synchronous_switch')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Przerzutnik
                             synchroniczny typu RS</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/rs_type_asynchronous_switch}"
+                        <a onclick="loadContent('/schema/rs_type_asynchronous_switch')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Przerzutnik
                             asynchroniczny typu RS</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/8421_to_gray_converter}"
+                        <a onclick="loadContent('/schema/8421_to_gray_converter')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Konwerter
                             z 8421 na Gray'a</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/bcd_to_aiken_converter}"
+                        <a onclick="loadContent('/schema/bcd_to_aiken_converter')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Konwerter
                             z BCD na Aiken'a</a>
                     </li>
                     <li class="ml-4">
-                        <a href="#" th:href="@{/schema/decimal_to_8421_converter}"
+                        <a onclick="loadContent('/schema/decimal_to_8421_converter')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Konwerter
                             liczby dziesiętnej na 8421</a>
                     </li>
@@ -235,24 +235,8 @@
 
 <!--Content-->
 <div class="p-4 sm:ml-64 mt-4">
-    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-        <div th:switch="${modelType}">
-            <div th:case="not-gate" th:insert="~{gate/not-gate.html}"></div>
-            <div th:case="and-gate" th:insert="~{gate/and-gate.html}"></div>
-            <div th:case="nand-gate" th:insert="~{gate/nand-gate.html}"></div>
-            <div th:case="or-gate" th:insert="~{gate/or-gate.html}"></div>
-            <div th:case="nor-gate" th:insert="~{gate/nor-gate.html}"></div>
-            <div th:case="xor-gate" th:insert="~{gate/xor-gate.html}"></div>
-            <div th:case="semi-summator-schema" th:insert="~{schema/semi-summator-schema.html}"></div>
-            <div th:case="1-bit-summator-schema" th:insert="~{schema/1-bit-summator-schema.html}"></div>
-            <div th:case="4-bit-serial-transfer-summator-schema" th:insert="~{schema/4-bit-serial-transfer-summator-schema.html}"></div>
-            <div th:case="d-type-switch-schema" th:insert="~{schema/d-type-switch-schema.html}"></div>
-            <div th:case="rs-type-synchronous-switch-schema" th:insert="~{schema/rs-type-synchronous-switch-schema.html}"></div>
-            <div th:case="rs-type-asynchronous-switch-schema" th:insert="~{schema/rs-type-asynchronous-switch-schema.html}"></div>
-            <div th:case="8421-to-gray-converter-schema" th:insert="~{schema/8421-to-gray-converter-schema.html}"></div>
-            <div th:case="bcd-to-aiken-converter-schema" th:insert="~{schema/bcd-to-aiken-converter-schema.html}"></div>
-            <div th:case="decimal-to-8421-converter-schema" th:insert="~{schema/decimal-to-8421-converter-schema.html}"></div>
-        </div>
+    <div id="contentArea"
+         class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
     </div>
 </div>
 
