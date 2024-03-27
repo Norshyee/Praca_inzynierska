@@ -1,5 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 200" version="1.0">
     <style>
+        #and-a {
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        #and-b {
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        #and-c {
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        #xor-a {
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        #xor-b {
+            stroke: black;
+            stroke-width: 1;
+        }
+
+        #xor-s {
+            stroke: black;
+            stroke-width: 1;
+        }
+
         #and {
             fill:none;
             stroke:black;
@@ -15,7 +45,7 @@
 
     <g transform="scale(2)">
         <g id="and" transform="translate(60,52)">
-            <path id="and-q" d="M 70,25 L 95,25"/>
+            <path id="and-c" d="M 70,25 L 95,25"/>
             <path id="and-a" d="M 31,15 L 0,15 L 0,-40"/>
             <path id="and-b" d="M 32,-20 L -20,-20 L -20,34"/>
             <g style="stroke-width:0;fill:#000;stroke:none">
@@ -24,7 +54,7 @@
         </g>
 
         <g id="xor" transform="translate(60.03125,-3.6378174)">
-            <path id="xor-q" d="M 70,25.5 L 95,25.5"/>
+            <path id="xor-s" d="M 70,25.5 L 95,25.5"/>
             <path id="xor-a" d="M 32,15 L -35,15"/>
             <path id="xor-b" d="M 32,90 L -35,90"/>
             <g transform="translate(26.600,-38.862)" style="stroke-width:0;fill:#000;stroke:none">
