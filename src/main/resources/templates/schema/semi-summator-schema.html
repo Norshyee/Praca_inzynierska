@@ -1,7 +1,7 @@
 <div th:fragment="semi-summator-schema-fragment">
     <span class="text-xl font-bold">Półsumator</span>
 
-    <div class="grid grid-cols-4">
+    <div class="grid grid-cols-[10%_25%_20%_15%_30%] gap-4">
         <div class="grid grid-flow-row place-items-center justify-items-end">
             <input id="a"
                    class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
@@ -23,6 +23,10 @@
                    placeholder="C"
                    readonly>
         </div>
+
+        <object class="flex justify-self-center self-center" id="semi-summator-schema-symbol" data="/svg/schema/semi-summator-schema-symbol.svg"
+                type="image/svg+xml">
+        </object>
 
         <div class="flex justify-center item-center">
             <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto text-center">

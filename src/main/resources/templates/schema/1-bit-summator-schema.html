@@ -1,7 +1,7 @@
 <div th:fragment="1-bit-summator-schema-fragment">
     <span class="text-xl font-bold">1-bit sumator</span>
 
-    <div class="grid grid-cols-4">
+    <div class="grid grid-cols-[10%_30%_10%_25%_20%] gap-4">
         <div class="grid grid-flow-row place-items-center justify-items-end">
             <input id="a"
                    class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
@@ -27,14 +27,18 @@
                    readonly>
         </div>
 
+        <object class="flex justify-self-center self-center" id="1-bit-summator-schema-symbol" data="/svg/schema/1-bit-summator-schema-symbol.svg"
+                type="image/svg+xml">
+        </object>
+
         <div class="flex justify-center item-center">
             <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto text-center">
                 <thead>
                 <tr>
                     <th class="border border-slate-300 w-10">A</th>
                     <th class="border border-slate-300 w-10">B</th>
-                    <th class="border border-slate-300 w-10">C<sub>in</sub></th>
-                    <th class="border border-slate-300 w-10">C<sub>out</sub></th>
+                    <th class="border border-slate-300 w-10">C<sub>n</sub></th>
+                    <th class="border border-slate-300 w-10">C<sub>n+1</sub></th>
                     <th class="border border-slate-300 w-10">S</th>
                 </tr>
                 </thead>
