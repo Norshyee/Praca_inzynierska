@@ -1,3 +1,37 @@
 <div th:fragment="d-type-switch-schema-fragment">
     <span class="text-xl font-bold">Przerzutnik typu D</span>
+
+    <div class="grid grid-cols-[10%_30%_10%_25%_20%] gap-4">
+        <div class="grid grid-flow-row place-items-center justify-items-end">
+            <input id="d"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="D" min="0" max="1" required pattern="[01]">
+            <div></div>
+            <div></div>
+            <input id="c"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="C" min="0" max="1" required pattern="[01]">
+        </div>
+
+        <object class="flex justify-self-center self-center" id="d-type-switch-schema"
+                data="/svg/schema/d-type-switch/d-type-switch-schema.svg"
+                type="image/svg+xml">
+        </object>
+
+        <div class="grid grid-flow-row place-items-center justify-items-start">
+            <div></div>
+
+            <input id="q" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q"
+                   readonly>
+
+            <div></div>
+
+            <input id="q-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q&#773;"
+                   readonly>
+
+            <div></div>
+        </div>
+    </div>
 </div>
