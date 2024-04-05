@@ -180,3 +180,116 @@ function oneBitAdder(a, b, c) {
 
     return {sum, carry};
 }
+
+let running = false; // Flag to track if the animation is running
+let requestId = null; // Variable to hold the requestAnimationFrame ID
+let currentPosition = 10; // Starting position of the line
+
+function toggleAnimation() {
+    var svgSignalClock = document.getElementById("d-type-switch-signal-clock").contentDocument;
+    var line = svgSignalClock.getElementById('movingLine'); // Select the line by ID
+    var toggleBtn = document.getElementById("playButton");
+
+    function moveLine() {
+        if (!running) return; // Exit the function if animation is not running
+
+        currentPosition += 0.4; // Move the line by 2 units; adjust for speed
+
+        if (currentPosition > 490) {
+            currentPosition = 10; // Reset position if it goes beyond the square wave path
+        }
+
+        line.setAttribute('x1', currentPosition);
+        line.setAttribute('x2', currentPosition);
+
+        if ((currentPosition >= 10 && currentPosition <= 90) || (currentPosition >= 170 && currentPosition <= 250) || (currentPosition >= 330 && currentPosition <= 410)) {
+            dTypeSwitchOutput(1); // High segment
+        } else {
+            dTypeSwitchOutput(0); // Low segment
+        }
+
+        requestId = requestAnimationFrame(moveLine); // Continue the animation
+    }
+
+    if (!running) {
+        running = true; // Set the flag to indicate animation is running
+        toggleBtn.textContent = 'Stop';
+        toggleBtn.classList.remove('bg-green-500', 'hover:bg-green-700');
+        toggleBtn.classList.add('bg-red-500', 'hover:bg-red-700');
+        moveLine(); // Start the animation
+    } else {
+        running = false; // Set the flag to indicate animation is stopped
+        toggleBtn.textContent = 'Start';
+        toggleBtn.classList.remove('bg-red-500', 'hover:bg-red-700');
+        toggleBtn.classList.add('bg-green-500', 'hover:bg-green-700');
+        cancelAnimationFrame(requestId); // Stop the animation
+    }
+}
+
+let nand1s = 0;
+let nand2s = 0;
+let nand3s = 0;
+let nand4s = 0;
+
+function dTypeSwitchOutput(c) {
+    var d = document.getElementById("d").value;
+    document.getElementById("clockBit").value= c;
+
+    nand1s = (d & c) == 0 ? '1' : '0';
+    nand2s = (nand1s & nand4s) == 0 ? '1' : '0';
+    nand3s = (nand1s & c) == 0 ? '1' : '0';
+    nand4s = (nand2s & nand3s) == 0 ? '1' : '0';
+
+    document.getElementById("q").value = nand2s;
+    document.getElementById("q-neg").value = nand4s;
+
+    var tableRows = document.getElementById("boardOfTruth").rows;
+    for (const row of tableRows) {
+        row.style.color = "black";
+    }
+
+    switch(c) {
+        case 0:
+            tableRows.item(1).style.color = "red";
+        break;
+
+        case 1:
+            if (d === '0') {
+                tableRows.item(2).style.color = "red";
+            } else {
+                tableRows.item(3).style.color = "red";
+            }
+        break;
+    }
+
+    var dTypeSwitch = document.getElementById("d-type-switch-schema").contentDocument;
+    dTypeSwitch.getElementById("d").style.stroke = (d == 1 ? "red" : "black");
+
+    dTypeSwitch.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("c1").style.stroke = (c == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("c-dot").style.stroke = (c == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("c-dot").style.fill = (c == 1 ? "red" : "black");
+
+    dTypeSwitch.getElementById("nand1-s").style.stroke = (nand1s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand1-s1").style.stroke = (nand1s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand1-s-dot").style.stroke = (nand1s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand1-s-dot").style.fill = (nand1s == 1 ? "red" : "black");
+
+    dTypeSwitch.getElementById("nand2-s").style.stroke = (nand2s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand2-s1").style.stroke = (nand2s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand2-s-dot").style.stroke = (nand2s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand2-s-dot").style.fill = (nand2s == 1 ? "red" : "black");
+
+    dTypeSwitch.getElementById("nand3-s").style.stroke = (nand3s == 1 ? "red" : "black");
+
+    dTypeSwitch.getElementById("nand4-s").style.stroke = (nand4s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand4-s1").style.stroke = (nand4s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand4-s-dot").style.stroke = (nand4s == 1 ? "red" : "black");
+    dTypeSwitch.getElementById("nand4-s-dot").style.fill = (nand4s == 1 ? "red" : "black");
+
+    var dTypeSwitchSymbol = document.getElementById("d-type-switch-symbol").contentDocument;
+    dTypeSwitchSymbol.getElementById("d").style.stroke = (d == 1 ? "red" : "black");
+    dTypeSwitchSymbol.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
+    dTypeSwitchSymbol.getElementById("q").style.stroke = (nand2s == 1 ? "red" : "black");
+    dTypeSwitchSymbol.getElementById("q-neg").style.stroke = (nand4s == 1 ? "red" : "black");
+}

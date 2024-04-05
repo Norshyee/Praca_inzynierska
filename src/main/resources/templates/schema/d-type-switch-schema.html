@@ -1,37 +1,106 @@
 <div th:fragment="d-type-switch-schema-fragment">
     <span class="text-xl font-bold">Przerzutnik typu D</span>
 
-    <div class="grid grid-cols-[10%_30%_10%_25%_20%] gap-4">
-        <div class="grid grid-flow-row place-items-center justify-items-end">
-            <input id="d"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="D" min="0" max="1" required pattern="[01]">
-            <div></div>
-            <div></div>
-            <input id="c"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="C" min="0" max="1" required pattern="[01]">
-        </div>
+    <div class="grid grid-rows-2 grid-cols-3 xl:grid-rows-1 xl:grid-cols-[10%_30%_10%_25%_20%] gap-4">
 
-        <object class="flex justify-self-center self-center" id="d-type-switch-schema"
-                data="/svg/schema/d-type-switch/d-type-switch-schema.svg"
-                type="image/svg+xml">
-        </object>
+            <div class="grid grid-flow-row place-items-center justify-items-end">
+                <input id="d"
+                       class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                       type="number" placeholder="D" min="0" max="1" required pattern="[01]">
+                <div></div>
+                <div></div>
+                <input id="clockBit" class="text-center border border-2 border-gray-400 rounded w-16" type="text"
+                       placeholder="C"
+                       readonly>
+            </div>
 
-        <div class="grid grid-flow-row place-items-center justify-items-start">
-            <div></div>
+            <object class="flex justify-self-center self-center" id="d-type-switch-schema"
+                    data="/svg/schema/d-type-switch/d-type-switch-schema.svg"
+                    type="image/svg+xml">
+            </object>
 
-            <input id="q" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                   placeholder="Q"
-                   readonly>
+            <div class="grid grid-flow-row place-items-center justify-items-start">
+                <div></div>
 
-            <div></div>
+                <input id="q" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                       placeholder="Q"
+                       readonly>
 
-            <input id="q-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                   placeholder="Q&#773;"
-                   readonly>
+                <div></div>
 
-            <div></div>
-        </div>
+                <input id="q-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                       placeholder="Q&#773;"
+                       readonly>
+
+                <div></div>
+            </div>
+
+
+            <div class="grid grid-flow-row place-items-center justify-items-start">
+                <object class="col-span-2 xl:col-span-1 flex justify-self-center self-center" id="d-type-switch-symbol"
+                        data="/svg/schema/d-type-switch/d-type-switch-symbol.svg"
+                        type="image/svg+xml">
+                </object>
+
+                <object class="col-span-2 xl:col-span-1 flex justify-self-center self-center" id="d-type-switch-signal-clock"
+                        data="/svg/schema/d-type-switch/d-type-switch-signal-clock.svg"
+                        type="image/svg+xml">
+                </object>
+            </div>
+
+            <div class="flex justify-center item-center">
+                <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto text-center my-auto">
+                    <thead>
+                    <tr>
+                        <th class="border border-slate-300 w-10">D</th>
+                        <th class="border border-slate-300 w-10">C</th>
+                        <th class="border border-slate-300 w-10">Q</th>
+                        <th class="border border-slate-300 w-10">Q&#773</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td class="border border-slate-300">X</td>
+                        <td class="border border-slate-300">0</td>
+                        <td class="border border-slate-300">Q<sub>n-1</sub></td>
+                        <td class="border border-slate-300">Q&#773<sub>n-1</sub></td>
+                    </tr>
+                    <tr>
+                        <td class="border border-slate-300">0</td>
+                        <td class="border border-slate-300">1</td>
+                        <td class="border border-slate-300">0</td>
+                        <td class="border border-slate-300">1</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-slate-300">1</td>
+                        <td class="border border-slate-300">1</td>
+                        <td class="border border-slate-300">1</td>
+                        <td class="border border-slate-300">0</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
     </div>
+
+    <div class="flex gap-4 justify-center mt-2 size-auto">
+        <button type="button"
+                class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+                onclick="randomInputs()">
+            Losuj
+        </button>
+        <button id="playButton"
+                class="px-4 py-2 border border-gray-400 rounded-md text-white font-bold bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+                onclick="toggleAnimation()">
+            Start
+        </button>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <p>
+
+    </p>
 </div>
