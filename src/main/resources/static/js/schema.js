@@ -185,8 +185,8 @@ let running = false; // Flag to track if the animation is running
 let requestId = null; // Variable to hold the requestAnimationFrame ID
 let currentPosition = 10; // Starting position of the line
 
-function toggleAnimation() {
-    var svgSignalClock = document.getElementById("d-type-switch-signal-clock").contentDocument;
+function toggleAnimation(schema) {
+    var svgSignalClock = document.getElementById("signal-clock").contentDocument;
     var line = svgSignalClock.getElementById('movingLine'); // Select the line by ID
     var toggleBtn = document.getElementById("playButton");
 
@@ -203,9 +203,25 @@ function toggleAnimation() {
         line.setAttribute('x2', currentPosition);
 
         if ((currentPosition >= 10 && currentPosition <= 90) || (currentPosition >= 170 && currentPosition <= 250) || (currentPosition >= 330 && currentPosition <= 410)) {
-            dTypeSwitchOutput(1); // High segment
+            switch(schema) {
+                case 'd-type-switch':
+                    dTypeSwitchOutput(1);
+                break;
+
+                case 'rs-synchronous-switch':
+                    rsSynchronousSwitchOutput(1);
+                break;
+            }
         } else {
-            dTypeSwitchOutput(0); // Low segment
+            switch(schema) {
+                case 'd-type-switch':
+                    dTypeSwitchOutput(0);
+                break;
+
+                case 'rs-synchronous-switch':
+                    rsSynchronousSwitchOutput(0);
+                break;
+            }
         }
 
         requestId = requestAnimationFrame(moveLine); // Continue the animation
@@ -292,4 +308,79 @@ function dTypeSwitchOutput(c) {
     dTypeSwitchSymbol.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
     dTypeSwitchSymbol.getElementById("q").style.stroke = (nand2s == 1 ? "red" : "black");
     dTypeSwitchSymbol.getElementById("q-neg").style.stroke = (nand4s == 1 ? "red" : "black");
+}
+
+function rsSynchronousSwitchOutput(c) {
+    var s = document.getElementById("a").value;
+    var r = document.getElementById("b").value;
+    document.getElementById("clockBit").value= c;
+
+    nand1s = (s & c) == 0 ? '1' : '0';
+    nand2s = (nand1s & nand4s) == 0 ? '1' : '0';
+    nand3s = (r & c) == 0 ? '1' : '0';
+    nand4s = (nand2s & nand3s) == 0 ? '1' : '0';
+
+    document.getElementById("q").value = nand2s;
+    document.getElementById("q-neg").value = nand4s;
+
+    var tableRows = document.getElementById("boardOfTruth").rows;
+    for (const row of tableRows) {
+        row.style.color = "black";
+    }
+
+    switch(c) {
+        case 0:
+            if (s === '0' && r === '0') {
+                tableRows.item(2).style.color = "red";
+            } else {
+                tableRows.item(1).style.color = "red";
+            }
+        break;
+
+        case 1:
+            if (s === '0') {
+                if (r === '0') {
+                    tableRows.item(2).style.color = "red";
+                } else {
+                    tableRows.item(4).style.color = "red";
+                }
+            } else {
+                if (r === '0') {
+                    tableRows.item(3).style.color = "red";
+                } else {
+                    tableRows.item(5).style.color = "red";
+                }
+            }
+        break;
+    }
+
+    var rsSynchronousSwitch = document.getElementById("rs-synchronous-switch-schema").contentDocument;
+    rsSynchronousSwitch.getElementById("s").style.stroke = (s == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("r").style.stroke = (r == 1 ? "red" : "black");
+
+    rsSynchronousSwitch.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("c2").style.stroke = (c == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("c2-dot").style.stroke = (c == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("c2-dot").style.fill = (c == 1 ? "red" : "black");
+
+    rsSynchronousSwitch.getElementById("nand1-s").style.stroke = (nand1s == 1 ? "red" : "black");
+
+    rsSynchronousSwitch.getElementById("nand2-s").style.stroke = (nand2s == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("nand2-s1").style.stroke = (nand2s == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("nand2-s-dot").style.stroke = (nand2s == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("nand2-s-dot").style.fill = (nand2s == 1 ? "red" : "black");
+
+    rsSynchronousSwitch.getElementById("nand3-s").style.stroke = (nand3s == 1 ? "red" : "black");
+
+    rsSynchronousSwitch.getElementById("nand4-s").style.stroke = (nand4s == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("nand4-s1").style.stroke = (nand4s == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("nand4-s-dot").style.stroke = (nand4s == 1 ? "red" : "black");
+    rsSynchronousSwitch.getElementById("nand4-s-dot").style.fill = (nand4s == 1 ? "red" : "black");
+
+    var rsSynchronousSwitchSymbol = document.getElementById("rs-synchronous-switch-symbol").contentDocument;
+    rsSynchronousSwitchSymbol.getElementById("s").style.stroke = (s == 1 ? "red" : "black");
+    rsSynchronousSwitchSymbol.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
+    rsSynchronousSwitchSymbol.getElementById("r").style.stroke = (r == 1 ? "red" : "black");
+    rsSynchronousSwitchSymbol.getElementById("q").style.stroke = (nand2s == 1 ? "red" : "black");
+    rsSynchronousSwitchSymbol.getElementById("q-neg").style.stroke = (nand4s == 1 ? "red" : "black");
 }

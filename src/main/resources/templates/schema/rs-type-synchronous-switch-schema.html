@@ -1,3 +1,125 @@
 <div th:fragment="rs-type-synchronous-switch-schema-fragment">
     <span class="text-xl font-bold">Przerzutnik synchroniczny typu RS</span>
+
+    <div class="grid grid-rows-2 grid-cols-3 xl:grid-rows-1 xl:grid-cols-[10%_30%_10%_25%_20%] gap-4">
+
+        <div class="grid grid-flow-row place-items-center justify-items-end">
+            <input id="a"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="S" min="0" max="1" required pattern="[01]">
+            <input id="clockBit" class="text-center border border-2 border-gray-400 rounded w-16" type="text"
+                   placeholder="C"
+                   readonly>
+            <input id="b"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="R" min="0" max="1" required pattern="[01]">
+        </div>
+
+        <object class="flex justify-self-center self-center" id="rs-synchronous-switch-schema"
+                data="/svg/schema/rs-synchronous-switch/rs-synchronous-switch-schema.svg"
+                type="image/svg+xml">
+        </object>
+
+        <div class="grid grid-flow-row place-items-center justify-items-start">
+            <div></div>
+
+            <input id="q" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q"
+                   readonly>
+
+            <div></div>
+
+            <input id="q-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q&#773;"
+                   readonly>
+
+            <div></div>
+        </div>
+
+
+        <div class="grid grid-flow-row place-items-center justify-items-start">
+            <object class="col-span-2 xl:col-span-1 flex justify-self-center self-center" id="rs-synchronous-switch-symbol"
+                    data="/svg/schema/rs-synchronous-switch/rs-synchronous-switch-symbol.svg"
+                    type="image/svg+xml">
+            </object>
+
+            <object class="col-span-2 xl:col-span-1 flex justify-self-center self-center" id="signal-clock"
+                    data="/svg/schema/signal-clock.svg"
+                    type="image/svg+xml">
+            </object>
+        </div>
+
+        <div class="flex justify-center item-center">
+            <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto text-center my-auto">
+                <thead>
+                <tr>
+                    <th class="border border-slate-300 w-10 bg-gray-200">S</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">R</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">C</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">Q</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">Q&#773</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">X</td>
+                    <td class="border border-slate-300 bg-yellow-100">X</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub></td>
+                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub></td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">X</td>
+                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub></td>
+                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub></td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">0</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex gap-4 justify-center mt-2 size-auto">
+        <button type="button"
+                class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+                onclick="randomInputs()">
+            Losuj
+        </button>
+        <button id="playButton"
+                class="px-4 py-2 border border-gray-400 rounded-md text-white font-bold bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+                onclick="toggleAnimation('rs-synchronous-switch')">
+            Start
+        </button>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <p>
+
+    </p>
 </div>
