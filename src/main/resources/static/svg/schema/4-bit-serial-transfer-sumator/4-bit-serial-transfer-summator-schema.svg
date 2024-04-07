@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" version="1.0">
+    <g transform="translate(10,0)">
+        <line id="a" x1="35" y1="15" x2="35" y2="30" stroke-width="2" stroke="black"/>
+        <line id="b" x1="65" y1="15" x2="65" y2="30" stroke-width="2" stroke="black"/>
+        <line id="c-out" x1="00" y1="50" x2="20" y2="50" stroke-width="2" stroke="black"/>
+        <rect x="20" y="30" width="60" height="40" stroke="black" fill="none" stroke-width="2"/>
+        <line id="sum" x1="50" y1="70" x2="50" y2="85" stroke-width="2" stroke="black"/>
+        <line id="c-in" x1="80" y1="50" x2="100" y2="50" stroke-width="2" stroke="black"/>
+        <text x="43" y="56" font-size="20">Σ</text>
+    </g>
+</svg>

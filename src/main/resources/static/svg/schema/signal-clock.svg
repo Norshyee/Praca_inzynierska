@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 110" xmlns="http://www.w3.org/2000/svg">
+    <g transform="scale(0.5) translate(50,0)">
+        <line x1="10" y1="10" x2="10" y2="190" stroke="black" stroke-width="2"/>
+        <line x1="10" y1="190" x2="490" y2="190" stroke="black" stroke-width="2"/>
+
+        <!-- Labels -->
+        <text x="0" y="105" font-family="Verdana" font-size="20" fill="black" text-anchor="middle" transform="rotate(-90 5,100) translate(0,-10)">Amplitude</text>
+        <text x="245" y="210" font-family="Verdana" font-size="20" fill="black" text-anchor="middle">Time</text>
+
+        <!-- Square Wave Path -->
+        <path d="M 10 150 L 10 50 L 90 50 L 90 150 L 170 150 L 170 50 L 250 50 L 250 150 L 330 150 L 330 50 L 410 50 L 410 150 L 490 150" fill="none" stroke="blue" stroke-width="2"/>
+
+        <line id="movingLine" x1="10" y1="30" x2="10" y2="170" stroke="red" stroke-width="5"/>
+    </g>
+</svg>
