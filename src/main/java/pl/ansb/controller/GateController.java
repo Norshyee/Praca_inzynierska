@@ -16,26 +16,26 @@ public class GateController {
 
     @GetMapping("/and")
     public String andGate(Model model) {
-        return "/gate/and-gate :: and-gate-fragment";
+        return "gate/and-gate :: and-gate-fragment";
     }
 
     @GetMapping("/nand")
     public String nandGate(Model model) {
-        return "/gate/nand-gate :: nand-gate-fragment";
+        return "gate/nand-gate :: nand-gate-fragment";
     }
 
     @GetMapping("/or")
     public String orGate(Model model) {
-        return "/gate/or-gate :: or-gate-fragment";
+        return "gate/or-gate :: or-gate-fragment";
     }
 
     @GetMapping("/nor")
     public String norGate(Model model) {
-        return "/gate/nor-gate :: nor-gate-fragment";
+        return "gate/nor-gate :: nor-gate-fragment";
     }
 
     @GetMapping("/xor")
     public String xorGate(Model model) {
-        return "/gate/xor-gate :: xor-gate-fragment";
+        return "gate/xor-gate :: xor-gate-fragment";
     }
 }
