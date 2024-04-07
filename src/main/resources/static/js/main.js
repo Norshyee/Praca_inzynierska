@@ -5,6 +5,18 @@ function loadContent(fragmentUrl) {
             var contentArea = document.getElementById('contentArea');
             contentArea.innerHTML = xhr.responseText
             applyCSS(contentArea);
+
+            if (fragmentUrl.includes('d_type_switch') && typeof dTypeSwitch.init === 'function') {
+                dTypeSwitch.init();
+            }
+
+            if (fragmentUrl.includes('rs_type_synchronous') && typeof rsTypeSynchronousSwitch.init === 'function') {
+                rsTypeSynchronousSwitch.init();
+            }
+
+            if (fragmentUrl.includes('rs_type_asynchronous') && typeof rsTypeAsynchronousSwitch.init === 'function') {
+                rsTypeAsynchronousSwitch.init();
+            }
         }
     };
     xhr.open('GET', fragmentUrl, true);
