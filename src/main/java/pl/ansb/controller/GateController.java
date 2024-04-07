@@ -11,7 +11,7 @@ public class GateController {
 
     @GetMapping("/not")
     public String notGate(Model model) {
-        return "/gate/not-gate :: not-gate-fragment";
+        return "gate/not-gate :: not-gate-fragment";
     }
 
     @GetMapping("/and")
