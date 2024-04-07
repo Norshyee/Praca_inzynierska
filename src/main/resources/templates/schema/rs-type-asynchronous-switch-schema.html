@@ -1,3 +1,199 @@
 <div th:fragment="rs-type-asynchronous-switch-schema-fragment">
     <span class="text-xl font-bold">Przerzutnik asynchroniczny typu RS</span>
+    <div class="grid grid-rows-2 grid-cols-4 gap-4">
+        <!--NAND-->
+        <div class="grid grid-flow-row place-items-center justify-items-end">
+            <input id="a1"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="S" min="0" max="1" required pattern="[01]">
+            <div></div>
+            <input id="b1"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="R" min="0" max="1" required pattern="[01]">
+        </div>
+
+        <object class="flex justify-self-center self-center" id="rs-asynchronous-switch-nand-schema"
+                data="/svg/schema/rs-asynchronous-switch/rs-asynchronous-switch-nand-schema.svg"
+                type="image/svg+xml">
+        </object>
+
+        <div class="grid grid-flow-row place-items-center justify-items-start">
+            <input id="q1" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q"
+                   readonly>
+            <input id="q1-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q&#773;"
+                   readonly>
+        </div>
+
+        <div class="grid grid-flow-row place-items-center justify-items-center gap-4">
+            <table id="boardOfTruth-nand" class="border-separate border border-slate-400 table-auto text-center my-auto w-full">
+                <thead>
+                <tr>
+                    <th class="border border-slate-300 w-10 bg-gray-200">S</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">R</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">Q</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">Q&#773</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">X</td>
+                    <td class="border border-slate-300 bg-orange-100">X</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">0</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub></td>
+                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="border border-slate-300 bg-red-100">Stan zastrzeżony</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table id="previousStateNandBoard" class="border-separate border border-slate-400 table-auto text-center w-full">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="border border-slate-300 w-10 bg-gray-200">Poprzedni stan</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="border border-slate-300 bg-yellow-100">Q</td>
+                        <td class="border border-slate-300 bg-yellow-100">1</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-slate-300 bg-yellow-100">Q&#773</td>
+                        <td class="border border-slate-300 bg-yellow-100">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--NOR-->
+        <div class="grid grid-flow-row place-items-center justify-items-end">
+            <input id="b2"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="R" min="0" max="1" required pattern="[01]">
+            <div></div>
+            <input id="a2"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="S" min="0" max="1" required pattern="[01]">
+        </div>
+
+        <object class="flex justify-self-center self-center" id="rs-asynchronous-switch-nor-schema"
+                data="/svg/schema/rs-asynchronous-switch/rs-asynchronous-switch-nor-schema.svg"
+                type="image/svg+xml">
+        </object>
+
+        <div class="grid grid-flow-row place-items-center justify-items-start">
+            <input id="q2" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q"
+                   readonly>
+            <input id="q2-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="Q&#773;"
+                   readonly>
+        </div>
+
+        <div class="flex justify-center item-center">
+            <table id="boardOfTruth-nor" class="border-separate border border-slate-400 table-auto text-center my-auto">
+                <thead>
+                <tr>
+                    <th class="border border-slate-300 w-10 bg-gray-200">R</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">S</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">Q</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">Q&#773</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub></td>
+                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub></td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">0</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">X</td>
+                    <td class="border border-slate-300 bg-orange-100">X</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="border border-slate-300 bg-red-100">Stan zastrzeżony</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table id="previousStateNorBoard" class="border-separate border border-slate-400 table-auto text-center w-full">
+                <thead>
+                <tr>
+                    <th colspan="2" class="border border-slate-300 w-10 bg-gray-200">Poprzedni stan</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">Q</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                </tr>
+                <tr>
+                    <td class="border border-slate-300 bg-yellow-100">Q&#773</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="flex gap-4 justify-center mt-2 size-auto">
+        <button type="button"
+                class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+                onclick="randomInputs()">
+            Losuj
+        </button>
+        <button id="toggleButton"
+                class="px-4 py-2 border border-gray-400 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
+                onclick="rsTypeAsynchronousSwitch.switchOutput()">
+            Generuj
+        </button>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <p>
+
+    </p>
 </div>
