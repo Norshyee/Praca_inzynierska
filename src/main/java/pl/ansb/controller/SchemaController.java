@@ -26,7 +26,7 @@ public class SchemaController {
 
     @GetMapping("/d_type_switch")
     public String dTypeSwitch(Model model) {
-        return "/schema/d-type-switch-schema :: d-type-switch-schema-fragment";
+        return "schema/d-type-switch-schema :: d-type-switch-schema-fragment";
     }
 
     @GetMapping("/rs_type_synchronous_switch")
