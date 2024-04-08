@@ -1,5 +1,0 @@
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(auto, auto));
-    /* Tworzy tyle kolumn, ile zmieści się w kontenerze, każda o minimalnej szerokości 200px i maksymalnej 1fr */
-}

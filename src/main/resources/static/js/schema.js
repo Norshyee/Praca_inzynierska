@@ -491,6 +491,7 @@ const rsTypeAsynchronousSwitch = {
         var s2 = document.getElementById("a2").value;
         var r2 = document.getElementById("b2").value;
 
+        var rsAsynchronousNorSwitch = document.getElementById("rs-asynchronous-switch-nor-schema").contentDocument;
         var tableRowsNor = document.getElementById("boardOfTruth-nor").rows;
         var previousStateBoard = document.getElementById("previousStateNorBoard").rows;
         tableRowsNor.item(5).style.fontWeight = "normal";
@@ -500,10 +501,10 @@ const rsTypeAsynchronousSwitch = {
 
         if (s2 == '1' && r2 == '0') {
             this.nor1s = '0';
-            this.nor2s = (r1 | this.nor1s) == 0 ? '1' : '0';
+            this.nor2s = (r2 | this.nor1s) == 0 ? '1' : '0';
         } else if (r2 == '1' && s2 == '0') {
             this.nor2s = '0';
-            this.nor1s = (s1 | this.nor2s) == 0 ? '1' : '0';
+            this.nor1s = (s2 | this.nor2s) == 0 ? '1' : '0';
         } else if (s2 == '1' && r2 == '1') {
             document.getElementById("q2").value = 'X';
             document.getElementById("q2-neg").value = 'X';
@@ -519,6 +520,8 @@ const rsTypeAsynchronousSwitch = {
 
         document.getElementById("q2").value = this.nor1s;
         document.getElementById("q2-neg").value = this.nor2s;
+        previousStateBoard.item(1).cells[1].textContent = this.nor1s;
+        previousStateBoard.item(2).cells[1].textContent = this.nor2s;
 
         switch(r2) {
             case '0':
@@ -537,5 +540,18 @@ const rsTypeAsynchronousSwitch = {
                 }
             break;
         }
+
+        rsAsynchronousNorSwitch.getElementById("s").style.stroke = (s2 == 1 ? "red" : "black");
+        rsAsynchronousNorSwitch.getElementById("r").style.stroke = (r2 == 1 ? "red" : "black");
+
+        rsAsynchronousNorSwitch.getElementById("nor1-s").style.stroke = (this.nor1s == 1 ? "red" : "black");
+        rsAsynchronousNorSwitch.getElementById("nor1-s1").style.stroke = (this.nor1s == 1 ? "red" : "black");
+        rsAsynchronousNorSwitch.getElementById("nor1-s-dot").style.stroke = (this.nor1s == 1 ? "red" : "black");
+        rsAsynchronousNorSwitch.getElementById("nor1-s-dot").style.fill = (this.nor1s == 1 ? "red" : "black");
+
+        rsAsynchronousNorSwitch.getElementById("nor2-s").style.stroke = (this.nor2s == 1 ? "red" : "black");
+        rsAsynchronousNorSwitch.getElementById("nor2-s1").style.stroke = (this.nor2s == 1 ? "red" : "black");
+        rsAsynchronousNorSwitch.getElementById("nor2-s-dot").style.stroke = (this.nor2s == 1 ? "red" : "black");
+        rsAsynchronousNorSwitch.getElementById("nor2-s-dot").style.fill = (this.nor2s == 1 ? "red" : "black");
     }
 };
