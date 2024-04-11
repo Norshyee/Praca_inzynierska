@@ -1,0 +1,131 @@
+<svg viewBox="0 0 790 550" xmlns="http://www.w3.org/2000/svg" version="1.0">
+    <g transform="translate(-50,0)">
+        <g>
+            <g>
+                <circle stroke="black" fill="black" cx="150" cy="50" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,50 L 150,50 M 150,25 L 482,25 M 150,25 L 150,470 L 482,470 M 150,285 L 482,285"/>
+                <circle stroke="black" fill="black" cx="150" cy="285" r="4"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="180" cy="95" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,95 L 180,95 L 180,35 L 482,35 M 180,95 L 180,330 L 482,330"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="210" cy="140" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,140 L 210,140 L 210,45 L 482,45 M 210,140 L 210,460 L 482,460 M 210,220 L 482,220"/>
+                <circle stroke="black" fill="black" cx="210" cy="220" r="4"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="240" cy="185" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,185 L 240,185 L 240,55 L 482,55 M 240,185 L 240,230 L 482,230"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="270" cy="120" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,230 L 100,230 L 100,120 L 270,120 L 270,80 L 482,80 M 270,120 L 270,450 L 482,450 M 270,340 L 482,340"/>
+                <circle stroke="black" fill="black" cx="270" cy="340" r="4"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="300" cy="275" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,275 L 300,275 L 300,90 L 482,90 M 300,275 L 300,350 L 482,350"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="330" cy="305" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,315 L 100,315 L 100,305 L 330,305 L 330,100 L 482,100 M 330,305 L 330,440 L 482,440"/>
+            </g>
+
+            <g>
+                <path fill="none" stroke="black" stroke-width="2.5" d="M 50,360 L 360,360 L 360,110 L 482,110"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="390" cy="405" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,405 L 390,405 L 390,175 L 482,175 M 390,405 L 390,415 L 482,415 M 390,295 L 482,295"/>
+                <circle stroke="black" fill="black" cx="390" cy="295" r="4"/>
+            </g>
+
+            <g>
+                <circle stroke="black" fill="black" cx="420" cy="320" r="4"/>
+                <path fill="none" stroke="black" stroke-width="2.5"
+                      d="M 50,450 L 100,450 L 100,425 L 420,425 L 420,320 L 482,320 M 420,320 L 420,210 L 482,210"/>
+            </g>
+
+            <g>
+                <text x="450" y="520" text-anchor="middle" stroke="red" font-size="20">1</text>
+                <path fill="none" stroke="red" stroke-width="2.5"
+                      d="M 450,500 L 450,145 L 482,145 M 450,155 L 482,155 M 450,165 L 482,165 M 450,200 L 482,200 M 450,265 L 482,265 M 450,275 L 482,275 M 450,385 L 482,385 M 450,395 L 482,395 M 450,405 L 482,405"/>
+                <circle stroke="red" fill="red" cx="450" cy="145" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="155" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="165" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="200" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="265" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="275" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="385" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="395" r="4"/>
+                <circle stroke="red" fill="red" cx="450" cy="405" r="4"/>
+            </g>
+        </g>
+
+        <g transform="translate(100,-90)">
+            <g transform="translate(300, 50) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
+                <line stroke="black" x1="57" y1="27" x2="76" y2="27"/>
+            </g>
+            <g transform="translate(300, 170) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
+                <line stroke="black" x1="57" y1="27" x2="76" y2="27"/>
+            </g>
+            <g transform="translate(300, 290) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
+                <line stroke="black" x1="57" y1="27" x2="76" y2="27"/>
+            </g>
+            <g transform="translate(300, 410) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
+                <line stroke="black" x1="57" y1="27" x2="76" y2="27"/>
+            </g>
+        </g>
+
+        <g transform="translate(600,0)">
+            <g transform="translate(0,-40) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
+                <path fill="none" stroke="black" stroke-width="1" d="M 50,27.5 L 60,27.5"/>
+            </g>
+
+            <g transform="translate(0,80) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
+                <path fill="none" stroke="black" stroke-width="1" d="M 50,27.5 L 60,27.5"/>
+            </g>
+
+            <g transform="translate(0,200) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
+                <path fill="none" stroke="black" stroke-width="1" d="M 50,27.5 L 60,27.5"/>
+            </g>
+
+            <g transform="translate(0,320) scale(4)">
+                <path fill="none" stroke="black" stroke-linecap="square"
+                      d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
+                <path fill="none" stroke="black" stroke-width="1" d="M 50,27.5 L 60,27.5"/>
+            </g>
+        </g>
+    </g>
+</svg>

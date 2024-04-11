@@ -1,3 +1,62 @@
 <div th:fragment="decimal-to-8421-converter-schema-fragment">
     <span class="text-xl font-bold">Konwerter liczby dziesiętnej na 8421</span>
+
+    <div class="grid grid-rows-1 grid-cols-[20%_60%_20%] gap-4">
+        <div class="grid grid-flow-row place-items-center justify-items-end">
+            <div></div>
+            <input id="kl0"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL0" min="0" max="1" required pattern="[01]">
+            <input id="kl1"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL1" min="0" max="1" required pattern="[01]">
+            <input id="kl2"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL2" min="0" max="1" required pattern="[01]">
+            <input id="kl3"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL3" min="0" max="1" required pattern="[01]">
+            <input id="kl4"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL4" min="0" max="1" required pattern="[01]">
+            <input id="kl5"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL5" min="0" max="1" required pattern="[01]">
+            <input id="kl6"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL6" min="0" max="1" required pattern="[01]">
+            <input id="kl7"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL7" min="0" max="1" required pattern="[01]">
+            <input id="kl8"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL8" min="0" max="1" required pattern="[01]">
+            <input id="kl9"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="KL9" min="0" max="1" required pattern="[01]">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <object class="flex justify-self-center self-center" id="decimal-to-8421-converter-schema"
+                data="/svg/schema/decimal-to-8421-converter/decimal-to-8421-converter-schema.svg"
+                type="image/svg+xml">
+        </object>
+
+        <div class="grid grid-flow-row place-items-center justify-items-start">
+            <input id="rd" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="D"
+                   readonly>
+            <input id="rc" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="C"
+                   readonly>
+            <input id="rb" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="B"
+                   readonly>
+            <input id="ra" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="A"
+                   readonly>
+        </div>
+    </div>
 </div>
