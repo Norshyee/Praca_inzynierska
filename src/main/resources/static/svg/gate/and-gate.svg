@@ -21,10 +21,10 @@
         }
     </style>
 
-    <g transform="translate(-11, -12)">
-        <line id="gA" x1="12" y1="20" x2="25" y2="20" />
-        <line id="gB" x1="12" y1="35" x2="25" y2="35" />
-        <line id="gC" x1="50" y1="27.5" x2="60" y2="27.5" />
+    <g transform="translate(-14, -12.5)">
+        <line id="gA" x1="16" y1="20" x2="25" y2="20" />
+        <line id="gB" x1="16" y1="35" x2="25" y2="35" />
+        <line id="gC" x1="50" y1="27.5" x2="62" y2="27.5" />
         <path id="figure" stroke-linecap="square"
               d="M 40 40 h -19 v -26 l 19 0 c 7.3 0 13 5.8 13 13 s -5.8 13 -13 13 z" />
     </g>
