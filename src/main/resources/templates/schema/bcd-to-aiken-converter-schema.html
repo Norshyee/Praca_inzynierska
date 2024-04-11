@@ -1,3 +1,204 @@
-<div th:fragment="bcd-to-aiken-converter-schema-fragment">
+<div th:fragment="bcd-to-aiken-converter-schema-fragment" class="min-w-min">
     <span class="text-xl font-bold">Konwerter z BCD na Aiken'a</span>
+
+    <div class="grid grid-rows-1 grid-cols-[20%_60%_20%] gap-4">
+        <div class="grid grid-flow-row place-items-center justify-items-end">
+            <input id="d"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="d" min="0" max="1" required pattern="[01]">
+            <input id="c"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="c" min="0" max="1" required pattern="[01]">
+            <input id="b"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="b" min="0" max="1" required pattern="[01]">
+            <input id="a"
+                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                   type="number" placeholder="a" min="0" max="1" required pattern="[01]">
+        </div>
+
+        <object class="flex justify-self-center self-center" id="bcd-to-aiken-converter-schema"
+                data="/svg/schema/bcd-to-aiken-converter/bcd-to-aiken-converter-schema.svg"
+                type="image/svg+xml">
+        </object>
+
+        <div class="grid grid-flow-row place-items-center justify-items-start">
+            <input id="rd" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="D"
+                   readonly>
+            <input id="rc" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="C"
+                   readonly>
+            <input id="rb" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="B"
+                   readonly>
+            <input id="ra" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
+                   placeholder="A"
+                   readonly>
+        </div>
+    </div>
+
+    <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto text-center my-auto">
+        <thead>
+        <tr>
+            <th rowspan="2" class="border border-slate-300 w-20">Cyfra</th>
+            <th colspan="4" class="border border-slate-300 w-10">BCD</th>
+            <th colspan="4" class="border border-slate-300 w-10">AIKEN</th>
+        </tr>
+
+        <tr>
+            <th class="border border-slate-300 w-10">d</th>
+            <th class="border border-slate-300 w-10">c</th>
+            <th class="border border-slate-300 w-10">b</th>
+            <th class="border border-slate-300 w-10">a</th>
+
+            <th class="border border-slate-300 w-10">D</th>
+            <th class="border border-slate-300 w-10">C</th>
+            <th class="border border-slate-300 w-10">B</th>
+            <th class="border border-slate-300 w-10">A</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th class="border border-slate-300">0</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">1</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">2</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">3</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">4</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">5</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">6</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">7</th>
+
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">8</th>
+
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+            </tr>
+
+            <tr>
+                <th class="border border-slate-300">9</th>
+
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">0</td>
+                <td class="border border-slate-300">1</td>
+
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+                <td class="border border-slate-300">1</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

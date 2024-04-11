@@ -21,7 +21,7 @@
         }
     </style>
 
-    <g transform="translate(-14, -12)">
+    <g transform="translate(-14, -12.5)">
         <line id="gA" x1="16" y1="20" x2="25" y2="20" />
         <line id="gB" x1="16" y1="35" x2="25" y2="35" />
         <line id="gC" x1="50" y1="27.5" x2="62" y2="27.5" />

@@ -1,98 +1,117 @@
 <div th:fragment="4-bit-serial-transfer-summator-schema-fragment">
     <span class="text-xl font-bold">4-bit sumator z przeniesieniem szeregowym</span>
 
-    <div class="grid grid-cols-[3%_10%_3%_10%_3%_10%_3%_10%_3%] mt-4 mb-4 justify-center">
-        <div class="grid grid-flow-row place-items-center justify-items-end">
-            <input id="c5" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="C(5)" readonly>
-        </div>
-
-        <div class="grid grid-flow-row place-items-center justify-items-center">
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="a4" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                    type="number" placeholder="A(4)" min="0" max="1" required pattern="[01]">
-                <input id="b4" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="B(4)" min="0" max="1" required pattern="[01]">
+    <div class="overflow-x-auto">
+        <div class="flex justify-center min-w-min grid grid-flow-col grid-cols-[min-content_min-content_min-content_min-content_min-content_min-content_min-content_min-content_min-content] mt-4 mb-4">
+            <div class="grid grid-flow-row place-items-center justify-items-end">
+                <input id="c5" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                       placeholder="C(5)" readonly>
             </div>
 
-            <object class="flex justify-self-center self-center" id="4-bit-sumator-4"
-                    data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
-                    type="image/svg+xml">
-            </object>
+            <div class="grid grid-flow-row place-items-center justify-items-center">
+                <div class="grid grid-flow-col gap-6">
+                    <input id="a4"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="A(4)" min="0" max="1" required pattern="[01]">
+                    <input id="b4"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="B(4)" min="0" max="1" required pattern="[01]">
+                </div>
 
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="s4" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="S(4)" readonly>
-            </div>
-        </div>
+                <object class="flex justify-self-center self-center" id="4-bit-sumator-4"
+                        data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
+                        type="image/svg+xml">
+                </object>
 
-        <div class="grid grid-flow-row place-items-center justify-items-center">
-            <input id="c4" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="C(4)" readonly>
-        </div>
-
-        <div class="grid grid-flow-row place-items-center justify-items-center">
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="a3" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="A(3)" min="0" max="1" required pattern="[01]">
-                <input id="b3" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="B(3)" min="0" max="1" required pattern="[01]">
-            </div>
-
-            <object class="flex justify-self-center self-center" id="4-bit-sumator-3"
-                    data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
-                    type="image/svg+xml">
-            </object>
-
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="s3" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="S(3)" readonly>
-            </div>
-        </div>
-
-        <div class="grid grid-flow-row place-items-center justify-items-center">
-            <input id="c3" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="C(3)" readonly>
-        </div>
-
-        <div class="grid grid-flow-row place-items-center justify-items-center">
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="a2" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="A(2)" min="0" max="1" required pattern="[01]">
-                <input id="b2" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="B(2)" min="0" max="1" required pattern="[01]">
+                <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
+                    <input id="s4" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                           placeholder="S(4)" readonly>
+                </div>
             </div>
 
-            <object class="flex justify-self-center self-center" id="4-bit-sumator-2"
-                    data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
-                    type="image/svg+xml">
-            </object>
-
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="s2" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="S(2)" readonly>
-            </div>
-        </div>
-
-        <div class="grid grid-flow-row place-items-center justify-items-center">
-            <input id="c2" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="C(2)" readonly>
-        </div>
-
-        <div class="grid grid-flow-row place-items-center justify-items-center">
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="a1" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="A(1)" min="0" max="1" required pattern="[01]">
-                <input id="b1" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="B(1)" min="0" max="1" required pattern="[01]">
+            <div class="grid grid-flow-row place-items-center justify-items-center">
+                <input id="c4" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                       placeholder="C(4)" readonly>
             </div>
 
-            <object class="flex justify-self-center self-center" id="4-bit-sumator-1"
-                    data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
-                    type="image/svg+xml">
-            </object>
+            <div class="grid grid-flow-row place-items-center justify-items-center">
+                <div class="grid grid-flow-col place-items-center justify-items-center gap-6">
+                    <input id="a3"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="A(3)" min="0" max="1" required pattern="[01]">
+                    <input id="b3"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="B(3)" min="0" max="1" required pattern="[01]">
+                </div>
 
-            <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
-                <input id="s1" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text" placeholder="S(1)" readonly>
+                <object class="flex justify-self-center self-center" id="4-bit-sumator-3"
+                        data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
+                        type="image/svg+xml">
+                </object>
+
+                <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
+                    <input id="s3" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                           placeholder="S(3)" readonly>
+                </div>
             </div>
-        </div>
 
-        <div class="grid grid-flow-row place-items-center justify-items-start">
-            <input id="c1" class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="C(1)" min="0" max="1" required pattern="[01]">
+            <div class="grid grid-flow-row place-items-center justify-items-center">
+                <input id="c3" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                       placeholder="C(3)" readonly>
+            </div>
+
+            <div class="grid grid-flow-row place-items-center justify-items-center">
+                <div class="grid grid-flow-col place-items-center justify-items-center gap-6">
+                    <input id="a2"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="A(2)" min="0" max="1" required pattern="[01]">
+                    <input id="b2"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="B(2)" min="0" max="1" required pattern="[01]">
+                </div>
+
+                <object class="flex justify-self-center self-center" id="4-bit-sumator-2"
+                        data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
+                        type="image/svg+xml">
+                </object>
+
+                <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
+                    <input id="s2" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                           placeholder="S(2)" readonly>
+                </div>
+            </div>
+
+            <div class="grid grid-flow-row place-items-center justify-items-center">
+                <input id="c2" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                       placeholder="C(2)" readonly>
+            </div>
+
+            <div class="grid grid-flow-row place-items-center justify-items-center">
+                <div class="grid grid-flow-col place-items-center justify-items-center gap-6">
+                    <input id="a1"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="A(1)" min="0" max="1" required pattern="[01]">
+                    <input id="b1"
+                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                           type="number" placeholder="B(1)" min="0" max="1" required pattern="[01]">
+                </div>
+
+                <object class="flex justify-self-center self-center" id="4-bit-sumator-1"
+                        data="/svg/schema/4-bit-serial-transfer-sumator/4-bit-serial-transfer-summator-schema.svg"
+                        type="image/svg+xml">
+                </object>
+
+                <div class="grid grid-flow-col place-items-center justify-items-center gap-4">
+                    <input id="s1" class="text-center border border-2 border-gray-400 rounded max-w-10" type="text"
+                           placeholder="S(1)" readonly>
+                </div>
+            </div>
+
+            <div class="grid grid-flow-row place-items-center justify-items-start">
+                <input id="c1"
+                       class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
+                       type="number" placeholder="C(1)" min="0" max="1" required pattern="[01]">
+            </div>
         </div>
     </div>
 
@@ -113,6 +132,5 @@
     <br>
 
     <p>
-
     </p>
 </div>

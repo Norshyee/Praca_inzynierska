@@ -16,9 +16,9 @@
         }
     </style>
 
-    <g transform="translate(-11, -12)">
-        <line id="gA" x1="12" y1="27.5" x2="30" y2="27.5" />
-        <line id="gC" x1="50" y1="27.5" x2="60" y2="27.5" />
+    <g transform="translate(-14, -12.5)">
+        <line id="gA" x1="16" y1="27.5" x2="30" y2="27.5" />
+        <line id="gC" x1="50" y1="27.5" x2="62" y2="27.5" />
         <path id="figure" stroke-linecap="square"
               d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z " />
     </g>

@@ -1,4 +1,4 @@
-<div th:fragment="nand-gate-fragment">
+<div th:fragment="nand-gate-fragment" class="min-w-min">
     <span class="text-xl font-bold">Bramka logiczna NAND</span>
 
     <div class="grid grid-cols-4">
@@ -11,7 +11,7 @@
                    type="number" placeholder="B" min="0" max="1" required pattern="[01]">
         </div>
 
-        <object class="flex justify-center items-center" id="nand-gate" data="/svg/gate/nand-gate.svg" type="image/svg+xml">
+        <object class="flex justify-self-center self-center" id="nand-gate" data="/svg/gate/nand-gate.svg" type="image/svg+xml">
             <!--Plik svg-->
         </object>
 
