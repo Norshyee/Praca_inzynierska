@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" version="1.0">
+    <g transform="translate(50,0)">
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="-15" y="50">b1</text>
+        <line stroke="black" stroke-width="2" x1="0" y1="45" x2="50" y2="45"/>
+
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="-15" y="85">b2</text>
+        <line stroke="black" stroke-width="2" x1="0" y1="80" x2="50" y2="80"/>
+
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="-15" y="120">b3</text>
+        <line stroke="black" stroke-width="2" x1="0" y1="115" x2="50" y2="115"/>
+
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="-15" y="155">b4</text>
+        <line stroke="black" stroke-width="2" x1="0" y1="150" x2="50" y2="150"/>
+
+        <text stroke="black" stroke-width="1" font-size="30" x="150" text-anchor="middle" y="110">Converter</text>
+        <rect x="50" y="25" width="200" height="150" fill="none" stroke="black" stroke-width="2"/>
+
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="310" y="50">A</text>
+        <line stroke="black" stroke-width="2" x1="250" y1="45" x2="300" y2="45"/>
+
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="310" y="85">B</text>
+        <line stroke="black" stroke-width="2" x1="250" y1="80" x2="300" y2="80"/>
+
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="310" y="120">C</text>
+        <line stroke="black" stroke-width="2" x1="250" y1="115" x2="300" y2="115"/>
+
+        <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="310" y="155">D</text>
+        <line stroke="black" stroke-width="2" x1="250" y1="150" x2="300" y2="150"/>
+    </g>
+</svg>
