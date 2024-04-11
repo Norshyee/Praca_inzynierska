@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" version="1.0">
-    <g transform="translate(50,0)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" version="1.0">
+    <g transform="translate(25,0) scale(0.5)">
         <text stroke="black" stroke-width="1" text-anchor="middle" font-size="20" x="-15" y="50">b1</text>
         <line stroke="black" stroke-width="2" x1="0" y1="45" x2="50" y2="45"/>
 

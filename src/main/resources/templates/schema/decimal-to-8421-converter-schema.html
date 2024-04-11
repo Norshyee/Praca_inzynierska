@@ -1,9 +1,8 @@
-<div th:fragment="decimal-to-8421-converter-schema-fragment">
+<div th:fragment="decimal-to-8421-converter-schema-fragment" class="min-w-min">
     <span class="text-xl font-bold">Konwerter liczby dziesiętnej na 8421</span>
 
-    <div class="grid grid-rows-1 grid-cols-[20%_60%_20%] gap-4">
-        <div class="grid grid-flow-row place-items-center justify-items-end">
-            <div></div>
+    <div class="min-w-min grid grid-rows-1 grid-cols-[20%_60%_20%] gap-4">
+        <div class="grid grid-flow-row place-items-center justify-items-end pt-10 pb-20 gap-1">
             <input id="kl0"
                    class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
                    type="number" placeholder="KL0" min="0" max="1" required pattern="[01]">
@@ -34,9 +33,6 @@
             <input id="kl9"
                    class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
                    type="number" placeholder="KL9" min="0" max="1" required pattern="[01]">
-            <div></div>
-            <div></div>
-            <div></div>
         </div>
 
         <object class="flex justify-self-center self-center" id="decimal-to-8421-converter-schema"
@@ -44,7 +40,7 @@
                 type="image/svg+xml">
         </object>
 
-        <div class="grid grid-flow-row place-items-center justify-items-start">
+        <div class="grid grid-flow-row place-items-center justify-items-start pb-20">
             <input id="rd" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
                    placeholder="D"
                    readonly>

@@ -1,14 +1,9 @@
-<div th:fragment="8421-to-gray-converter-schema-fragment">
+<div th:fragment="8421-to-gray-converter-schema-fragment" class="min-w-min">
     <span class="text-xl font-bold">Konwerter z 8421 na Gray'a</span>
 
-    <div class="grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-[60%_40%] gap-4">
+    <div class="grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-[70%_30%] gap-4 xl:gap-0">
         <div class="grid grid-rows-2 gap-4">
-            <object class="flex justify-self-center self-center" id="8421-to-gray-converter-symbol"
-                    data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-symbol.svg"
-                    type="image/svg+xml">
-            </object>
-
-            <div class="grid grid-cols-3">
+            <div class="grid grid-cols-3 gap-4">
                 <div class="grid grid-flow-row place-items-center justify-items-end">
                     <input id="b1"
                            class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
@@ -29,7 +24,7 @@
                         type="image/svg+xml">
                 </object>
 
-                <div class="grid grid-flow-row place-items-center justify-items-start">
+                <div class="grid grid-flow-row place-items-center justify-items-start pt-8">
                     <input id="a" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
                            placeholder="A"
                            readonly>
@@ -44,6 +39,11 @@
                            readonly>
                 </div>
             </div>
+
+            <object class="max-w-[800px] max-h-[400px] flex justify-self-center self-center" id="8421-to-gray-converter-symbol"
+                    data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-symbol.svg"
+                    type="image/svg+xml">
+            </object>
         </div>
 
         <table id="boardOfTruth-nand" class="border-separate border border-slate-400 text-center mx-auto">
@@ -264,6 +264,5 @@
     <br>
 
     <p>
-        Ababa pap
     </p>
 </div>
