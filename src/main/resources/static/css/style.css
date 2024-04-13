@@ -1,0 +1,43 @@
+.collapsible {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    max-height: 0;
+    padding: 0 1rem;
+}
+
+.collapsible.expanded {
+    max-height: 500px; /* Dostosuj maksymalną wysokość do swoich potrzeb */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.content-collapsible {
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    width: 100%;
+    margin-left: 0;
+}
+
+.content-collapsible.collapsed {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+}
+
+.sidebar-collapsible {
+    transition: transform 0.3s ease-out;
+    width: 250px;
+    transform: translateX(-100%);
+}
+
+.sidebar-collapsible.expanded {
+    transform: translateX(0);
+}
+
+.checkbox-label input[type="checkbox"] + span::after {
+    content: '0';
+    transition: all 0.3s;
+}
+
+.checkbox-label input[type="checkbox"]:checked + span::after {
+    content: '1';
+    transition: all 0.3s;
+}

@@ -8,18 +8,24 @@
     <script src="/js/gate.js"></script>
     <script src="/js/schema.js"></script>
     <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadContent('/gate/not');
+        });
+    </script>
 </head>
 
 <body>
 
 <!-- Navbar -->
-<nav class="fixed top-0 z-50 w-full h-20 bg-gradient-to-br from-red-400 to-orange-400 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+<nav class="fixed top-0 z-50 w-full h-30 bg-gradient-to-br from-red-400 to-orange-400 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <div class="px-3 py-4 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
-                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+                <button data-collapse-toggle="logo-sidebar" aria-controls="logo-sidebar"
                         type="button"
-                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                        class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                     <span class="sr-only">Open sidebar</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                          xmlns="http://www.w3.org/2000/svg">
@@ -27,14 +33,14 @@
                               d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                     </svg>
                 </button>
-                <a href="https://www.pusb.pl/" class="flex ml-2 md:mr-24">
+                <a href="https://www.pusb.pl/" class="flex ml-3 md:mr-24">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 47" width="65" height="47" fill="none"
                          preserveAspectRatio="xMinYMin" alt="Do strony głównej">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M49.5589 9.46258C46.4491 9.46258 44.0009 11.8504 44.0009 14.7409C44.0009 17.6943 46.5152 20.0821 49.5589 20.0821C52.6687 20.0821 55.1831 17.6943 55.1831 14.8038C55.1831 13.3585 54.5876 12.0389 53.5289 11.0335C52.4702 10.0281 51.0807 9.46258 49.5589 9.46258ZM49.5589 27.874C46.4491 27.874 44.0009 30.199 44.0009 33.1523C44.0009 34.5976 44.5964 35.9172 45.6551 36.9226C47.8386 38.9962 51.3454 39.059 53.5289 36.9854C55.7124 34.9118 55.7786 31.5814 53.5951 29.5077L53.5289 29.4449C52.4702 28.3767 51.0807 27.8111 49.5589 27.874ZM33.348 27.3713C32.8187 26.5544 32.157 25.8003 31.2969 25.172C30.569 24.5436 29.775 23.978 28.981 23.4753C28.0547 22.9098 27.0622 22.4699 26.0697 22.0929C24.8125 21.5902 23.82 21.276 23.0922 21.0247C22.3644 20.7733 21.3057 20.4591 19.85 20.0193C16.4094 19.0139 14.0935 18.0713 12.8364 17.1916C11.6454 16.4375 10.9837 15.1808 10.9837 13.7984C10.9837 12.5416 11.5792 11.3477 12.6379 10.5937C13.9612 9.71393 15.483 9.27407 17.1372 9.3369C21.1734 9.3369 24.1509 11.222 26.0035 14.9923L33.7451 10.9078C32.2232 7.89164 29.9735 5.37814 27.0622 3.61869C24.0847 1.85924 20.644 0.916676 17.1372 0.979514C13.2334 0.916676 9.39568 2.17343 6.41818 4.56125C3.44067 6.94908 1.91884 10.1538 1.91884 14.1126C1.85267 15.9348 2.24967 17.7571 3.04367 19.3909C3.77151 20.899 4.89634 22.1558 6.35201 23.1612C7.67534 24.1037 9.13101 24.9206 10.6528 25.549C12.3732 26.2402 14.1597 26.8057 15.9462 27.3084C19.7177 28.3138 22.2982 29.2564 23.7539 30.1361C25.8712 31.2672 26.5329 33.8435 25.3419 35.8543C25.011 36.357 24.614 36.7969 24.1509 37.1111C22.9599 37.9908 21.1072 38.4307 18.5267 38.4307C13.2334 38.4307 9.66035 36.1685 7.87384 31.7071L0 36.0428C1.191 39.3104 3.57301 42.1381 6.61668 44.0232C9.72651 45.9712 13.6304 46.9766 18.1959 46.9766C23.1584 46.9766 27.2607 45.7827 30.3705 43.3948C33.4804 41.007 35.0684 37.7395 35.0684 33.655C35.0684 31.4557 34.4729 29.2564 33.348 27.3713Z"
                               fill="white"></path>
                     </svg>
-                    <span class="text-white self-center text-xs font-semibold sm:text-sm whitespace-nowrap dark:text-white">Akademia<br> Nauk Stosowanych<br> Stefana Batorego</span>
+                    <span class="text-white self-center font-semibold text-sm whitespace-nowrap dark:text-white">Akademia<br> Nauk Stosowanych<br> Stefana Batorego</span>
                 </a>
             </div>
         </div>
@@ -43,7 +49,7 @@
 
 <!--Sidebar-->
 <aside id="logo-sidebar"
-       class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+       class="sidebar-collapsible expanded fixed top-3 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
        aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 mt-3">
@@ -67,7 +73,7 @@
                               clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <ul id="gates" class="py-2 space-y-2">
+                <ul id="gates" class="collapsible expanded py-2 space-y-2">
                     <li class="ml-4">
                         <a onclick="loadContent('/gate/not')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
@@ -185,7 +191,7 @@
                               clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <ul id="schema" class="py-2 space-y-2">
+                <ul id="schema" class="collapsible expanded py-2 space-y-2">
                     <li class="ml-4">
                         <a onclick="loadContent('/schema/semi_summator')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Półsumator</a>
@@ -237,7 +243,7 @@
 </aside>
 
 <!--Content-->
-<div class="p-4 sm:ml-64 mt-4">
+<div id="content-coll" class="content-collapsible collapsed p-4 mt-8">
     <div id="contentArea" class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
     </div>
 </div>

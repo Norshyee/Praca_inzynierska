@@ -1,8 +1,8 @@
 function notGateOutput() {
-    var a = document.getElementById("a").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
     var c = (a == 0) ? '1' : '0';
 
-    document.getElementById("q").value = c;
+    document.getElementById("q").textContent = c;
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
