@@ -30,8 +30,24 @@ function applyCSS(contentArea) {
     document.head.appendChild(link);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Znajdź wszystkie przyciski, które mają przełączać listy
+    document.querySelectorAll('[data-collapse-toggle]').forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('aria-controls');
+            const targetElement = document.getElementById(targetId);
+            targetElement.classList.toggle('expanded');
+
+            if (targetId === 'logo-sidebar') {
+                const contentColl = document.getElementById('content-coll');
+                contentColl.classList.toggle('collapsed');
+            }
+        });
+    });
+});
+
 function randomInputs() {
-    if (document.getElementById("a")) document.getElementById("a").value = (Math.random() >= 0.5) ? 1 : 0;
+    if (document.getElementById("a")) document.getElementById("a").checked = (Math.random() >= 0.5) ? 1 : 0;
     if (document.getElementById("b")) document.getElementById("b").value = (Math.random() >= 0.5) ? 1 : 0;
     if (document.getElementById("c")) document.getElementById("c").value = (Math.random() >= 0.5) ? 1 : 0;
     if (document.getElementById("d")) document.getElementById("d").value = (Math.random() >= 0.5) ? 1 : 0;
