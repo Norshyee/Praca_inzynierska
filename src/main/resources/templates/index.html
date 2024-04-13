@@ -53,7 +53,7 @@
        aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 mt-3">
-            <li>
+            <li class="space-y-2">
                 <button type="button"
                         class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="gates" data-collapse-toggle="gates">
@@ -73,7 +73,7 @@
                               clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <ul id="gates" class="collapsible expanded py-2 space-y-2">
+                <ul id="gates" class="collapsible expanded space-y-2">
                     <li class="ml-4">
                         <a onclick="loadContent('/gate/not')"
                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
@@ -166,7 +166,8 @@
                     </li>
                 </ul>
             </li>
-            <li>
+
+            <li class="space-y-2">
                 <button type="button"
                         class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         aria-controls="schema" data-collapse-toggle="schema">
@@ -183,7 +184,7 @@
                             </g>
                         </g>
                     </svg>
-                    <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Schematy</span>
+                    <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Układy</span>
                     <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                          xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -191,50 +192,101 @@
                               clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <ul id="schema" class="collapsible expanded py-2 space-y-2">
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/semi_summator')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Półsumator</a>
+                <ul id="schema" class="collapsible expanded ml-4 space-y-1">
+                    <button type="button"
+                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            aria-controls="adders" data-collapse-toggle="adders">
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Sumatory</span>
+                        <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <li id="adders" class="collapsible expanded space-y-1">
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/semi_summator')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">Półsumator</span>
+                            </a>
+                        </ul>
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/1_bit_summator')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">1-bit sumator</span>
+                            </a>
+                        </ul>
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/4_bit_serial_transfer_summator')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">4-bit sumator z przeniesieniem szeregowym</span>
+                            </a>
+                        </ul>
                     </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/1_bit_summator')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">1-bit
-                            sumator</a>
+
+                    <button type="button"
+                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            aria-controls="switches" data-collapse-toggle="switches">
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Przerzutniki</span>
+                        <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <li id="switches" class="collapsible expanded">
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/d_type_switch')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">Przerzutnik typu D</span>
+                            </a>
+                        </ul>
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/rs_type_synchronous_switch')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">Przerzutnik synchroniczny typu RS</span>
+                            </a>
+                        </ul>
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/rs_type_asynchronous_switch')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">Przerzutnik asynchroniczny typu RS</span>
+                            </a>
+                        </ul>
                     </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/4_bit_serial_transfer_summator')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">4-bit
-                            sumator z przeniesieniem szeregowym</a>
-                    </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/d_type_switch')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Przerzutnik
-                            typu D</a>
-                    </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/rs_type_synchronous_switch')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Przerzutnik
-                            synchroniczny typu RS</a>
-                    </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/rs_type_asynchronous_switch')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Przerzutnik
-                            asynchroniczny typu RS</a>
-                    </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/8421_to_gray_converter')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Konwerter
-                            z 8421 na Gray'a</a>
-                    </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/bcd_to_aiken_converter')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Konwerter
-                            z BCD na Aiken'a</a>
-                    </li>
-                    <li class="ml-4">
-                        <a onclick="loadContent('/schema/decimal_to_8421_converter')"
-                           class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Konwerter
-                            liczby dziesiętnej na 8421</a>
+
+                    <button type="button"
+                            class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            aria-controls="converters" data-collapse-toggle="converters">
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Konwertery</span>
+                        <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <li id="converters" class="collapsible expanded">
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/8421_to_gray_converter')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">Konwerter z 8421 na Gray'a</span>
+                            </a>
+                        </ul>
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/bcd_to_aiken_converter')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">Konwerter z BCD na Aiken'a</span>
+                            </a>
+                        </ul>
+                        <ul class="ml-4">
+                            <a onclick="loadContent('/schema/decimal_to_8421_converter')"
+                               class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                                <span class="ml-3 text-left">Konwerter liczby dziesiętnej na 8421</span>
+                            </a>
+                        </ul>
                     </li>
                 </ul>
             </li>

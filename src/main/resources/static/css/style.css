@@ -1,14 +1,12 @@
 .collapsible {
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    transition: max-height 0.3s ease-out;
     max-height: 0;
-    padding: 0 1rem;
 }
 
 .collapsible.expanded {
-    max-height: 500px; /* Dostosuj maksymalną wysokość do swoich potrzeb */
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    transition: max-height 0.25s ease-in;
+    max-height: 1000px;
 }
 
 .content-collapsible {
