@@ -16,7 +16,7 @@
     </script>
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 
 <!-- Navbar -->
 <nav class="fixed top-0 z-50 w-full h-30 bg-gradient-to-br from-red-400 to-orange-400 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -56,7 +56,7 @@
 
 <!--Sidebar-->
 <aside id="logo-sidebar"
-       class="sidebar-collapsible expanded fixed top-3 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+       class="sidebar-collapsible expanded fixed top-3 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 translate-x-0 dark:bg-gray-800 dark:border-gray-700 min-h-screen pb-8"
        aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul class="space-y-2 mt-3">
@@ -302,13 +302,13 @@
 </aside>
 
 <!--Content-->
-<div id="content-coll" class="content-collapsible collapsed p-4 mt-8">
+<div id="content-coll" class="content-collapsible collapsed p-4 mt-8 pb-8">
     <div id="contentArea" class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
     </div>
 </div>
 
 <footer class="fixed bottom-0 z-50 w-full h-5 bg-gradient-to-br from-orange-400 to-red-400 flex justify-between text-white font-semibold text-sm px-3">
-    <div>Wersja:</div>
+    <div>Wersja: <span th:text="${version} + ' (' + ${commitId} + ')'">1.0.0</span></div>
     <div>Autor: Rafał Karchier</div>
 </footer>
 </body>
