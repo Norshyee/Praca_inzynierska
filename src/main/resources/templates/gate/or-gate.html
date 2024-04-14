@@ -3,12 +3,16 @@
 
     <div class="grid grid-cols-4">
         <div class="grid grid-flow-row place-items-center justify-items-end">
-            <input id="a"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="A" min="0" max="1" required pattern="[01]">
-            <input id="b"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="B" min="0" max="1" required pattern="[01]">
+            <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="a">
+                <span class="flex-1 text-center bg-yellow-200">A</span>
+                <input type="checkbox" class="hidden" id="a"/>
+                <span class="flex-1 text-center bg-white"></span>
+            </label>
+            <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="b">
+                <span class="flex-1 text-center bg-yellow-200">B</span>
+                <input type="checkbox" class="hidden" id="b"/>
+                <span class="flex-1 text-center bg-white"></span>
+            </label>
         </div>
 
         <object class="flex justify-self-center self-center" id="or-gate" data="/svg/gate/or-gate.svg"
@@ -17,8 +21,11 @@
         </object>
 
         <div class="flex justify-start items-center">
-            <input id="q" class="text-center border border-2 border-gray-400 rounded w-14" type="text" placeholder="Q"
-                   readonly>
+            <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="q">
+                <input type="checkbox" class="hidden" id="q" disabled/>
+                <span class="flex-1 text-center bg-white"></span>
+                <span class="flex-1 text-center bg-orange-200">Q</span>
+            </label>
         </div>
 
         <div class="flex justify-center items-center">
