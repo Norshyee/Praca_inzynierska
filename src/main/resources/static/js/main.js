@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function randomInputs() {
-    if (document.getElementById("a")) document.getElementById("a").checked = (Math.random() >= 0.5) ? 1 : 0;
+//    if (document.getElementById("a")) document.getElementById("a").checked = (Math.random() >= 0.5) ? 1 : 0;
+    if (document.getElementById("a")) document.getElementById("a").value = (Math.random() >= 0.5) ? 1 : 0;
     if (document.getElementById("b")) document.getElementById("b").value = (Math.random() >= 0.5) ? 1 : 0;
     if (document.getElementById("c")) document.getElementById("c").value = (Math.random() >= 0.5) ? 1 : 0;
     if (document.getElementById("d")) document.getElementById("d").value = (Math.random() >= 0.5) ? 1 : 0;
@@ -63,4 +64,7 @@ function randomInputs() {
     if (document.getElementById("b4")) document.getElementById("b4").value = (Math.random() >= 0.5) ? 1 : 0;
 
     if (document.getElementById("c1")) document.getElementById("c1").value = (Math.random() >= 0.5) ? 1 : 0;
+    if (document.getElementById("c2")) document.getElementById("c2").value = (Math.random() >= 0.5) ? 1 : 0;
+    if (document.getElementById("c3")) document.getElementById("c3").value = (Math.random() >= 0.5) ? 1 : 0;
+    if (document.getElementById("c4")) document.getElementById("c4").value = (Math.random() >= 0.5) ? 1 : 0;
 }

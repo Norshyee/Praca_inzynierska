@@ -134,16 +134,16 @@ function fourBitSumatorOutput() {
     var fourthAdder = oneBitAdder(a4,b4,thirdAdder.carry);
 
     document.getElementById("s1").value = firstAdder.sum;
-    document.getElementById("c2").value = firstAdder.carry;
+    document.getElementById("cr2").value = firstAdder.carry;
 
     document.getElementById("s2").value = secondAdder.sum;
-    document.getElementById("c3").value = secondAdder.carry;
+    document.getElementById("cr3").value = secondAdder.carry;
 
     document.getElementById("s3").value = thirdAdder.sum;
-    document.getElementById("c4").value = thirdAdder.carry;
+    document.getElementById("cr4").value = thirdAdder.carry;
 
     document.getElementById("s4").value = fourthAdder.sum;
-    document.getElementById("c5").value = fourthAdder.carry;
+    document.getElementById("cr5").value = fourthAdder.carry;
 
     var add1 = document.getElementById("4-bit-sumator-1").contentDocument;
     add1.getElementById("a").style.stroke = (a1 == 1 ? "red" : "black");
@@ -313,7 +313,7 @@ const rsTypeSynchronousSwitch = Object.create(BaseSwitch);
 
 rsTypeSynchronousSwitch.init = function() {
     this.nand1s = 0;
-    this.nand2s = 0;
+    this.nand2s = 1;
     this.nand3s = 0;
     this.nand4s = 0;
 };
