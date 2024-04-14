@@ -81,7 +81,7 @@
                     <failOnNoGitDirectory>false</failOnNoGitDirectory>
                     <gitDescribe>
                         <skip>true</skip>
-                        <alwyas>true</alwyas>
+                        <always>true</always>
                     </gitDescribe>
                 </configuration>
             </plugin>
