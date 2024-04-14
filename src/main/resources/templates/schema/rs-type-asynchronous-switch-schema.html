@@ -6,13 +6,17 @@
             <!--NAND-->
             <div class="grid grid-cols-3">
                 <div class="grid grid-flow-row place-items-center justify-items-end">
-                    <input id="a1"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="S" min="0" max="1" required pattern="[01]">
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="a1">
+                        <span class="flex-1 text-center bg-yellow-200">S</span>
+                        <input type="checkbox" class="hidden" id="a1"/>
+                        <span class="flex-1 text-center bg-white"></span>
+                    </label>
                     <div></div>
-                    <input id="b1"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="R" min="0" max="1" required pattern="[01]">
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="b1">
+                        <span class="flex-1 text-center bg-yellow-200">R</span>
+                        <input type="checkbox" class="hidden" id="b1"/>
+                        <span class="flex-1 text-center bg-white"></span>
+                    </label>
                 </div>
 
                 <object class="flex justify-self-center self-center" id="rs-asynchronous-switch-nand-schema"
@@ -21,12 +25,16 @@
                 </object>
 
                 <div class="grid grid-flow-row place-items-center justify-items-start">
-                    <input id="q1" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="Q"
-                           readonly>
-                    <input id="q1-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="Q&#773;"
-                           readonly>
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="q1">
+                        <input type="checkbox" class="hidden" id="q1" disabled/>
+                        <span class="flex-1 text-center bg-white"></span>
+                        <span class="flex-1 text-center bg-orange-200">Q</span>
+                    </label>
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="q1-neg">
+                        <input type="checkbox" class="hidden" id="q1-neg" disabled/>
+                        <span class="flex-1 text-center bg-white"></span>
+                        <span class="flex-1 text-center bg-orange-200">Q&#773;</span>
+                    </label>
                 </div>
             </div>
 
@@ -101,13 +109,17 @@
             <!--NOR-->
             <div class="grid grid-cols-3">
                 <div class="grid grid-flow-row place-items-center justify-items-end">
-                    <input id="b2"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="R" min="0" max="1" required pattern="[01]">
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="b2">
+                        <span class="flex-1 text-center bg-yellow-200">R</span>
+                        <input type="checkbox" class="hidden" id="b2"/>
+                        <span class="flex-1 text-center bg-white"></span>
+                    </label>
                     <div></div>
-                    <input id="a2"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="S" min="0" max="1" required pattern="[01]">
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="a2">
+                        <span class="flex-1 text-center bg-yellow-200">S</span>
+                        <input type="checkbox" class="hidden" id="a2"/>
+                        <span class="flex-1 text-center bg-white"></span>
+                    </label>
                 </div>
 
                 <object class="flex justify-self-center self-center" id="rs-asynchronous-switch-nor-schema"
@@ -116,12 +128,16 @@
                 </object>
 
                 <div class="grid grid-flow-row place-items-center justify-items-start">
-                    <input id="q2" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="Q"
-                           readonly>
-                    <input id="q2-neg" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="Q&#773;"
-                           readonly>
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="q2">
+                        <input type="checkbox" class="hidden" id="q2" disabled/>
+                        <span class="flex-1 text-center bg-white"></span>
+                        <span class="flex-1 text-center bg-orange-200">Q</span>
+                    </label>
+                    <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="q2-neg">
+                        <input type="checkbox" class="hidden" id="q2-neg" disabled/>
+                        <span class="flex-1 text-center bg-white"></span>
+                        <span class="flex-1 text-center bg-orange-200">Q&#773;</span>
+                    </label>
                 </div>
             </div>
 

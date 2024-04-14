@@ -36,7 +36,7 @@
 
         <g id="and" transform="translate(30, 20)">
             <path id="and1-a" d="M 30,15 L 0,15"/>
-            <circle id="and1-dot" cx="0" cy="15" r="2" fill="black"/>
+            <circle id="and1-dot" cx="0" cy="15" r="2" fill="black" stroke="none"/>
             <path id="and1-b" d="M 30,35 L -15,35"/>
             <path id="and1-s" d="M 70,25 L 200,25 L 200,-35 L 220,-35"/>
             <path style="stroke-width:0;fill:#000;stroke:none"
@@ -52,9 +52,9 @@
 
         <g id="xor" transform="translate(30, 90)">
             <path id="xor1-a" d="M 30,15 L 0,15 L 0,-135"/>
-            <circle id="xor1-dot" cx="0" cy="-135" r="2" fill="black"/>
+            <circle id="xor1-dot" cx="0" cy="-135" r="2" fill="black" stroke="none"/>
             <path id="xor1-b" d="M 30,35 L 15,35 L 15,-35"/>
-            <circle id="xor1-dot2" cx="15" cy="-35" r="2" fill="black"/>
+            <circle id="xor1-dot2" cx="15" cy="-35" r="2" fill="black" stroke="none"/>
             <path id="xor1-s" d="M 70,25.5 L 220,25.5"/>
             <g transform="translate(26.600,-38.862)" style="stroke-width:0;fill:#000;stroke:none">
                 <path d="M -2.25,81.500 C -3.847,84.144 -4.5,84.500 -4.5,84.500 L -8.156,84.500 L -6.156,82.062 C -6.15625,82.062505 -0.5,75.062451 -0.5,64.5 C -0.5,53.937 -6.156,46.937 -6.156,46.937 L -8.156,44.5 L -4.5,44.5 C -3.71875,45.4375 -3.078125,46.15625 -2.28125,47.5 C -0.408531,50.599815 2.5,56.526646 2.5,64.5 C 2.5,72.45065 -0.396697,78.379425 -2.25,81.500005 z"/>
@@ -64,7 +64,7 @@
 
         <g id="xor" transform="translate(220, 100)">
             <path id="xor2-b" d="M 30,35 L 15,35 L -85,35"/>
-            <circle id="xor2-dot" cx="-85" cy="35" r="2" fill="black"/>
+            <circle id="xor2-dot" cx="-85" cy="35" r="2" fill="black" stroke="none"/>
             <path id="xor2-s" d="M 70,25.5 L 80,25.5"/>
             <g transform="translate(26.600,-38.862)" style="stroke-width:0;fill:#000;stroke:none">
                 <path d="M -2.25,81.500 C -3.847,84.144 -4.5,84.500 -4.5,84.500 L -8.156,84.500 L -6.156,82.062 C -6.15625,82.062505 -0.5,75.062451 -0.5,64.5 C -0.5,53.937 -6.156,46.937 -6.156,46.937 L -8.156,44.5 L -4.5,44.5 C -3.71875,45.4375 -3.078125,46.15625 -2.28125,47.5 C -0.408531,50.599815 2.5,56.526646 2.5,64.5 C 2.5,72.45065 -0.396697,78.379425 -2.25,81.500005 z"/>

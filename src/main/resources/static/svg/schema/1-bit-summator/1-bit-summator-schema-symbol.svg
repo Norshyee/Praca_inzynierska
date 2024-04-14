@@ -5,12 +5,12 @@
 
         <g>
             <text x="125" y="20" font-family="Arial" font-size="14">A</text>
-            <line x1="130" y1="25" x2="130" y2="70" stroke="black" stroke-width="2"/>
+            <line id="aLine" x1="130" y1="25" x2="130" y2="70" stroke="black" stroke-width="2"/>
         </g>
 
         <g>
             <text x="165" y="20" font-family="Arial" font-size="14">B</text>
-            <line x1="170" y1="25" x2="170" y2="70" stroke="black" stroke-width="2"/>
+            <line id="bLine" x1="170" y1="25" x2="170" y2="70" stroke="black" stroke-width="2"/>
         </g>
 
         <g>
@@ -18,12 +18,12 @@
             <rect x="120" y="70" width="60" height="60" stroke="black" fill="none" stroke-width="2"/>
         </g>
 
-        <path d="M 260,100 L 210,100 L 210,160" stroke="black" stroke-width="2" fill="none"/>
-        <path d="M 130,130 L 130,185 L 117,185" stroke="black" stroke-width="2" fill="none"/>
-        <path d="M 170,130 L 170,145 L 185,145 L 185,160" stroke="black" stroke-width="2" fill="none"/>
-        <path d="M 185,220 L 185,235 L 130,235 L 130,205 L 117,205" stroke="black" stroke-width="2" fill="none"/>
-        <line x1="210" y1="220" x2="210" y2="280" stroke="black" stroke-width="2"/>
-        <line x1="65" y1="196" x2="35" y2="196" stroke="black" stroke-width="2"/>
+        <path id="cnInLine" d="M 260,100 L 210,100 L 210,160" stroke="black" stroke-width="2" fill="none"/>
+        <path id="ps1SumLine" d="M 130,130 L 130,185 L 117,185" stroke="black" stroke-width="2" fill="none"/>
+        <path id="ps1CarryLine" d="M 170,130 L 170,145 L 185,145 L 185,160" stroke="black" stroke-width="2" fill="none"/>
+        <path id="ps2CarryLine" d="M 185,220 L 185,235 L 130,235 L 130,205 L 117,205" stroke="black" stroke-width="2" fill="none"/>
+        <line id="ps2SumLine" x1="210" y1="220" x2="210" y2="280" stroke="black" stroke-width="2"/>
+        <line id="cnOutLine" x1="65" y1="196" x2="35" y2="196" stroke="black" stroke-width="2"/>
         <text x="261" y="105" font-family="Arial" font-size="14">C(n)</text>
         <text x="-10" y="200" font-family="Arial" font-size="14">C(n+1)</text>
         <text x="205" y="295" font-family="Arial" font-size="14">S</text>
