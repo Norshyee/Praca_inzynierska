@@ -79,6 +79,10 @@
                     <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
                     <injectAllReactorProjects>false</injectAllReactorProjects>
                     <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                    <gitDescribe>
+                        <skip>true</skip>
+                        <alwyas>true</alwyas>
+                    </gitDescribe>
                 </configuration>
             </plugin>
             <plugin>
