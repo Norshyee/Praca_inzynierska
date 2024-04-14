@@ -4,15 +4,21 @@
     <div class="grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-2 gap-4">
         <div class="grid grid-cols-[20%_60%_20%]">
             <div class="grid grid-flow-row place-items-center justify-items-end">
-                <input id="a"
-                       class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="A" min="0" max="1" required pattern="[01]">
-                <input id="b"
-                       class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="B" min="0" max="1" required pattern="[01]">
-                <input id="c"
-                       class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                       type="number" placeholder="C(n)" min="0" max="1" required pattern="[01]">
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="a">
+                    <span class="flex-1 text-center bg-yellow-200">A</span>
+                    <input type="checkbox" class="hidden" id="a"/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="b">
+                    <span class="flex-1 text-center bg-yellow-200">B</span>
+                    <input type="checkbox" class="hidden" id="b"/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="c">
+                    <span class="flex-1 text-center bg-yellow-200">C<sub>n</sub></span>
+                    <input type="checkbox" class="hidden" id="c"/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
             </div>
 
             <object class="flex justify-self-center self-center" id="1-bit-summator-schema"
@@ -21,12 +27,16 @@
             </object>
 
             <div class="grid grid-flow-row place-items-center justify-items-start">
-                <input id="q" class="text-center border border-2 border-gray-400 rounded w-24" type="text"
-                       placeholder="C(n+1)"
-                       readonly>
-                <input id="s" class="text-center border border-2 border-gray-400 rounded w-24" type="text"
-                       placeholder="S"
-                       readonly>
+                <label class="checkbox-label flex w-16 border-2 border-gray-400 rounded-lg overflow-hidden" for="q">
+                    <input type="checkbox" class="hidden" id="q" disabled/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">C<sub>n+1</sub></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-gray-400 rounded-lg overflow-hidden" for="s">
+                    <input type="checkbox" class="hidden" id="s" disabled/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">S</span>
+                </label>
             </div>
         </div>
 

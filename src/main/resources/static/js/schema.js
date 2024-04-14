@@ -1,11 +1,33 @@
 function semiSumatorOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
     var s = a ^ b;
     var c = a & b;
+    var sCheck = (s == 1) ? true : false;
+    var qCheck = (c == 1) ? true : false;
 
-    document.getElementById("s").value = 'S: ' + s;
-    document.getElementById("q").value = 'C: ' + c;
+    document.getElementById("q").checked = qCheck;
+    document.getElementById("s").checked = sCheck;
+    const qCheckbox = document.getElementById("q");
+    const sCheckbox = document.getElementById("s");
+    const qLabel = qCheckbox.closest('.checkbox-label');
+    const sLabel = sCheckbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        qLabel.classList.remove('border-gray-400');
+        qLabel.classList.add('border-red-400');
+    } else {
+        qLabel.classList.remove('border-red-400');
+        qLabel.classList.add('border-gray-400');
+    }
+
+    if(sCheck) {
+        sLabel.classList.remove('border-gray-400');
+        sLabel.classList.add('border-red-400');
+    } else {
+        sLabel.classList.remove('border-red-400');
+        sLabel.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -39,9 +61,9 @@ function semiSumatorOutput() {
 }
 
 function oneBitSumatorOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
-    var c = document.getElementById("c").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
+    var c = document.getElementById("c").checked ? '1' : '0';
 
     var or1 = a | b;
     var and1 = a & b;
@@ -51,8 +73,31 @@ function oneBitSumatorOutput() {
     var q = and2 | and1;
     var s = xor1 ^ c;
 
-    document.getElementById("s").value = 'S: ' + s;
-    document.getElementById("q").value = 'C(n+1): ' + q;
+    var qCheck = (q == 1) ? true : false;
+    var sCheck = (s == 1) ? true : false;
+
+    document.getElementById("q").checked = qCheck;
+    document.getElementById("s").checked = sCheck;
+    const qCheckbox = document.getElementById("q");
+    const sCheckbox = document.getElementById("s");
+    const qLabel = qCheckbox.closest('.checkbox-label');
+    const sLabel = sCheckbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        qLabel.classList.remove('border-gray-400');
+        qLabel.classList.add('border-red-400');
+    } else {
+        qLabel.classList.remove('border-red-400');
+        qLabel.classList.add('border-gray-400');
+    }
+
+    if(sCheck) {
+        sLabel.classList.remove('border-gray-400');
+        sLabel.classList.add('border-red-400');
+    } else {
+        sLabel.classList.remove('border-red-400');
+        sLabel.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
