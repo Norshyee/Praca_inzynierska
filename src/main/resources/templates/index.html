@@ -16,7 +16,7 @@
     </script>
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 
 <!-- Navbar -->
 <nav class="fixed top-0 z-50 w-full h-30 bg-gradient-to-br from-red-400 to-orange-400 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -302,13 +302,13 @@
 </aside>
 
 <!--Content-->
-<div id="content-coll" class="content-collapsible collapsed p-4 mt-8 min-h-screen pb-8">
+<div id="content-coll" class="content-collapsible collapsed p-4 mt-8 pb-8">
     <div id="contentArea" class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
     </div>
 </div>
 
 <footer class="fixed bottom-0 z-50 w-full h-5 bg-gradient-to-br from-orange-400 to-red-400 flex justify-between text-white font-semibold text-sm px-3">
-    <div>Wersja:</div>
+    <div>Wersja: <span th:text="${version} + ' (' + ${commitId} + ')'">1.0.0</span></div>
     <div>Autor: Rafał Karchier</div>
 </footer>
 </body>
