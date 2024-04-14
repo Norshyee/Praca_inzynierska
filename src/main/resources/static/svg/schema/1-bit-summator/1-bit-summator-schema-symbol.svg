@@ -1,37 +1,41 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" version="1.0">
-    <rect x="50" y="50" width="200" height="200" stroke="black" stroke-dasharray="5,5" fill="none" stroke-width="2"/>
+    <g transform="translate(10,0)">
+        <rect x="50" y="50" width="200" height="200" stroke="black" stroke-dasharray="5,5" fill="none"
+              stroke-width="2"/>
 
-    <g>
-        <text x="125" y="20" font-family="Arial" font-size="14">A</text>
-        <line x1="130" y1="25" x2="130" y2="70" stroke="black" stroke-width="2"/>
-    </g>
+        <g>
+            <text x="125" y="20" font-family="Arial" font-size="14">A</text>
+            <line id="aLine" x1="130" y1="25" x2="130" y2="70" stroke="black" stroke-width="2"/>
+        </g>
 
-    <g>
-        <text x="165" y="20" font-family="Arial" font-size="14">B</text>
-        <line x1="170" y1="25" x2="170" y2="70" stroke="black" stroke-width="2"/>
-    </g>
+        <g>
+            <text x="165" y="20" font-family="Arial" font-size="14">B</text>
+            <line id="bLine" x1="170" y1="25" x2="170" y2="70" stroke="black" stroke-width="2"/>
+        </g>
 
-    <g>
-        <text x="140" y="105" font-family="Arial" font-size="14">PS</text>
-        <rect x="120" y="70" width="60" height="60" stroke="black" fill="none" stroke-width="2"/>
-    </g>
+        <g>
+            <text x="140" y="105" font-family="Arial" font-size="14">PS</text>
+            <rect x="120" y="70" width="60" height="60" stroke="black" fill="none" stroke-width="2"/>
+        </g>
 
-    <path d="M 260,100 L 210,100 L 210,160" stroke="black" stroke-width="2" fill="none"/>
-    <path d="M 130,130 L 130,185 L 117,185" stroke="black" stroke-width="2" fill="none"/>
-    <path d="M 170,130 L 170,145 L 185,145 L 185,160" stroke="black" stroke-width="2" fill="none"/>
-    <path d="M 185,220 L 185,235 L 130,235 L 130,205 L 117,205" stroke="black" stroke-width="2" fill="none"/>
-    <line x1="210" y1="220" x2="210" y2="280" stroke="black" stroke-width="2"/>
-    <line x1="65" y1="196" x2="35" y2="196" stroke="black" stroke-width="2"/>
-    <text x="265" y="105" font-family="Arial" font-size="14">C(i-1)</text>
-    <text x="10" y="200" font-family="Arial" font-size="14">C(i)</text>
-    <text x="205" y="295" font-family="Arial" font-size="14">S</text>
+        <path id="cnInLine" d="M 260,100 L 210,100 L 210,160" stroke="black" stroke-width="2" fill="none"/>
+        <path id="ps1SumLine" d="M 130,130 L 130,185 L 117,185" stroke="black" stroke-width="2" fill="none"/>
+        <path id="ps1CarryLine" d="M 170,130 L 170,145 L 185,145 L 185,160" stroke="black" stroke-width="2" fill="none"/>
+        <path id="ps2CarryLine" d="M 185,220 L 185,235 L 130,235 L 130,205 L 117,205" stroke="black" stroke-width="2" fill="none"/>
+        <line id="ps2SumLine" x1="210" y1="220" x2="210" y2="280" stroke="black" stroke-width="2"/>
+        <line id="cnOutLine" x1="65" y1="196" x2="35" y2="196" stroke="black" stroke-width="2"/>
+        <text x="261" y="105" font-family="Arial" font-size="14">C(n)</text>
+        <text x="-10" y="200" font-family="Arial" font-size="14">C(n+1)</text>
+        <text x="205" y="295" font-family="Arial" font-size="14">S</text>
 
-    <g>
-        <text x="190" y="195" font-family="Arial" font-size="14">PS</text>
-        <rect x="170" y="160" width="60" height="60" stroke="black" fill="none" stroke-width="2"/>
-    </g>
+        <g>
+            <text x="190" y="195" font-family="Arial" font-size="14">PS</text>
+            <rect x="170" y="160" width="60" height="60" stroke="black" fill="none" stroke-width="2"/>
+        </g>
 
-    <g transform="translate(-5, 80) scale(1.6) rotate(180, 50, 50)">
-        <path stroke-linecap="square" fill="none" stroke="black" d="M 21 14.5 v 0.1 c 2.2 3.8 3.5 8.2 3.5 12.9 c 0 4.7 -1.3 9.1 -3.5 12.9 v 0.1 h 13.5 c 9.6 0 18 -5.2 22.5 -13 c -4.5 -7.8 -12.9 -13 -22.5 -13 h -13.5 z"/>
+        <g transform="translate(-5, 80) scale(1.6) rotate(180, 50, 50)">
+            <path stroke-linecap="square" fill="none" stroke="black"
+                  d="M 21 14.5 v 0.1 c 2.2 3.8 3.5 8.2 3.5 12.9 c 0 4.7 -1.3 9.1 -3.5 12.9 v 0.1 h 13.5 c 9.6 0 18 -5.2 22.5 -13 c -4.5 -7.8 -12.9 -13 -22.5 -13 h -13.5 z"/>
+        </g>
     </g>
 </svg>

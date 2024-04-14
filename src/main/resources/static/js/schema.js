@@ -1,11 +1,33 @@
 function semiSumatorOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
     var s = a ^ b;
     var c = a & b;
+    var sCheck = (s == 1) ? true : false;
+    var qCheck = (c == 1) ? true : false;
 
-    document.getElementById("s").value = 'S: ' + s;
-    document.getElementById("q").value = 'C: ' + c;
+    document.getElementById("q").checked = qCheck;
+    document.getElementById("s").checked = sCheck;
+    const qCheckbox = document.getElementById("q");
+    const sCheckbox = document.getElementById("s");
+    const qLabel = qCheckbox.closest('.checkbox-label');
+    const sLabel = sCheckbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        qLabel.classList.remove('border-gray-400');
+        qLabel.classList.add('border-red-400');
+    } else {
+        qLabel.classList.remove('border-red-400');
+        qLabel.classList.add('border-gray-400');
+    }
+
+    if(sCheck) {
+        sLabel.classList.remove('border-gray-400');
+        sLabel.classList.add('border-red-400');
+    } else {
+        sLabel.classList.remove('border-red-400');
+        sLabel.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -29,19 +51,26 @@ function semiSumatorOutput() {
     }
 
     var svg = document.getElementById("semi-summator-schema").contentDocument;
-
     svg.getElementById("and-a").style.stroke = (a == 1 ? "red" : "black");
+    svg.getElementById("and-a-dot").style.fill = (a == 1 ? "red" : "black");
     svg.getElementById("and-b").style.stroke = (b == 1 ? "red" : "black");
+    svg.getElementById("and-b-dot").style.fill = (b == 1 ? "red" : "black");
     svg.getElementById("and-c").style.stroke = (c == 1 ? "red" : "black");
     svg.getElementById("xor-a").style.stroke = (a == 1 ? "red" : "black");
     svg.getElementById("xor-b").style.stroke = (b == 1 ? "red" : "black");
     svg.getElementById("xor-s").style.stroke = (s == 1 ? "red" : "black");
+
+    var symbolSvg = document.getElementById("semi-summator-schema-symbol").contentDocument;
+    symbolSvg.getElementById("aLine").style.stroke = (a == 1 ? "red" : "black");
+    symbolSvg.getElementById("bLine").style.stroke = (b == 1 ? "red" : "black");
+    symbolSvg.getElementById("sumLine").style.stroke = (s == 1 ? "red" : "black");
+    symbolSvg.getElementById("carryLine").style.stroke = (c == 1 ? "red" : "black");
 }
 
 function oneBitSumatorOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
-    var c = document.getElementById("c").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
+    var c = document.getElementById("c").checked ? '1' : '0';
 
     var or1 = a | b;
     var and1 = a & b;
@@ -51,8 +80,31 @@ function oneBitSumatorOutput() {
     var q = and2 | and1;
     var s = xor1 ^ c;
 
-    document.getElementById("s").value = 'S: ' + s;
-    document.getElementById("q").value = 'C(n+1): ' + q;
+    var qCheck = (q == 1) ? true : false;
+    var sCheck = (s == 1) ? true : false;
+
+    document.getElementById("q").checked = qCheck;
+    document.getElementById("s").checked = sCheck;
+    const qCheckbox = document.getElementById("q");
+    const sCheckbox = document.getElementById("s");
+    const qLabel = qCheckbox.closest('.checkbox-label');
+    const sLabel = sCheckbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        qLabel.classList.remove('border-gray-400');
+        qLabel.classList.add('border-red-400');
+    } else {
+        qLabel.classList.remove('border-red-400');
+        qLabel.classList.add('border-gray-400');
+    }
+
+    if(sCheck) {
+        sLabel.classList.remove('border-gray-400');
+        sLabel.classList.add('border-red-400');
+    } else {
+        sLabel.classList.remove('border-red-400');
+        sLabel.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -94,56 +146,67 @@ function oneBitSumatorOutput() {
     }
 
     var svg = document.getElementById("1-bit-summator-schema").contentDocument;
-
     svg.getElementById("or1-a").style.stroke = (a == 1 ? "red" : "black");
     svg.getElementById("or1-b").style.stroke = (b == 1 ? "red" : "black");
     svg.getElementById("or1-s").style.stroke = (or1 == 1 ? "red" : "black");
     svg.getElementById("or2-s").style.stroke = (q == 1 ? "red" : "black");
     svg.getElementById("and1-a").style.stroke = (a == 1 ? "red" : "black");
-    svg.getElementById("and1-dot").style.stroke = (a == 1 ? "red" : "black");
+    svg.getElementById("and1-dot").style.fill = (a == 1 ? "red" : "black");
     svg.getElementById("and1-b").style.stroke = (b == 1 ? "red" : "black");
     svg.getElementById("and1-s").style.stroke = (and1 == 1 ? "red" : "black");
     svg.getElementById("and2-b").style.stroke = (c == 1 ? "red" : "black");
     svg.getElementById("and2-s").style.stroke = (and2 == 1 ? "red" : "black");
     svg.getElementById("xor1-a").style.stroke = (a == 1 ? "red" : "black");
-    svg.getElementById("xor1-dot").style.stroke = (a == 1 ? "red" : "black");
+    svg.getElementById("xor1-dot").style.fill = (a == 1 ? "red" : "black");
     svg.getElementById("xor1-b").style.stroke = (b == 1 ? "red" : "black");
-    svg.getElementById("xor1-dot2").style.stroke = (b == 1 ? "red" : "black");
+    svg.getElementById("xor1-dot2").style.fill = (b == 1 ? "red" : "black");
     svg.getElementById("xor1-s").style.stroke = (xor1 == 1 ? "red" : "black");
     svg.getElementById("xor2-b").style.stroke = (c == 1 ? "red" : "black");
-    svg.getElementById("xor2-dot").style.stroke = (c == 1 ? "red" : "black");
+    svg.getElementById("xor2-dot").style.fill = (c == 1 ? "red" : "black");
     svg.getElementById("xor2-s").style.stroke = (s == 1 ? "red" : "black");
+
+    var symbolSvg = document.getElementById("1-bit-summator-schema-symbol").contentDocument;
+    symbolSvg.getElementById("aLine").style.stroke = (a == 1 ? "red" : "black");
+    symbolSvg.getElementById("bLine").style.stroke = (b == 1 ? "red" : "black");
+    symbolSvg.getElementById("cnInLine").style.stroke = (c == 1 ? "red" : "black");
+    symbolSvg.getElementById("cnOutLine").style.stroke = (q == 1 ? "red" : "black");
+    symbolSvg.getElementById("ps1SumLine").style.stroke = (and1 == 1 ? "red" : "black");
+    symbolSvg.getElementById("ps1CarryLine").style.stroke = (xor1 == 1 ? "red" : "black");
+    symbolSvg.getElementById("ps2SumLine").style.stroke = (s == 1 ? "red" : "black");
+    symbolSvg.getElementById("ps2CarryLine").style.stroke = (and2 == 1 ? "red" : "black");
 }
 
 function fourBitSumatorOutput() {
-    var a1 = document.getElementById("a1").value;
-    var a2 = document.getElementById("a2").value;
-    var a3 = document.getElementById("a3").value;
-    var a4 = document.getElementById("a4").value;
+    var a1 = document.getElementById("a1").checked ? '1' : '0';
+    var a2 = document.getElementById("a2").checked ? '1' : '0';
+    var a3 = document.getElementById("a3").checked ? '1' : '0';
+    var a4 = document.getElementById("a4").checked ? '1' : '0';
 
-    var b1 = document.getElementById("b1").value;
-    var b2 = document.getElementById("b2").value;
-    var b3 = document.getElementById("b3").value;
-    var b4 = document.getElementById("b4").value;
+    var b1 = document.getElementById("b1").checked ? '1' : '0';
+    var b2 = document.getElementById("b2").checked ? '1' : '0';
+    var b3 = document.getElementById("b3").checked ? '1' : '0';
+    var b4 = document.getElementById("b4").checked ? '1' : '0';
 
-    var c1 = document.getElementById("c1").value;
+    var c1 = document.getElementById("c1").checked ? '1' : '0';
 
     var firstAdder = oneBitAdder(a1,b1,c1);
     var secondAdder = oneBitAdder(a2,b2,firstAdder.carry);
     var thirdAdder = oneBitAdder(a3,b3,secondAdder.carry);
     var fourthAdder = oneBitAdder(a4,b4,thirdAdder.carry);
 
-    document.getElementById("s1").value = firstAdder.sum;
-    document.getElementById("cr2").value = firstAdder.carry;
+    document.getElementById("s1").checked = firstAdder.sum === 1;
+    document.getElementById("cr2").checked = firstAdder.carry === 1;
 
-    document.getElementById("s2").value = secondAdder.sum;
-    document.getElementById("cr3").value = secondAdder.carry;
+    document.getElementById("s2").checked = secondAdder.sum === 1;
+    document.getElementById("cr3").checked = secondAdder.carry === 1;
 
-    document.getElementById("s3").value = thirdAdder.sum;
-    document.getElementById("cr4").value = thirdAdder.carry;
+    document.getElementById("s3").checked = thirdAdder.sum === 1;
+    document.getElementById("cr4").checked = thirdAdder.carry === 1;
 
-    document.getElementById("s4").value = fourthAdder.sum;
-    document.getElementById("cr5").value = fourthAdder.carry;
+    document.getElementById("s4").checked = fourthAdder.sum === 1;
+    document.getElementById("cr5").checked = fourthAdder.carry === 1;
+
+    resetInputs(['s1', 'cr2', 's2', 'cr3', 's3', 'cr4', 's4', 'cr5']);
 
     var add1 = document.getElementById("4-bit-sumator-1").contentDocument;
     add1.getElementById("a").style.stroke = (a1 == 1 ? "red" : "black");
@@ -243,8 +306,8 @@ dTypeSwitch.processCurrentPosition = function() {
               (this.currentPosition >= 170 && this.currentPosition <= 250) ||
               (this.currentPosition >= 330 && this.currentPosition <= 410) ? 1 : 0;
 
-    var d = document.getElementById("d").value; // Assuming "d" is the input ID for D
-    document.getElementById("clockBit").value = c;
+    var d = document.getElementById("d").checked ? '1' : '0';
+    document.getElementById("clockBit").checked = (c === 1);
 
     var prevNand1s = this.nand1s;
     var prevNand2s = this.nand2s;
@@ -255,8 +318,10 @@ dTypeSwitch.processCurrentPosition = function() {
     this.nand3s = (prevNand1s & c) === 0 ? '1' : '0';
     this.nand4s = (prevNand2s & this.nand3s) === 0 ? '1' : '0';
 
-    document.getElementById("q").value = this.nand2s;
-    document.getElementById("q-neg").value = this.nand4s;
+    document.getElementById("q").checked = (this.nand2s === '1');
+    document.getElementById("q-neg").checked = (this.nand4s === '1');
+
+    resetInputs(['clockBit', 'q', 'q-neg']);
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -324,9 +389,9 @@ rsTypeSynchronousSwitch.processCurrentPosition = function() {
               (this.currentPosition >= 170 && this.currentPosition <= 250) ||
               (this.currentPosition >= 330 && this.currentPosition <= 410) ? 1 : 0;
 
-    var s = document.getElementById("a").value; // Assuming "a" is the input ID for S
-    var r = document.getElementById("b").value; // Assuming "b" is the input ID for R
-    document.getElementById("clockBit").value = c;
+    var s = document.getElementById("a").checked ? '1' : '0';
+    var r = document.getElementById("b").checked ? '1' : '0';
+    document.getElementById("clockBit").checked = (c === 1);
 
     var prevNand2s = this.nand2s;
     var prevNand4s = this.nand4s;
@@ -336,8 +401,10 @@ rsTypeSynchronousSwitch.processCurrentPosition = function() {
     this.nand3s = (r & c) === 0 ? '1' : '0';
     this.nand4s = (prevNand2s & this.nand3s) == 0 ? '1' : '0';
 
-    document.getElementById("q").value = this.nand2s;
-    document.getElementById("q-neg").value = this.nand4s;
+    document.getElementById("q").checked = (this.nand2s === '1');
+    document.getElementById("q-neg").checked = (this.nand4s === '1');
+
+    resetInputs(['clockBit', 'q', 'q-neg']);
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     tableRows.item(7).style.fontWeight = "bold";
@@ -417,11 +484,12 @@ const rsTypeAsynchronousSwitch = {
     switchOutput: function() {
         this.rsNandOutput();
         this.rsNorOutput();
+        resetInputs(['q1', 'q2', 'q1-neg', 'q2-neg']);
     },
 
     rsNandOutput: function() {
-        var s1 = document.getElementById("a1").value;
-        var r1 = document.getElementById("b1").value;
+        var s1 = document.getElementById("a1").checked ? '1' : '0';
+        var r1 = document.getElementById("b1").checked ? '1' : '0';
 
         var rsAsynchronousNandSwitch = document.getElementById("rs-asynchronous-switch-nand-schema").contentDocument;
         var tableRowsNand = document.getElementById("boardOfTruth-nand").rows;
@@ -438,8 +506,8 @@ const rsTypeAsynchronousSwitch = {
             this.nand2s = '1';
             this.nand1s = (s1 & this.nand2s) == 0 ? '1' : '0';
         } else if (s1 == '0' && r1 == '0') {
-            document.getElementById("q1").value = 'X';
-            document.getElementById("q1-neg").value = 'X';
+            document.getElementById("q1").checked = false;
+            document.getElementById("q1-neg").checked = false;
 
             tableRowsNand.item(1).style.color = "red";
             tableRowsNand.item(5).style.color = "red";
@@ -450,8 +518,8 @@ const rsTypeAsynchronousSwitch = {
             return;
         }
 
-        document.getElementById("q1").value = this.nand1s;
-        document.getElementById("q1-neg").value = this.nand2s;
+        document.getElementById("q1").checked = (this.nand1s === '1');
+        document.getElementById("q1-neg").checked = (this.nand2s === '1');
         previousStateBoard.item(1).cells[1].textContent = this.nand1s;
         previousStateBoard.item(2).cells[1].textContent = this.nand2s;
 
@@ -488,8 +556,8 @@ const rsTypeAsynchronousSwitch = {
     },
 
     rsNorOutput: function() {
-        var s2 = document.getElementById("a2").value;
-        var r2 = document.getElementById("b2").value;
+        var s2 = document.getElementById("a2").checked ? '1' : '0';
+        var r2 = document.getElementById("b2").checked ? '1' : '0';
 
         var rsAsynchronousNorSwitch = document.getElementById("rs-asynchronous-switch-nor-schema").contentDocument;
         var tableRowsNor = document.getElementById("boardOfTruth-nor").rows;
@@ -506,8 +574,8 @@ const rsTypeAsynchronousSwitch = {
             this.nor2s = '0';
             this.nor1s = (s2 | this.nor2s) == 0 ? '1' : '0';
         } else if (s2 == '1' && r2 == '1') {
-            document.getElementById("q2").value = 'X';
-            document.getElementById("q2-neg").value = 'X';
+            document.getElementById("q2").checked = false;
+            document.getElementById("q2-neg").checked = false;
 
             tableRowsNor.item(4).style.color = "red";
             tableRowsNor.item(5).style.color = "red";
@@ -518,8 +586,8 @@ const rsTypeAsynchronousSwitch = {
             return;
         }
 
-        document.getElementById("q2").value = this.nor1s;
-        document.getElementById("q2-neg").value = this.nor2s;
+        document.getElementById("q2").checked = (this.nor1s === '1');
+        document.getElementById("q2-neg").checked = (this.nor2s === '1');
         previousStateBoard.item(1).cells[1].textContent = this.nor1s;
         previousStateBoard.item(2).cells[1].textContent = this.nor2s;
 
@@ -555,3 +623,13 @@ const rsTypeAsynchronousSwitch = {
         rsAsynchronousNorSwitch.getElementById("nor2-s-dot").style.fill = (this.nor2s == 1 ? "red" : "black");
     }
 };
+
+function resetInputs(checkboxes) {
+    checkboxes.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox) {
+            checkbox.offsetHeight; // Trigger reflow
+            checkbox.dispatchEvent(new Event('change'));
+        }
+    });
+}

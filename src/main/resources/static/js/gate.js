@@ -37,11 +37,22 @@ function notGateOutput() {
 }
 
 function andGateOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
     var q = a & b;
+    var qCheck = (q == 1) ? true : false;
 
-    document.getElementById("q").value = q;
+    document.getElementById("q").checked = qCheck;
+    const checkbox = document.getElementById("q");
+    const label = checkbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        label.classList.remove('border-gray-400');
+        label.classList.add('border-red-400');
+    } else {
+        label.classList.remove('border-red-400');
+        label.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -72,11 +83,22 @@ function andGateOutput() {
 }
 
 function nandGateOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
     var q = (a & b) == 0 ? '1' : '0';
+    var qCheck = (q == 1) ? true : false;
 
-    document.getElementById("q").value = q;
+    document.getElementById("q").checked = qCheck;
+    const checkbox = document.getElementById("q");
+    const label = checkbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        label.classList.remove('border-gray-400');
+        label.classList.add('border-red-400');
+    } else {
+        label.classList.remove('border-red-400');
+        label.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -107,11 +129,22 @@ function nandGateOutput() {
 }
 
 function orGateOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
     var q = a | b;
+    var qCheck = (q == 1) ? true : false;
 
-    document.getElementById("q").value = q;
+    document.getElementById("q").checked = qCheck;
+    const checkbox = document.getElementById("q");
+    const label = checkbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        label.classList.remove('border-gray-400');
+        label.classList.add('border-red-400');
+    } else {
+        label.classList.remove('border-red-400');
+        label.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -142,11 +175,22 @@ function orGateOutput() {
 }
 
 function norGateOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
     var q = (a | b) == 0 ? '1' : '0';
+    var qCheck = (q == 1) ? true : false;
 
-    document.getElementById("q").value = q;
+    document.getElementById("q").checked = qCheck;
+    const checkbox = document.getElementById("q");
+    const label = checkbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        label.classList.remove('border-gray-400');
+        label.classList.add('border-red-400');
+    } else {
+        label.classList.remove('border-red-400');
+        label.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
@@ -177,11 +221,22 @@ function norGateOutput() {
 }
 
 function xorGateOutput() {
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+    var a = document.getElementById("a").checked ? '1' : '0';
+    var b = document.getElementById("b").checked ? '1' : '0';
     var q = a ^ b;
+    var qCheck = (q == 1) ? true : false;
 
-    document.getElementById("q").value = q;
+    document.getElementById("q").checked = qCheck;
+    const checkbox = document.getElementById("q");
+    const label = checkbox.closest('.checkbox-label');
+
+    if(qCheck) {
+        label.classList.remove('border-gray-400');
+        label.classList.add('border-red-400');
+    } else {
+        label.classList.remove('border-red-400');
+        label.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
