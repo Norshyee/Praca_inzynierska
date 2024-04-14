@@ -8,10 +8,4 @@ import org.springframework.web.servlet.resource.ResourceUrlEncodingFilter;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-
-    @Bean
-    @ConditionalOnEnabledResourceChain
-    public ResourceUrlEncodingFilter resourceUrlEncodingFilter() {
-        return new ResourceUrlEncodingFilter();
-    }
 }
