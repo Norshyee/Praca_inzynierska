@@ -1,8 +1,19 @@
 function notGateOutput() {
     var a = document.getElementById("a").checked ? '1' : '0';
     var c = (a == 0) ? '1' : '0';
+    var cCheck = (a == 0) ? true : false;
 
-    document.getElementById("q").textContent = c;
+    document.getElementById("q").checked = cCheck;
+    const checkbox = document.getElementById("q");
+    const label = checkbox.closest('.checkbox-label');
+
+    if(cCheck) {
+        label.classList.remove('border-gray-400');
+        label.classList.add('border-red-400');
+    } else {
+        label.classList.remove('border-red-400');
+        label.classList.add('border-gray-400');
+    }
 
     var tableRows = document.getElementById("boardOfTruth").rows;
     for (const row of tableRows) {
