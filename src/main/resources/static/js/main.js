@@ -17,6 +17,8 @@ function loadContent(fragmentUrl) {
             if (fragmentUrl.includes('rs_type_asynchronous') && typeof rsTypeAsynchronousSwitch.init === 'function') {
                 rsTypeAsynchronousSwitch.init();
             }
+
+            initCheckboxBehavior();
         }
     };
     xhr.open('GET', fragmentUrl, true);
@@ -28,6 +30,22 @@ function applyCSS(contentArea) {
     link.rel = 'stylesheet';
     link.href = '/css/style.css';
     document.head.appendChild(link);
+}
+
+function initCheckboxBehavior() {
+    const checkboxes = document.querySelectorAll('.checkbox-label input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            const label = this.closest('.checkbox-label');
+            if (this.checked) {
+                label.classList.remove('border-gray-400');
+                label.classList.add('border-red-400');
+            } else {
+                label.classList.remove('border-red-400');
+                label.classList.add('border-gray-400');
+            }
+        });
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
