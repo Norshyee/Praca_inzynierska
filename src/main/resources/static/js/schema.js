@@ -162,6 +162,7 @@ function oneBitSumatorOutput() {
     svg.getElementById("xor1-dot2").style.fill = (b == 1 ? "red" : "black");
     svg.getElementById("xor1-s").style.stroke = (xor1 == 1 ? "red" : "black");
     svg.getElementById("xor2-b").style.stroke = (c == 1 ? "red" : "black");
+    svg.getElementById("xor2-b").style.stroke = (c == 1 ? "red" : "black");
     svg.getElementById("xor2-dot").style.fill = (c == 1 ? "red" : "black");
     svg.getElementById("xor2-s").style.stroke = (s == 1 ? "red" : "black");
 
@@ -296,7 +297,7 @@ const dTypeSwitch = Object.create(BaseSwitch);
 
 dTypeSwitch.init = function() {
     this.nand1s = 0;
-    this.nand2s = 0;
+    this.nand2s = 1;
     this.nand3s = 0;
     this.nand4s = 0;
 };
@@ -320,6 +321,8 @@ dTypeSwitch.processCurrentPosition = function() {
 
     document.getElementById("q").checked = (this.nand2s === '1');
     document.getElementById("q-neg").checked = (this.nand4s === '1');
+    document.getElementById("qPrevValue").textContent = this.nand2s;
+    document.getElementById("qNotPrevValue").textContent = this.nand4s;
 
     resetInputs(['clockBit', 'q', 'q-neg']);
 
@@ -347,24 +350,20 @@ dTypeSwitch.processCurrentPosition = function() {
 
     dTypeSwitch.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
     dTypeSwitch.getElementById("c1").style.stroke = (c == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("c-dot").style.stroke = (c == 1 ? "red" : "black");
     dTypeSwitch.getElementById("c-dot").style.fill = (c == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand1-s").style.stroke = (this.nand1s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand1-s1").style.stroke = (this.nand1s == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("nand1-s-dot").style.stroke = (this.nand1s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand1-s-dot").style.fill = (this.nand1s == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand2-s").style.stroke = (this.nand2s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand2-s1").style.stroke = (this.nand2s == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("nand2-s-dot").style.stroke = (this.nand2s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand2-s-dot").style.fill = (this.nand2s == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand3-s").style.stroke = (this.nand3s == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand4-s").style.stroke = (this.nand4s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand4-s1").style.stroke = (this.nand4s == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("nand4-s-dot").style.stroke = (this.nand4s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand4-s-dot").style.fill = (this.nand4s == 1 ? "red" : "black");
 
     var dTypeSwitchSymbol = document.getElementById("d-type-switch-symbol").contentDocument;
@@ -378,9 +377,9 @@ const rsTypeSynchronousSwitch = Object.create(BaseSwitch);
 
 rsTypeSynchronousSwitch.init = function() {
     this.nand1s = 0;
-    this.nand2s = 1;
+    this.nand2s = 0;
     this.nand3s = 0;
-    this.nand4s = 0;
+    this.nand4s = 1;
 };
 
 rsTypeSynchronousSwitch.processCurrentPosition = function() {
@@ -403,6 +402,10 @@ rsTypeSynchronousSwitch.processCurrentPosition = function() {
 
     document.getElementById("q").checked = (this.nand2s === '1');
     document.getElementById("q-neg").checked = (this.nand4s === '1');
+    document.getElementById("qPrevValue").textContent = this.nand2s;
+    document.getElementById("qNotPrevValue").textContent = this.nand4s;
+    document.getElementById("qPrevValue2").textContent = this.nand2s;
+    document.getElementById("qNotPrevValue2").textContent = this.nand4s;
 
     resetInputs(['clockBit', 'q', 'q-neg']);
 
@@ -450,21 +453,18 @@ rsTypeSynchronousSwitch.processCurrentPosition = function() {
 
     rsSynchronousSwitch.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("c2").style.stroke = (c == 1 ? "red" : "black");
-    rsSynchronousSwitch.getElementById("c2-dot").style.stroke = (c == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("c2-dot").style.fill = (c == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand1-s").style.stroke = (this.nand1s == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand2-s").style.stroke = (this.nand2s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand2-s1").style.stroke = (this.nand2s == 1 ? "red" : "black");
-    rsSynchronousSwitch.getElementById("nand2-s-dot").style.stroke = (this.nand2s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand2-s-dot").style.fill = (this.nand2s == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand3-s").style.stroke = (this.nand3s == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand4-s").style.stroke = (this.nand4s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand4-s1").style.stroke = (this.nand4s == 1 ? "red" : "black");
-    rsSynchronousSwitch.getElementById("nand4-s-dot").style.stroke = (this.nand4s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand4-s-dot").style.fill = (this.nand4s == 1 ? "red" : "black");
 
     var rsSynchronousSwitchSymbol = document.getElementById("rs-synchronous-switch-symbol").contentDocument;
@@ -493,7 +493,6 @@ const rsTypeAsynchronousSwitch = {
 
         var rsAsynchronousNandSwitch = document.getElementById("rs-asynchronous-switch-nand-schema").contentDocument;
         var tableRowsNand = document.getElementById("boardOfTruth-nand").rows;
-        var previousStateBoard = document.getElementById("previousStateNandBoard").rows;
         tableRowsNand.item(5).style.fontWeight = "normal";
         for (const row of tableRowsNand) {
             row.style.color = "black";
@@ -512,16 +511,16 @@ const rsTypeAsynchronousSwitch = {
             tableRowsNand.item(1).style.color = "red";
             tableRowsNand.item(5).style.color = "red";
             tableRowsNand.item(5).style.fontWeight = "bold";
-            previousStateBoard.item(1).cells[1].textContent = this.nand1s;
-            previousStateBoard.item(2).cells[1].textContent = this.nand2s;
+            document.getElementById("nandQPrevValue").textContent = this.nand1s;
+            document.getElementById("nandQNotPrevValue").textContent = this.nand2s;
 
             return;
         }
 
         document.getElementById("q1").checked = (this.nand1s === '1');
         document.getElementById("q1-neg").checked = (this.nand2s === '1');
-        previousStateBoard.item(1).cells[1].textContent = this.nand1s;
-        previousStateBoard.item(2).cells[1].textContent = this.nand2s;
+        document.getElementById("nandQPrevValue").textContent = this.nand1s;
+        document.getElementById("nandQNotPrevValue").textContent = this.nand2s;
 
         switch(s1) {
             case '0':
@@ -546,12 +545,10 @@ const rsTypeAsynchronousSwitch = {
 
         rsAsynchronousNandSwitch.getElementById("nand1-s").style.stroke = (this.nand1s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand1-s1").style.stroke = (this.nand1s == 1 ? "red" : "black");
-        rsAsynchronousNandSwitch.getElementById("nand1-s-dot").style.stroke = (this.nand1s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand1-s-dot").style.fill = (this.nand1s == 1 ? "red" : "black");
 
         rsAsynchronousNandSwitch.getElementById("nand2-s").style.stroke = (this.nand2s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand2-s1").style.stroke = (this.nand2s == 1 ? "red" : "black");
-        rsAsynchronousNandSwitch.getElementById("nand2-s-dot").style.stroke = (this.nand2s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand2-s-dot").style.fill = (this.nand2s == 1 ? "red" : "black");
     },
 
@@ -561,7 +558,6 @@ const rsTypeAsynchronousSwitch = {
 
         var rsAsynchronousNorSwitch = document.getElementById("rs-asynchronous-switch-nor-schema").contentDocument;
         var tableRowsNor = document.getElementById("boardOfTruth-nor").rows;
-        var previousStateBoard = document.getElementById("previousStateNorBoard").rows;
         tableRowsNor.item(5).style.fontWeight = "normal";
         for (const row of tableRowsNor) {
             row.style.color = "black";
@@ -580,16 +576,16 @@ const rsTypeAsynchronousSwitch = {
             tableRowsNor.item(4).style.color = "red";
             tableRowsNor.item(5).style.color = "red";
             tableRowsNor.item(5).style.fontWeight = "bold";
-            previousStateBoard.item(1).cells[1].textContent = this.nor1s;
-            previousStateBoard.item(2).cells[1].textContent = this.nor2s;
+            document.getElementById("norQPrevValue").textContent = this.nor1s;
+            document.getElementById("norQNotPrevValue").textContent = this.nor2s;
 
             return;
         }
 
         document.getElementById("q2").checked = (this.nor1s === '1');
         document.getElementById("q2-neg").checked = (this.nor2s === '1');
-        previousStateBoard.item(1).cells[1].textContent = this.nor1s;
-        previousStateBoard.item(2).cells[1].textContent = this.nor2s;
+        document.getElementById("norQPrevValue").textContent = this.nor1s;
+        document.getElementById("norQNotPrevValue").textContent = this.nor2s;
 
         switch(r2) {
             case '0':
@@ -614,12 +610,10 @@ const rsTypeAsynchronousSwitch = {
 
         rsAsynchronousNorSwitch.getElementById("nor1-s").style.stroke = (this.nor1s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor1-s1").style.stroke = (this.nor1s == 1 ? "red" : "black");
-        rsAsynchronousNorSwitch.getElementById("nor1-s-dot").style.stroke = (this.nor1s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor1-s-dot").style.fill = (this.nor1s == 1 ? "red" : "black");
 
         rsAsynchronousNorSwitch.getElementById("nor2-s").style.stroke = (this.nor2s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor2-s1").style.stroke = (this.nor2s == 1 ? "red" : "black");
-        rsAsynchronousNorSwitch.getElementById("nor2-s-dot").style.stroke = (this.nor2s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor2-s-dot").style.fill = (this.nor2s == 1 ? "red" : "black");
     }
 };

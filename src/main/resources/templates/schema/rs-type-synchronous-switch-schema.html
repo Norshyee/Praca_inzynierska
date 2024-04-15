@@ -9,14 +9,14 @@
                     <input type="checkbox" class="hidden" id="a"/>
                     <span class="flex-1 text-center bg-white"></span>
                 </label>
-                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="clockBit">
-                    <span class="flex-1 text-center bg-orange-200">C</span>
-                    <input type="checkbox" class="hidden" id="clockBit" disabled/>
+                <label class="checkbox-label flex w-14 border-2 border-red-400 rounded-lg overflow-hidden" for="clockBit">
+                    <span class="flex-1 text-center bg-gray-200">C</span>
+                    <input type="checkbox" class="hidden" id="clockBit" checked disabled/>
                     <span class="flex-1 text-center bg-white"></span>
                 </label>
-                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="b">
+                <label class="checkbox-label flex w-14 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden" for="b">
                     <span class="flex-1 text-center bg-yellow-200">R</span>
-                    <input type="checkbox" class="hidden" id="b"/>
+                    <input type="checkbox" class="hidden" id="b" checked/>
                     <span class="flex-1 text-center bg-white"></span>
                 </label>
             </div>
@@ -29,7 +29,7 @@
             <div class="grid grid-flow-row place-items-center justify-items-start">
                 <div></div>
 
-                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="q">
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden mt-10" for="q">
                     <input type="checkbox" class="hidden" id="q" disabled/>
                     <span class="flex-1 text-center bg-white"></span>
                     <span class="flex-1 text-center bg-orange-200">Q</span>
@@ -37,8 +37,8 @@
 
                 <div></div>
 
-                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg overflow-hidden" for="q-neg">
-                    <input type="checkbox" class="hidden" id="q-neg" disabled/>
+                <label class="checkbox-label flex w-14 border-2 border-red-400 rounded-lg overflow-hidden mb-10" for="q-neg">
+                    <input type="checkbox" class="hidden" id="q-neg" checked disabled/>
                     <span class="flex-1 text-center bg-white"></span>
                     <span class="flex-1 text-center bg-orange-200">Q&#773;</span>
                 </label>
@@ -66,7 +66,7 @@
                 <tr>
                     <th class="border border-slate-300 w-10 bg-yellow-200">S</th>
                     <th class="border border-slate-300 w-10 bg-yellow-200">R</th>
-                    <th class="border border-slate-300 w-10 bg-yellow-200">C</th>
+                    <th class="border border-slate-300 w-10 bg-gray-200">C</th>
                     <th class="border border-slate-300 w-10 bg-orange-200">Q</th>
                     <th class="border border-slate-300 w-10 bg-orange-200">Q&#773</th>
                 </tr>
@@ -76,42 +76,42 @@
                 <tr>
                     <td class="border border-slate-300 bg-yellow-100">X</td>
                     <td class="border border-slate-300 bg-yellow-100">X</td>
-                    <td class="border border-slate-300 bg-yellow-100">0</td>
-                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub></td>
-                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub></td>
+                    <td class="border border-slate-300 bg-gray-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub> = <span id="qPrevValue">0</span></td>
+                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub> = <span id="qNotPrevValue">1</span></td>
                 </tr>
                 <tr>
                     <td class="border border-slate-300 bg-yellow-100">0</td>
                     <td class="border border-slate-300 bg-yellow-100">0</td>
-                    <td class="border border-slate-300 bg-yellow-100">X</td>
-                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub></td>
-                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub></td>
+                    <td class="border border-slate-300 bg-gray-100">X</td>
+                    <td class="border border-slate-300 bg-orange-100">Q<sub>n-1</sub> = <span id="qPrevValue2">0</span></td>
+                    <td class="border border-slate-300 bg-orange-100">Q&#773<sub>n-1</sub> = <span id="qNotPrevValue2">1</span></td>
                 </tr>
                 <tr>
                     <td class="border border-slate-300 bg-yellow-100">1</td>
                     <td class="border border-slate-300 bg-yellow-100">0</td>
-                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-gray-100">1</td>
                     <td class="border border-slate-300 bg-orange-100">1</td>
                     <td class="border border-slate-300 bg-orange-100">0</td>
                 </tr>
                 <tr>
                     <td class="border border-slate-300 bg-yellow-100">0</td>
                     <td class="border border-slate-300 bg-yellow-100">1</td>
-                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-gray-100">1</td>
                     <td class="border border-slate-300 bg-orange-100">0</td>
                     <td class="border border-slate-300 bg-orange-100">1</td>
                 </tr>
                 <tr>
                     <td class="border border-slate-300 bg-yellow-100">1</td>
                     <td class="border border-slate-300 bg-yellow-100">1</td>
-                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-gray-100">1</td>
                     <td class="border border-slate-300 bg-orange-100">1</td>
                     <td class="border border-slate-300 bg-orange-100">1</td>
                 </tr>
                 <tr>
                     <td class="border border-slate-300 bg-yellow-100">1</td>
                     <td class="border border-slate-300 bg-yellow-100">1</td>
-                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-gray-100">0</td>
                     <td class="border border-slate-300 bg-orange-100">X</td>
                     <td class="border border-slate-300 bg-orange-100">X</td>
                 </tr>
