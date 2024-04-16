@@ -1,112 +1,112 @@
-<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" version="1.0">
-    <g transform="translate(0,-50)">
+<svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg" version="1.0">
+    <g transform="translate(-50,-40) scale(1.1)">
         <g transform="translate(100, 45) scale(2)">
-            <line stroke="black" x1="-25" y1="27.5" x2="26" y2="27.5"/>
+            <line id="d" stroke="black" x1="-25" y1="27.5" x2="26" y2="27.5"/>
             <path fill="none" stroke="black" stroke-linecap="square"
                   d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
-            <line stroke="black" x1="50" y1="27.5" x2="346" y2="27.5"/>
-            <circle cx="80" cy="28" r="2" fill="black"/>
-            <path fill="none" stroke="black" d="M 80,27 L 80,77 L 346,77"/>
-            <circle cx="80" cy="77" r="2" fill="black"/>
-            <path fill="none" stroke="black" d="M 80,77 L 80,164.5 L 246,164.5"/>
+            <line id="not1s" stroke="black" x1="50" y1="27.5" x2="346" y2="27.5"/>
+            <circle id="not1s-dot" cx="80" cy="28" r="2" fill="black"/>
+            <path id="not1s-1" fill="none" stroke="black" d="M 80,27 L 80,77 L 346,77"/>
+            <circle id="not1s-dot2" cx="80" cy="77" r="2" fill="black"/>
+            <path id="not1s-2" fill="none" stroke="black" d="M 80,77 L 80,164.5 L 246,164.5"/>
         </g>
 
         <g transform="translate(50,0)">
             <g transform="translate(300, 105) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <line stroke="black" x1="57" y1="27" x2="121" y2="27"/>
+                <line id="nand1s" stroke="black" x1="57" y1="27" x2="121" y2="27"/>
             </g>
 
             <g transform="translate(500, 85) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <line stroke="black" x1="57" y1="27" x2="121" y2="27"/>
+                <line id="nand5s" stroke="black" x1="57" y1="27" x2="121" y2="27"/>
             </g>
 
             <g transform="translate(700, 65) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <line stroke="black" x1="57" y1="27" x2="100" y2="27"/>
+                <path id="nand8s" stroke="black" fill="none" d="M 57,27 L 80,27 L 80,17 L 100,17"/>
             </g>
         </g>
 
         <g>
-            <line stroke="black" stroke-width="2" x1="50" y1="219" x2="591" y2="219"/>
-            <circle cx="230" cy="219" r="4" fill="black"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 230,219 L 230,120 L 591,120"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 230,219 L 230,430 L 391,430"/>
-            <circle cx="120" cy="219" r="4" fill="black"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 120,219 L 120,320 L 151,320"/>
+            <line id="c" stroke="black" stroke-width="2" x1="50" y1="219" x2="591" y2="219"/>
+            <circle id="c-dot" cx="230" cy="219" r="4" fill="black"/>
+            <path id="c-1" fill="none" stroke="black" stroke-width="2" d="M 230,219 L 230,120 L 591,120"/>
+            <path id="c-2" fill="none" stroke="black" stroke-width="2" d="M 230,219 L 230,430 L 391,430"/>
+            <circle id="c-dot2" cx="120" cy="219" r="4" fill="black"/>
+            <path id="c-3" fill="none" stroke="black" stroke-width="2" d="M 120,219 L 120,320 L 151,320"/>
             <path transform="translate(100,265) scale(2)" fill="none" stroke="black" stroke-linecap="square"
                   d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
-            <line stroke="black" stroke-width="2" x1="199" y1="320" x2="391" y2="320"/>
+            <line id="not2s" stroke="black" stroke-width="2" x1="199" y1="320" x2="391" y2="320"/>
         </g>
 
         <g transform="translate(50, 100)">
             <g transform="translate(300, 105) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <line stroke="black" x1="57" y1="27" x2="121" y2="27"/>
+                <line id="nand2s" stroke="black" x1="57" y1="27" x2="121" y2="27"/>
             </g>
 
             <g transform="translate(500, 85) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <line stroke="black" x1="57" y1="27" x2="121" y2="27"/>
+                <line id="nand6s" stroke="black" x1="57" y1="27" x2="121" y2="27"/>
             </g>
 
             <g transform="translate(700, 65) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <line stroke="black" x1="57" y1="27" x2="100" y2="27"/>
+                <line id="nand9s" stroke="black" x1="57" y1="27" x2="100" y2="27"/>
             </g>
         </g>
 
         <g transform="translate(0,130)">
-            <line stroke="black" stroke-width="2" x1="50" y1="219" x2="391" y2="219"/>
-            <circle cx="120" cy="219" r="4" fill="black"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 120,219 L 120,284 L 151,284"/>
+            <line id="b" stroke="black" stroke-width="2" x1="50" y1="219" x2="391" y2="219"/>
+            <circle id="b-dot" cx="120" cy="219" r="4" fill="black"/>
+            <path id="b-2" fill="none" stroke="black" stroke-width="2" d="M 120,219 L 120,284 L 151,284"/>
             <path transform="translate(100,229) scale(2)" fill="none" stroke="black" stroke-linecap="square"
                   d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
-            <line stroke="black" stroke-width="2" x1="200" y1="284" x2="391" y2="284"/>
-            <circle cx="285" cy="284" r="4" fill="black"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 285,284 L 285,115 L 391,115"/>
-            <circle cx="285" cy="115" r="4" fill="black"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 285,115 L 285,15 L 391,15"/>
+            <line id="not3s" stroke="black" stroke-width="2" x1="200" y1="284" x2="391" y2="284"/>
+            <circle id="not3s-dot" cx="285" cy="284" r="4" fill="black"/>
+            <path id="not3s-1" fill="none" stroke="black" stroke-width="2" d="M 285,284 L 285,115 L 391,115"/>
+            <circle id="not3s-dot2" cx="285" cy="115" r="4" fill="black"/>
+            <path id="not3s-2" fill="none" stroke="black" stroke-width="2" d="M 285,115 L 285,15 L 391,15"/>
         </g>
 
         <g transform="translate(50, 180)">
             <g transform="translate(300, 100) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <path fill="none" stroke="black" stroke-width="1" d="M 57,27 L 80,27 L 80,40 L 121,40"/>
+                <path id="nand3s" fill="none" stroke="black" stroke-width="1" d="M 57,27 L 80,27 L 80,40 L 121,40"/>
             </g>
 
             <g transform="translate(500, 140) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <path fill="none" stroke="black" stroke-width="1" d="M 57,27 L 200,27"/>
+                <path id="nand7s" fill="none" stroke="black" stroke-width="1" d="M 57,27 L 100,27 L 100,17 L 200,17"/>
             </g>
 
             <g transform="translate(300, 180) scale(2)">
                 <path fill="none" stroke="black" stroke-linecap="square"
                       d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-                <path fill="none" stroke="black" stroke-width="1" d="M 57,27 L 80,27 L 80,14 L 121,14"/>
+                <path id="nand4s" fill="none" stroke="black" stroke-width="1" d="M 57,27 L 80,27 L 80,14 L 121,14"/>
             </g>
         </g>
 
-        <g transform="translate(0,240)">
-            <line stroke="black" stroke-width="2" x1="50" y1="219" x2="950" y2="219"/>
-            <circle cx="120" cy="219" r="4" fill="black"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 120,219 L 120,254 L 151,254"/>
-            <circle cx="320" cy="219" r="4" fill="black"/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 320,219 L 320,30 L 391,30"/>
-            <circle cx="320" cy="160" r="4" fill="black"/>
-            <line stroke="black" stroke-width="2" x1="320" y1="160" x2="391" y2="160"/>
+        <g transform="translate(0,250)">
+            <line id="a" stroke="black" stroke-width="2" x1="50" y1="219" x2="950" y2="219"/>
+            <circle id="a-dot" cx="120" cy="219" r="4" fill="black"/>
+            <path id="a-1" fill="none" stroke="black" stroke-width="2" d="M 120,219 L 120,254 L 151,254"/>
+            <circle id="a-dot2" cx="320" cy="219" r="4" fill="black"/>
+            <path id="a-2" fill="none" stroke="black" stroke-width="2" d="M 320,219 L 320,20 L 391,20"/>
+            <circle id="a-dot3" cx="320" cy="150" r="4" fill="black"/>
+            <line id="a-3" stroke="black" stroke-width="2" x1="320" y1="150" x2="391" y2="150"/>
             <path transform="translate(100,200) scale(2)" fill="none" stroke="black" stroke-linecap="square"
                   d="M 50 27.5 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 c 0 -1.1 0.9 -2 2 -2 s 2 0.9 2 2 z m -24 11 v -22 l 19 11 l -19 11 z "/>
-            <path fill="none" stroke="black" stroke-width="2" d="M 200,254.5 L 360,254.5 L 360,-70 L 391,-70"/>
+            <path id="not4s" fill="none" stroke="black" stroke-width="2" d="M 200,254.5 L 360,254.5 L 360,-70 L 391,-70"/>
         </g>
     </g>
 </svg>

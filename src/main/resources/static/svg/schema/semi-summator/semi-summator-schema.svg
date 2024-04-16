@@ -2,32 +2,32 @@
     <style>
         #and-a {
             stroke: black;
-            stroke-width: 1.5;
+            stroke-width: 1;
         }
 
         #and-b {
             stroke: black;
-            stroke-width: 1.5;
+            stroke-width: 1;
         }
 
         #and-c {
             stroke: black;
-            stroke-width: 1.5;
+            stroke-width: 1;
         }
 
         #xor-a {
             stroke: black;
-            stroke-width: 1.5;
+            stroke-width: 1;
         }
 
         #xor-b {
             stroke: black;
-            stroke-width: 1.5;
+            stroke-width: 1;
         }
 
         #xor-s {
             stroke: black;
-            stroke-width: 1.5;
+            stroke-width: 1;
         }
 
         #and {
@@ -46,9 +46,9 @@
     <g transform="scale(2) translate(-15,1)">
         <g id="and" transform="translate(60,52)">
             <path id="and-c" d="M 70,25 L 100,25"/>
-            <circle id="and-a-dot" cx="0" cy="-40.5" r="2" fill="black" stroke="none"/>
+            <circle id="and-a-dot" cx="0" cy="-40.5" r="1.5" fill="black" stroke="none"/>
             <path id="and-a" d="M 31,15 L 0,15 L 0,-40"/>
-            <circle id="and-b-dot" cx="-20" cy="34.5" r="2" fill="black" stroke="none"/>
+            <circle id="and-b-dot" cx="-20" cy="34.5" r="1.5" fill="black" stroke="none"/>
             <path id="and-b" d="M 25,-20 L -20,-20 L -20,34"/>
             <g style="stroke-width:0;fill:#000;stroke:none">
                 <path d="M 30,5 L 30,6.428 L 30,43.571 L 30,45 L 31.428,45 L 50.476,45 C 61.744,45 70.47,36.0 70.47619,25 C 70.47619,14.000045 61.744099,5.0000002 50.47619,5 C 50.47619,5 50.47619,5 31.428571,5 L 30,5 z M 32.857143,7.8571429 C 40.834264,7.8571429 45.918368,7.8571429 48.095238,7.8571429 C 49.285714,7.8571429 49.880952,7.8571429 50.178571,7.8571429 C 50.327381,7.8571429 50.409227,7.8571429 50.446429,7.8571429 C 50.465029,7.8571429 50.471543,7.8571429 50.47619,7.8571429 C 60.236853,7.857143 67.142857,15.497098 67.142857,25 C 67.142857,34.502902 59.760662,42.142857 50,42.142857 L 32.857143,42.142857 L 32.857143,7.8571429 z"/>

@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function randomInputs() {
-    ['a', 'b', 'c', 'd', 'a1', 'a2', 'a3', 'a4', 'b1', 'b2', 'b3', 'b4', 'c1', 'c2', 'c3', 'c4'].forEach(id => {
+    ['a', 'b', 'c', 'd', 'a1', 'a2', 'a3', 'a4', 'b1', 'b2', 'b3', 'b4', 'c1', 'c2', 'c3', 'c4' , 'kl0', 'kl1', 'kl2', 'kl3', 'kl4', 'kl5', 'kl6', 'kl7', 'kl8', 'kl9'].forEach(id => {
         const checkbox = document.getElementById(id);
         if (checkbox) {
             checkbox.checked = Math.random() >= 0.5;

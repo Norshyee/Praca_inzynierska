@@ -162,6 +162,7 @@ function oneBitSumatorOutput() {
     svg.getElementById("xor1-dot2").style.fill = (b == 1 ? "red" : "black");
     svg.getElementById("xor1-s").style.stroke = (xor1 == 1 ? "red" : "black");
     svg.getElementById("xor2-b").style.stroke = (c == 1 ? "red" : "black");
+    svg.getElementById("xor2-b").style.stroke = (c == 1 ? "red" : "black");
     svg.getElementById("xor2-dot").style.fill = (c == 1 ? "red" : "black");
     svg.getElementById("xor2-s").style.stroke = (s == 1 ? "red" : "black");
 
@@ -296,7 +297,7 @@ const dTypeSwitch = Object.create(BaseSwitch);
 
 dTypeSwitch.init = function() {
     this.nand1s = 0;
-    this.nand2s = 0;
+    this.nand2s = 1;
     this.nand3s = 0;
     this.nand4s = 0;
 };
@@ -320,6 +321,8 @@ dTypeSwitch.processCurrentPosition = function() {
 
     document.getElementById("q").checked = (this.nand2s === '1');
     document.getElementById("q-neg").checked = (this.nand4s === '1');
+    document.getElementById("qPrevValue").textContent = this.nand2s;
+    document.getElementById("qNotPrevValue").textContent = this.nand4s;
 
     resetInputs(['clockBit', 'q', 'q-neg']);
 
@@ -347,24 +350,20 @@ dTypeSwitch.processCurrentPosition = function() {
 
     dTypeSwitch.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
     dTypeSwitch.getElementById("c1").style.stroke = (c == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("c-dot").style.stroke = (c == 1 ? "red" : "black");
     dTypeSwitch.getElementById("c-dot").style.fill = (c == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand1-s").style.stroke = (this.nand1s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand1-s1").style.stroke = (this.nand1s == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("nand1-s-dot").style.stroke = (this.nand1s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand1-s-dot").style.fill = (this.nand1s == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand2-s").style.stroke = (this.nand2s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand2-s1").style.stroke = (this.nand2s == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("nand2-s-dot").style.stroke = (this.nand2s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand2-s-dot").style.fill = (this.nand2s == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand3-s").style.stroke = (this.nand3s == 1 ? "red" : "black");
 
     dTypeSwitch.getElementById("nand4-s").style.stroke = (this.nand4s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand4-s1").style.stroke = (this.nand4s == 1 ? "red" : "black");
-    dTypeSwitch.getElementById("nand4-s-dot").style.stroke = (this.nand4s == 1 ? "red" : "black");
     dTypeSwitch.getElementById("nand4-s-dot").style.fill = (this.nand4s == 1 ? "red" : "black");
 
     var dTypeSwitchSymbol = document.getElementById("d-type-switch-symbol").contentDocument;
@@ -378,9 +377,9 @@ const rsTypeSynchronousSwitch = Object.create(BaseSwitch);
 
 rsTypeSynchronousSwitch.init = function() {
     this.nand1s = 0;
-    this.nand2s = 1;
+    this.nand2s = 0;
     this.nand3s = 0;
-    this.nand4s = 0;
+    this.nand4s = 1;
 };
 
 rsTypeSynchronousSwitch.processCurrentPosition = function() {
@@ -403,6 +402,10 @@ rsTypeSynchronousSwitch.processCurrentPosition = function() {
 
     document.getElementById("q").checked = (this.nand2s === '1');
     document.getElementById("q-neg").checked = (this.nand4s === '1');
+    document.getElementById("qPrevValue").textContent = this.nand2s;
+    document.getElementById("qNotPrevValue").textContent = this.nand4s;
+    document.getElementById("qPrevValue2").textContent = this.nand2s;
+    document.getElementById("qNotPrevValue2").textContent = this.nand4s;
 
     resetInputs(['clockBit', 'q', 'q-neg']);
 
@@ -450,21 +453,18 @@ rsTypeSynchronousSwitch.processCurrentPosition = function() {
 
     rsSynchronousSwitch.getElementById("c").style.stroke = (c == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("c2").style.stroke = (c == 1 ? "red" : "black");
-    rsSynchronousSwitch.getElementById("c2-dot").style.stroke = (c == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("c2-dot").style.fill = (c == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand1-s").style.stroke = (this.nand1s == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand2-s").style.stroke = (this.nand2s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand2-s1").style.stroke = (this.nand2s == 1 ? "red" : "black");
-    rsSynchronousSwitch.getElementById("nand2-s-dot").style.stroke = (this.nand2s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand2-s-dot").style.fill = (this.nand2s == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand3-s").style.stroke = (this.nand3s == 1 ? "red" : "black");
 
     rsSynchronousSwitch.getElementById("nand4-s").style.stroke = (this.nand4s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand4-s1").style.stroke = (this.nand4s == 1 ? "red" : "black");
-    rsSynchronousSwitch.getElementById("nand4-s-dot").style.stroke = (this.nand4s == 1 ? "red" : "black");
     rsSynchronousSwitch.getElementById("nand4-s-dot").style.fill = (this.nand4s == 1 ? "red" : "black");
 
     var rsSynchronousSwitchSymbol = document.getElementById("rs-synchronous-switch-symbol").contentDocument;
@@ -493,7 +493,6 @@ const rsTypeAsynchronousSwitch = {
 
         var rsAsynchronousNandSwitch = document.getElementById("rs-asynchronous-switch-nand-schema").contentDocument;
         var tableRowsNand = document.getElementById("boardOfTruth-nand").rows;
-        var previousStateBoard = document.getElementById("previousStateNandBoard").rows;
         tableRowsNand.item(5).style.fontWeight = "normal";
         for (const row of tableRowsNand) {
             row.style.color = "black";
@@ -512,16 +511,16 @@ const rsTypeAsynchronousSwitch = {
             tableRowsNand.item(1).style.color = "red";
             tableRowsNand.item(5).style.color = "red";
             tableRowsNand.item(5).style.fontWeight = "bold";
-            previousStateBoard.item(1).cells[1].textContent = this.nand1s;
-            previousStateBoard.item(2).cells[1].textContent = this.nand2s;
+            document.getElementById("nandQPrevValue").textContent = this.nand1s;
+            document.getElementById("nandQNotPrevValue").textContent = this.nand2s;
 
             return;
         }
 
         document.getElementById("q1").checked = (this.nand1s === '1');
         document.getElementById("q1-neg").checked = (this.nand2s === '1');
-        previousStateBoard.item(1).cells[1].textContent = this.nand1s;
-        previousStateBoard.item(2).cells[1].textContent = this.nand2s;
+        document.getElementById("nandQPrevValue").textContent = this.nand1s;
+        document.getElementById("nandQNotPrevValue").textContent = this.nand2s;
 
         switch(s1) {
             case '0':
@@ -546,12 +545,10 @@ const rsTypeAsynchronousSwitch = {
 
         rsAsynchronousNandSwitch.getElementById("nand1-s").style.stroke = (this.nand1s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand1-s1").style.stroke = (this.nand1s == 1 ? "red" : "black");
-        rsAsynchronousNandSwitch.getElementById("nand1-s-dot").style.stroke = (this.nand1s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand1-s-dot").style.fill = (this.nand1s == 1 ? "red" : "black");
 
         rsAsynchronousNandSwitch.getElementById("nand2-s").style.stroke = (this.nand2s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand2-s1").style.stroke = (this.nand2s == 1 ? "red" : "black");
-        rsAsynchronousNandSwitch.getElementById("nand2-s-dot").style.stroke = (this.nand2s == 1 ? "red" : "black");
         rsAsynchronousNandSwitch.getElementById("nand2-s-dot").style.fill = (this.nand2s == 1 ? "red" : "black");
     },
 
@@ -561,7 +558,6 @@ const rsTypeAsynchronousSwitch = {
 
         var rsAsynchronousNorSwitch = document.getElementById("rs-asynchronous-switch-nor-schema").contentDocument;
         var tableRowsNor = document.getElementById("boardOfTruth-nor").rows;
-        var previousStateBoard = document.getElementById("previousStateNorBoard").rows;
         tableRowsNor.item(5).style.fontWeight = "normal";
         for (const row of tableRowsNor) {
             row.style.color = "black";
@@ -580,16 +576,16 @@ const rsTypeAsynchronousSwitch = {
             tableRowsNor.item(4).style.color = "red";
             tableRowsNor.item(5).style.color = "red";
             tableRowsNor.item(5).style.fontWeight = "bold";
-            previousStateBoard.item(1).cells[1].textContent = this.nor1s;
-            previousStateBoard.item(2).cells[1].textContent = this.nor2s;
+            document.getElementById("norQPrevValue").textContent = this.nor1s;
+            document.getElementById("norQNotPrevValue").textContent = this.nor2s;
 
             return;
         }
 
         document.getElementById("q2").checked = (this.nor1s === '1');
         document.getElementById("q2-neg").checked = (this.nor2s === '1');
-        previousStateBoard.item(1).cells[1].textContent = this.nor1s;
-        previousStateBoard.item(2).cells[1].textContent = this.nor2s;
+        document.getElementById("norQPrevValue").textContent = this.nor1s;
+        document.getElementById("norQNotPrevValue").textContent = this.nor2s;
 
         switch(r2) {
             case '0':
@@ -614,13 +610,498 @@ const rsTypeAsynchronousSwitch = {
 
         rsAsynchronousNorSwitch.getElementById("nor1-s").style.stroke = (this.nor1s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor1-s1").style.stroke = (this.nor1s == 1 ? "red" : "black");
-        rsAsynchronousNorSwitch.getElementById("nor1-s-dot").style.stroke = (this.nor1s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor1-s-dot").style.fill = (this.nor1s == 1 ? "red" : "black");
 
         rsAsynchronousNorSwitch.getElementById("nor2-s").style.stroke = (this.nor2s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor2-s1").style.stroke = (this.nor2s == 1 ? "red" : "black");
-        rsAsynchronousNorSwitch.getElementById("nor2-s-dot").style.stroke = (this.nor2s == 1 ? "red" : "black");
         rsAsynchronousNorSwitch.getElementById("nor2-s-dot").style.fill = (this.nor2s == 1 ? "red" : "black");
+    }
+};
+
+const toGrayConverter = {
+    xor1s: 0,
+    xor2s: 0,
+    xor3s: 0,
+    xor4s: 0,
+
+    converterOutput: function() {
+        this.toGrayOutput();
+        resetInputs(['q1', 'q2', 'q3', 'q4']);
+    },
+
+    toGrayOutput: function() {
+        var b8 = document.getElementById("b4").checked ? '1' : '0';
+        var b4 = document.getElementById("b3").checked ? '1' : '0';
+        var b2 = document.getElementById("b2").checked ? '1' : '0';
+        var b1 = document.getElementById("b1").checked ? '1' : '0';
+
+        var tableOfTruth = document.getElementById("boardOfTruth").rows;
+        for (const row of tableOfTruth) {
+            row.style.color = "black";
+        }
+
+        this.xor4s = (b8 === '1') ? 1 : 0;
+        this.xor3s = b4 ^ b8;
+        this.xor2s = b2 ^ b4;
+        this.xor1s = b1 ^ b2;
+
+        document.getElementById("q4").checked = (this.xor4s === 1);
+        document.getElementById("q3").checked = (this.xor3s === 1);
+        document.getElementById("q2").checked = (this.xor2s === 1);
+        document.getElementById("q1").checked = (this.xor1s === 1);
+
+        switch(b8) {
+            case '0':
+                switch(b4) {
+                    case '0':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(2).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(3).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(4).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(5).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(6).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(7).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(8).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(9).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+
+            case '1':
+                switch(b4) {
+                    case '0':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(10).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(11).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(13).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(14).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(15).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(16).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(17).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+        }
+
+        var toGraySwitchSvg = document.getElementById("8421-to-gray-converter-schema").contentDocument;
+        toGraySwitchSvg.getElementById("b1").style.stroke = (b1 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("b2").style.stroke = (b2 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b2-2").style.stroke = (b2 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b2-dot").style.fill = (b2 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("b4").style.stroke = (b4 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b4-2").style.stroke = (b4 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b4-dot").style.fill = (b4 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("b8").style.stroke = (b8 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b8-2").style.stroke = (b8 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b8-dot").style.fill = (b8 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("a").style.stroke = (this.xor1s == 1 ? "red" : "black");
+        toGraySwitchSvg.getElementById("b").style.stroke = (this.xor2s == 1 ? "red" : "black");
+        toGraySwitchSvg.getElementById("c").style.stroke = (this.xor3s == 1 ? "red" : "black");
+        toGraySwitchSvg.getElementById("d").style.stroke = (this.xor4s == 1 ? "red" : "black");
+
+        var toGraySymbolSvg = document.getElementById("8421-to-gray-converter-symbol").contentDocument;
+        toGraySymbolSvg.getElementById("b8").style.stroke = (b8 == '1' ? "red" : "black");
+        toGraySymbolSvg.getElementById("b4").style.stroke = (b4 == '1' ? "red" : "black");
+        toGraySymbolSvg.getElementById("b2").style.stroke = (b2 == '1' ? "red" : "black");
+        toGraySymbolSvg.getElementById("b1").style.stroke = (b1 == '1' ? "red" : "black");
+
+        toGraySymbolSvg.getElementById("d").style.stroke = (this.xor4s == 1 ? "red" : "black");
+        toGraySymbolSvg.getElementById("c").style.stroke = (this.xor3s == 1 ? "red" : "black");
+        toGraySymbolSvg.getElementById("b").style.stroke = (this.xor2s == 1 ? "red" : "black");
+        toGraySymbolSvg.getElementById("a").style.stroke = (this.xor1s == 1 ? "red" : "black");
+    }
+};
+
+const bcdToAikenConverter = {
+    converterOutput: function() {
+        this.bcdToAikenOutput();
+        resetInputs(['rd', 'rc', 'rb', 'ra']);
+    },
+
+    bcdToAikenOutput: function() {
+        var d = document.getElementById("d").checked ? '1' : '0';
+        var c = document.getElementById("c").checked ? '1' : '0';
+        var b = document.getElementById("b").checked ? '1' : '0';
+        var a = document.getElementById("a").checked ? '1' : '0';
+
+        const notD = (d === '1') ? 0 : 1;
+        const notC = (c === '1') ? 0 : 1;
+        const notB = (b === '1') ? 0 : 1;
+        const notA = (a === '1') ? 0 : 1;
+
+        const nand1 = ((notB & notA) === 1) ? 0 : 1;
+        const nand2 = ((notB & a) === 1) ? 0 : 1;
+        const nand3 = ((notC & b) === 1) ? 0 : 1;
+        const nand4 = ((a & notB & c) === 1) ? 0 : 1;
+
+        const nand5 = ((c & nand1) === 1) ? 0 : 1;
+        const nand6 = ((c & nand2) === 1) ? 0 : 1;
+        const nand7 = ((nand3 & notD & nand4) === 1) ? 0 : 1;
+
+        const nand8 = ((notD & nand5) === 1) ? 0 : 1;
+        const nand9 = ((notD & nand6) === 1) ? 0 : 1;
+
+        var tableOfTruth = document.getElementById("boardOfTruth").rows;
+        for (const row of tableOfTruth) {
+            row.style.color = "black";
+        }
+
+        document.getElementById("rd").checked = (nand8 === 1);
+        document.getElementById("rc").checked = (nand9 === 1);
+        document.getElementById("rb").checked = (nand7 === 1);
+        document.getElementById("ra").checked = (a === '1');
+
+        switch(d) {
+            case '0':
+                switch(c) {
+                    case '0':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(2).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(3).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(4).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(5).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(6).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(7).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(8).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(9).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+
+            case '1':
+                switch(c) {
+                    case '0':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(10).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(11).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+        }
+
+        var bcdToAikenConverterSvg = document.getElementById("bcd-to-aiken-converter-schema").contentDocument;
+
+        bcdToAikenConverterSvg.getElementById("d").style.stroke = (d == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s").style.stroke = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-dot").style.fill = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-1").style.stroke = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-dot2").style.fill = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-2").style.stroke = (notD == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("nand1s").style.stroke = (nand1 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand5s").style.stroke = (nand5 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand8s").style.stroke = (nand8 == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("c").style.stroke = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-dot").style.fill = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-1").style.stroke = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-2").style.stroke = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-dot2").style.fill = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-3").style.stroke = (c == '1' ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("not2s").style.stroke = (notC == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand2s").style.stroke = (nand2 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand6s").style.stroke = (nand6 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand9s").style.stroke = (nand9 == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("b").style.stroke = (b == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("b-dot").style.fill = (b == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("b-2").style.stroke = (b == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s").style.stroke = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-dot").style.fill = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-1").style.stroke = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-dot2").style.fill = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-2").style.stroke = (notB == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("nand3s").style.stroke = (nand3 == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand7s").style.stroke = (nand7 == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand4s").style.stroke = (nand4 == '1' ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("a").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-dot").style.fill = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-1").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-dot2").style.fill = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-2").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-dot3").style.fill = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-3").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not4s").style.stroke = (notA == 1 ? "red" : "black");
+    }
+};
+
+const decimalTo8421Converter = {
+    converterOutput: function(inputs) {
+        this.decimalTo8421Output(inputs);
+        resetInputs(['kl0', 'kl1', 'kl2', 'kl3', 'kl4', 'kl5', 'kl6', 'kl7', 'kl8', 'kl9', 'rd', 'rc', 'rb', 'ra']);
+    },
+
+    decimalTo8421Output: function(inputs) {
+        const kl0 = inputs[0];
+        const kl1 = inputs[1];
+        const kl2 = inputs[2];
+        const kl3 = inputs[3];
+        const kl4 = inputs[4];
+        const kl5 = inputs[5];
+        const kl6 = inputs[6];
+        const kl7 = inputs[7];
+        const kl8 = inputs[8];
+        const kl9 = inputs[9];
+
+        document.getElementById("kl0").checked = kl0;
+        document.getElementById("kl1").checked = kl1;
+        document.getElementById("kl2").checked = kl2;
+        document.getElementById("kl3").checked = kl3;
+        document.getElementById("kl4").checked = kl4;
+        document.getElementById("kl5").checked = kl5;
+        document.getElementById("kl6").checked = kl6;
+        document.getElementById("kl7").checked = kl7;
+        document.getElementById("kl8").checked = kl8;
+        document.getElementById("kl9").checked = kl9;
+
+        const nandD = !(kl0 & kl1 & kl2 & kl3 & kl4 & kl5 & kl6 & kl7);
+        const nandC = !(kl0 & kl1 & kl2 & kl3 & kl8 & kl9);
+        const nandB = !(kl0 & kl1 & kl4 & kl5 & kl8 & kl9);
+        const nandA = !(kl0 & kl2 & kl4 & kl6 & kl8);
+
+        const notD = !nandD;
+        const notC = !nandC;
+        const notB = !nandB;
+        const notA = !nandA;
+
+        document.getElementById("rd").checked = notD;
+        document.getElementById("rc").checked = notC;
+        document.getElementById("rb").checked = notB;
+        document.getElementById("ra").checked = notA;
+
+        var decimalTo8421ConverterSvg = document.getElementById("decimal-to-8421-converter-schema").contentDocument;
+        decimalTo8421ConverterSvg.getElementById("kl0").style.stroke = (kl0 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl0-dot").style.fill = (kl0 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl0-dot-2").style.fill = (kl0 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl1").style.stroke = (kl1 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl1-dot").style.fill = (kl1 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl2").style.stroke = (kl2 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl2-dot").style.fill = (kl2 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl2-dot-2").style.fill = (kl2 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl3").style.stroke = (kl3 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl3-dot").style.fill = (kl3 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl4").style.stroke = (kl4 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl4-dot").style.fill = (kl4 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl4-dot-2").style.fill = (kl4 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl5").style.stroke = (kl5 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl5-dot").style.fill = (kl5 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl6").style.stroke = (kl6 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl6-dot").style.fill = (kl6 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl7").style.stroke = (kl7 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl8").style.stroke = (kl8 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl8-dot").style.fill = (kl8 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl8-dot-2").style.fill = (kl8 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl9").style.stroke = (kl9 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl9-dot").style.fill = (kl9 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("nandDs").style.stroke = (nandD ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("nandCs").style.stroke = (nandC ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("nandBs").style.stroke = (nandB ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("nandAs").style.stroke = (nandA ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("notDs").style.stroke = (notD ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("notCs").style.stroke = (notC ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("notBs").style.stroke = (notB ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("notAs").style.stroke = (notA ? "red" : "black");
     }
 };
 

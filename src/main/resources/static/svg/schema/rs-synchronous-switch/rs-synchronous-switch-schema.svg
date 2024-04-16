@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" version="1.0">
     <g transform="translate(0,5)">
         <g transform="scale(2) translate(0,0)">
-            <line id="s" stroke="black" stroke-width="1" x1="0" y1="20" x2="21" y2="20"/>
-            <path id="c" fill="none" stroke="black" stroke-width="1" d="M 21,35 L 11,35 L 11,72.5 L 0,72.5"/>
+            <line id="s" stroke="black" stroke-width="1" x1="5" y1="20" x2="21" y2="20"/>
+            <path id="c" fill="none" stroke="black" stroke-width="1" d="M 21,35 L 11,35 L 11,72.5 L 5,72.5"/>
             <path fill="none" stroke="black" stroke-linecap="square"
                   d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
             <path id="nand1-s" fill="none" stroke="black" stroke-width="1" d="M 57,27 L 70,27 L 70,40 L 91,40"/>
@@ -11,15 +11,15 @@
         <g transform="scale(2) translate(70,20)">
             <path fill="none" stroke="black" stroke-linecap="square"
                   d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-            <line id="nand2-s" stroke="black" stroke-width="1" x1="57" y1="27" x2="80" y2="27"/>
+            <line id="nand2-s" stroke="black" stroke-width="1" x1="57" y1="27" x2="75" y2="27"/>
             <path id="nand2-s1" fill="none" stroke="black" stroke-width="1" d="M 63,27 L 63,43 L 10,58 L 10,70 L 21,70"/>
-            <circle id="nand2-s-dot" cx="63" cy="27" r="2" fill="black"/>
+            <circle id="nand2-s-dot" cx="63" cy="27" r="1.5" fill="black" stroke="none"/>
         </g>
 
         <g transform="scale(2) translate(0,90)">
             <path id="c2" fill="none" stroke="black" stroke-width="1" d="M 21,20 L 11,20 L 11,-17.5"/>
-            <circle id="c2-dot" cx="11" cy="-17.5" r="2" fill="black"/>
-            <line id="r" stroke="black" stroke-width="1" x1="0" y1="35" x2="21" y2="35"/>
+            <circle id="c2-dot" cx="11" cy="-17.5" r="1.5" fill="black" stroke="none"/>
+            <line id="r" stroke="black" stroke-width="1" x1="5" y1="35" x2="21" y2="35"/>
             <path fill="none" stroke="black" stroke-linecap="square"
                   d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
             <path id="nand3-s" fill="none" stroke="black" stroke-width="1" d="M 57,27 L 70,27 L 70,14 L 91,14"/>
@@ -29,9 +29,9 @@
         <g transform="scale(2) translate(70,70)">
             <path fill="none" stroke="black" stroke-linecap="square"
                   d="M 40 40 h -19 v -26 l 19 0 c 7.2 0 13 5.8 13 13 s -5.8 13 -13 13 z m 17 -13 c 0 1.1 -0.9 2 -2 2 s -2 -0.9 -2 -2 s 0.9 -2 2 -2 s 2 0.9 2 2 z"/>
-            <line id="nand4-s" stroke="black" stroke-width="1" x1="57" y1="27" x2="80" y2="27"/>
+            <line id="nand4-s" stroke="black" stroke-width="1" x1="57" y1="27" x2="75" y2="27"/>
             <path id="nand4-s1" fill="none" stroke="black" stroke-width="1" d="M 63,27 L 63,10 L 10,-5 L 10,-16 L 21,-16"/>
-            <circle id="nand4-s-dot" cx="63" cy="27" r="2" fill="black"/>
+            <circle id="nand4-s-dot" cx="63" cy="27" r="1.5" fill="black" stroke="none"/>
         </g>
     </g>
 </svg>
