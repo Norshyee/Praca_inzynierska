@@ -1,67 +1,90 @@
 <div th:fragment="8421-to-gray-converter-schema-fragment" class="min-w-min">
     <span class="text-xl font-bold">Konwerter z 8421 na Gray'a</span>
 
-    <div class="grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-[70%_30%] gap-4 xl:gap-0">
-        <div class="grid grid-rows-2 gap-4">
-            <div class="grid grid-cols-3 gap-4">
-                <div class="grid grid-flow-row place-items-center justify-items-end">
-                    <input id="b1"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="b1" min="0" max="1" required pattern="[01]">
-                    <input id="b2"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="b2" min="0" max="1" required pattern="[01]">
-                    <input id="b3"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="b4" min="0" max="1" required pattern="[01]">
-                    <input id="b4"
-                           class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                           type="number" placeholder="b8" min="0" max="1" required pattern="[01]">
-                </div>
-
-                <object class="flex justify-self-center self-center" id="8421-to-gray-converter-schema"
-                        data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-schema.svg"
-                        type="image/svg+xml">
-                </object>
-
-                <div class="grid grid-flow-row place-items-center justify-items-start pt-8">
-                    <input id="a" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="A"
-                           readonly>
-                    <input id="b" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="B"
-                           readonly>
-                    <input id="c" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="C"
-                           readonly>
-                    <input id="d" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                           placeholder="D"
-                           readonly>
-                </div>
+    <div class="grid grid-rows-3 xl:grid-rows-1 xl:grid-cols-[50%_30%_20%]">
+        <div class="grid grid-cols-[20%_60%_20%]">
+            <div class="grid grid-flow-row place-items-center justify-items-end">
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="b4">
+                    <span class="flex-1 text-center bg-yellow-200">b8</span>
+                    <input type="checkbox" class="hidden" id="b4"/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="b3">
+                    <span class="flex-1 text-center bg-yellow-200">b4</span>
+                    <input type="checkbox" class="hidden" id="b3"/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="b2">
+                    <span class="flex-1 text-center bg-yellow-200">b2</span>
+                    <input type="checkbox" class="hidden" id="b2"/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="b1">
+                    <span class="flex-1 text-center bg-yellow-200">b1</span>
+                    <input type="checkbox" class="hidden" id="b1"/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
             </div>
 
-            <object class="max-w-[800px] max-h-[400px] flex justify-self-center self-center" id="8421-to-gray-converter-symbol"
-                    data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-symbol.svg"
+            <object class="flex justify-self-center self-center" id="8421-to-gray-converter-schema"
+                    data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-schema.svg"
                     type="image/svg+xml">
             </object>
+
+            <div class="grid grid-flow-row place-items-center justify-items-start">
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="q4">
+                    <input type="checkbox" class="hidden" id="q4" disabled/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">D</span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="q3">
+                    <input type="checkbox" class="hidden" id="q3" disabled/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">C</span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="q2">
+                    <input type="checkbox" class="hidden" id="q2" disabled/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">B</span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-gray-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="q1">
+                    <input type="checkbox" class="hidden" id="q1" disabled/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">A</span>
+                </label>
+            </div>
         </div>
 
-        <table id="boardOfTruth-nand" class="border-separate border border-slate-400 text-center mx-auto">
+        <object class="flex justify-self-center self-center"
+                id="8421-to-gray-converter-symbol"
+                data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-symbol.svg"
+                type="image/svg+xml">
+        </object>
+
+        <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto my-auto">
             <thead>
             <tr>
                 <th colspan="4" class="border border-slate-300 w-10 bg-yellow-300">Kod 8421</th>
                 <th colspan="4" class="border border-slate-300 w-10 bg-orange-300">Kod Gray'a</th>
             </tr>
             <tr>
-                <th class="border border-slate-300 w-10 bg-yellow-200">b1</th>
-                <th class="border border-slate-300 w-10 bg-yellow-200">b2</th>
-                <th class="border border-slate-300 w-10 bg-yellow-200">b4</th>
                 <th class="border border-slate-300 w-10 bg-yellow-200">b8</th>
+                <th class="border border-slate-300 w-10 bg-yellow-200">b4</th>
+                <th class="border border-slate-300 w-10 bg-yellow-200">b2</th>
+                <th class="border border-slate-300 w-10 bg-yellow-200">b1</th>
 
-                <th class="border border-slate-300 w-10 bg-orange-200">A</th>
-                <th class="border border-slate-300 w-10 bg-orange-200">B</th>
-                <th class="border border-slate-300 w-10 bg-orange-200">C</th>
                 <th class="border border-slate-300 w-10 bg-orange-200">D</th>
+                <th class="border border-slate-300 w-10 bg-orange-200">C</th>
+                <th class="border border-slate-300 w-10 bg-orange-200">B</th>
+                <th class="border border-slate-300 w-10 bg-orange-200">A</th>
             </tr>
             </thead>
 
@@ -254,7 +277,7 @@
         </button>
         <button id="toggleButton"
                 class="px-4 py-2 border border-gray-400 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
-                onclick="rsTypeAsynchronousSwitch.switchOutput()">
+                onclick="toGrayConverter.converterOutput()">
             Generuj
         </button>
     </div>

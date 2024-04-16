@@ -618,6 +618,193 @@ const rsTypeAsynchronousSwitch = {
     }
 };
 
+const toGrayConverter = {
+    xor1s: 0,
+    xor2s: 0,
+    xor3s: 0,
+    xor4s: 0,
+
+    converterOutput: function() {
+        this.toGrayOutput();
+        resetInputs(['q1', 'q2', 'q3', 'q4']);
+    },
+
+    toGrayOutput: function() {
+        var b8 = document.getElementById("b4").checked ? '1' : '0';
+        var b4 = document.getElementById("b3").checked ? '1' : '0';
+        var b2 = document.getElementById("b2").checked ? '1' : '0';
+        var b1 = document.getElementById("b1").checked ? '1' : '0';
+
+        var tableOfTruth = document.getElementById("boardOfTruth").rows;
+        for (const row of tableOfTruth) {
+            row.style.color = "black";
+        }
+
+        this.xor4s = (b8 === '1') ? 1 : 0;
+        this.xor3s = b4 ^ b8;
+        this.xor2s = b2 ^ b4;
+        this.xor1s = b1 ^ b2;
+
+        document.getElementById("q4").checked = (this.xor4s === 1);
+        document.getElementById("q3").checked = (this.xor3s === 1);
+        document.getElementById("q2").checked = (this.xor2s === 1);
+        document.getElementById("q1").checked = (this.xor1s === 1);
+
+        switch(b8) {
+            case '0':
+                switch(b4) {
+                    case '0':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(2).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(3).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(4).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(5).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(6).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(7).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(8).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(9).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+
+            case '1':
+                switch(b4) {
+                    case '0':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(10).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(11).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(13).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b2) {
+                            case '0':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(14).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(15).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(b1) {
+                                    case '0':
+                                        tableOfTruth.item(16).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(17).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+        }
+
+        var toGraySwitchSvg = document.getElementById("8421-to-gray-converter-schema").contentDocument;
+        toGraySwitchSvg.getElementById("b1").style.stroke = (b1 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("b2").style.stroke = (b2 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b2-2").style.stroke = (b2 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b2-dot").style.fill = (b2 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("b4").style.stroke = (b4 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b4-2").style.stroke = (b4 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b4-dot").style.fill = (b4 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("b8").style.stroke = (b8 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b8-2").style.stroke = (b8 == '1' ? "red" : "black");
+        toGraySwitchSvg.getElementById("b8-dot").style.fill = (b8 == '1' ? "red" : "black");
+
+        toGraySwitchSvg.getElementById("a").style.stroke = (this.xor1s == 1 ? "red" : "black");
+        toGraySwitchSvg.getElementById("b").style.stroke = (this.xor2s == 1 ? "red" : "black");
+        toGraySwitchSvg.getElementById("c").style.stroke = (this.xor3s == 1 ? "red" : "black");
+        toGraySwitchSvg.getElementById("d").style.stroke = (this.xor4s == 1 ? "red" : "black");
+
+        var toGraySymbolSvg = document.getElementById("8421-to-gray-converter-symbol").contentDocument;
+        toGraySymbolSvg.getElementById("b8").style.stroke = (b8 == '1' ? "red" : "black");
+        toGraySymbolSvg.getElementById("b4").style.stroke = (b4 == '1' ? "red" : "black");
+        toGraySymbolSvg.getElementById("b2").style.stroke = (b2 == '1' ? "red" : "black");
+        toGraySymbolSvg.getElementById("b1").style.stroke = (b1 == '1' ? "red" : "black");
+
+        toGraySymbolSvg.getElementById("d").style.stroke = (this.xor4s == 1 ? "red" : "black");
+        toGraySymbolSvg.getElementById("c").style.stroke = (this.xor3s == 1 ? "red" : "black");
+        toGraySymbolSvg.getElementById("b").style.stroke = (this.xor2s == 1 ? "red" : "black");
+        toGraySymbolSvg.getElementById("a").style.stroke = (this.xor1s == 1 ? "red" : "black");
+    }
+};
+
 function resetInputs(checkboxes) {
     checkboxes.forEach(id => {
         const checkbox = document.getElementById(id);
