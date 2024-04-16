@@ -805,6 +805,216 @@ const toGrayConverter = {
     }
 };
 
+const bcdToAikenConverter = {
+    converterOutput: function() {
+        this.bcdToAikenOutput();
+        resetInputs(['rd', 'rc', 'rb', 'ra']);
+    },
+
+    bcdToAikenOutput: function() {
+        var d = document.getElementById("d").checked ? '1' : '0';
+        var c = document.getElementById("c").checked ? '1' : '0';
+        var b = document.getElementById("b").checked ? '1' : '0';
+        var a = document.getElementById("a").checked ? '1' : '0';
+
+        const notD = (d === '1') ? 0 : 1;
+        const notC = (c === '1') ? 0 : 1;
+        const notB = (b === '1') ? 0 : 1;
+        const notA = (a === '1') ? 0 : 1;
+
+        const nand1 = ((notB & notA) === 1) ? 0 : 1;
+        const nand2 = ((notB & a) === 1) ? 0 : 1;
+        const nand3 = ((notC & b) === 1) ? 0 : 1;
+        const nand4 = ((a & notB & c) === 1) ? 0 : 1;
+
+        const nand5 = ((c & nand1) === 1) ? 0 : 1;
+        const nand6 = ((c & nand2) === 1) ? 0 : 1;
+        const nand7 = ((nand3 & notD & nand4) === 1) ? 0 : 1;
+
+        const nand8 = ((notD & nand5) === 1) ? 0 : 1;
+        const nand9 = ((notD & nand6) === 1) ? 0 : 1;
+
+        var tableOfTruth = document.getElementById("boardOfTruth").rows;
+        for (const row of tableOfTruth) {
+            row.style.color = "black";
+        }
+
+        document.getElementById("rd").checked = (nand8 === 1);
+        document.getElementById("rc").checked = (nand9 === 1);
+        document.getElementById("rb").checked = (nand7 === 1);
+        document.getElementById("ra").checked = (a === '1');
+
+        switch(d) {
+            case '0':
+                switch(c) {
+                    case '0':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(2).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(3).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(4).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(5).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(6).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(7).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(8).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(9).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+
+            case '1':
+                switch(c) {
+                    case '0':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(10).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(11).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+
+                    case '1':
+                        switch(b) {
+                            case '0':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+                                }
+                            break;
+
+                            case '1':
+                                switch(a) {
+                                    case '0':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+
+                                    case '1':
+                                        tableOfTruth.item(12).style.color = "red";
+                                    break;
+                                }
+                            break;
+                        }
+                    break;
+                }
+            break;
+        }
+
+        var bcdToAikenConverterSvg = document.getElementById("bcd-to-aiken-converter-schema").contentDocument;
+
+        bcdToAikenConverterSvg.getElementById("d").style.stroke = (d == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s").style.stroke = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-dot").style.fill = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-1").style.stroke = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-dot2").style.fill = (notD == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not1s-2").style.stroke = (notD == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("nand1s").style.stroke = (nand1 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand5s").style.stroke = (nand5 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand8s").style.stroke = (nand8 == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("c").style.stroke = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-dot").style.fill = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-1").style.stroke = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-2").style.stroke = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-dot2").style.fill = (c == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("c-3").style.stroke = (c == '1' ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("not2s").style.stroke = (notC == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand2s").style.stroke = (nand2 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand6s").style.stroke = (nand6 == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand9s").style.stroke = (nand9 == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("b").style.stroke = (b == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("b-dot").style.fill = (b == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("b-2").style.stroke = (b == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s").style.stroke = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-dot").style.fill = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-1").style.stroke = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-dot2").style.fill = (notB == 1 ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not3s-2").style.stroke = (notB == 1 ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("nand3s").style.stroke = (nand3 == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand7s").style.stroke = (nand7 == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("nand4s").style.stroke = (nand4 == '1' ? "red" : "black");
+
+        bcdToAikenConverterSvg.getElementById("a").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-dot").style.fill = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-1").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-dot2").style.fill = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-2").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-dot3").style.fill = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("a-3").style.stroke = (a == '1' ? "red" : "black");
+        bcdToAikenConverterSvg.getElementById("not4s").style.stroke = (notA == 1 ? "red" : "black");
+    }
+};
+
 function resetInputs(checkboxes) {
     checkboxes.forEach(id => {
         const checkbox = document.getElementById(id);
