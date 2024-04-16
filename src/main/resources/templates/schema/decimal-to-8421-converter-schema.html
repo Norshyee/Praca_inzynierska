@@ -1,58 +1,135 @@
 <div th:fragment="decimal-to-8421-converter-schema-fragment" class="min-w-min">
     <span class="text-xl font-bold">Konwerter liczby dziesiętnej na 8421</span>
 
-    <div class="min-w-min grid grid-rows-1 grid-cols-[20%_60%_20%] gap-4">
-        <div class="grid grid-flow-row place-items-center justify-items-end pt-10 pb-20 gap-1">
-            <input id="kl0"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL0" min="0" max="1" required pattern="[01]">
-            <input id="kl1"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL1" min="0" max="1" required pattern="[01]">
-            <input id="kl2"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL2" min="0" max="1" required pattern="[01]">
-            <input id="kl3"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL3" min="0" max="1" required pattern="[01]">
-            <input id="kl4"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL4" min="0" max="1" required pattern="[01]">
-            <input id="kl5"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL5" min="0" max="1" required pattern="[01]">
-            <input id="kl6"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL6" min="0" max="1" required pattern="[01]">
-            <input id="kl7"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL7" min="0" max="1" required pattern="[01]">
-            <input id="kl8"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL8" min="0" max="1" required pattern="[01]">
-            <input id="kl9"
-                   class="text-center border border-2 border-gray-400 rounded focus:border-blue-500 hover:border-blue-500 valid:border-green-500 invalid:border-red-500"
-                   type="number" placeholder="KL9" min="0" max="1" required pattern="[01]">
+    <div class="grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-[20%_80%]">
+        <div class="flex items-center justify-center ml-5">
+            <div class="grid grid-cols-3 gap-4 p-4 min-w-full">
+                <!-- Numbers 0-9 -->
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,0,1,1,1,1,1,1,1,1])">1</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,0,1,1,1,1,1,1,1])">2</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,0,1,1,1,1,1,1])">3</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,1,0,1,1,1,1,1])">4</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,1,1,0,1,1,1,1])">5</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,1,1,1,0,1,1,1])">6</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,1,1,1,1,0,1,1])">7</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,1,1,1,1,1,0,1])">8</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,1,1,1,1,1,1,0])">9</button>
+                <button class="p-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([0,1,1,1,1,1,1,1,1,1])">0</button>
+
+                <!-- Reset Button -->
+                <button class="col-span-2 p-2 bg-red-500 text-white font-bold rounded hover:bg-red-700 focus:outline-none"
+                        onclick="decimalTo8421Converter.converterOutput([1,1,1,1,1,1,1,1,1,1])">Reset</button>
+            </div>
         </div>
 
-        <object class="flex justify-self-center self-center" id="decimal-to-8421-converter-schema"
-                data="/svg/schema/decimal-to-8421-converter/decimal-to-8421-converter-schema.svg"
-                type="image/svg+xml">
-        </object>
+        <div class="min-w-min grid grid-rows-1 grid-cols-[10%_70%_20%] gap-4">
+            <div class="grid grid-flow-row place-items-center justify-items-end pt-10 pb-20 gap-1">
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl0">
+                    <span class="flex-1 text-center bg-yellow-200">KL0</span>
+                    <input type="checkbox" class="hidden" id="kl0" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl1">
+                    <span class="flex-1 text-center bg-yellow-200">KL1</span>
+                    <input type="checkbox" class="hidden" id="kl1" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl2">
+                    <span class="flex-1 text-center bg-yellow-200">KL2</span>
+                    <input type="checkbox" class="hidden" id="kl2" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl3">
+                    <span class="flex-1 text-center bg-yellow-200">KL3</span>
+                    <input type="checkbox" class="hidden" id="kl3" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl4">
+                    <span class="flex-1 text-center bg-yellow-200">KL4</span>
+                    <input type="checkbox" class="hidden" id="kl4" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl5">
+                    <span class="flex-1 text-center bg-yellow-200">KL5</span>
+                    <input type="checkbox" class="hidden" id="kl5" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl6">
+                    <span class="flex-1 text-center bg-yellow-200">KL6</span>
+                    <input type="checkbox" class="hidden" id="kl6" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl7">
+                    <span class="flex-1 text-center bg-yellow-200">KL7</span>
+                    <input type="checkbox" class="hidden" id="kl7" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl8">
+                    <span class="flex-1 text-center bg-yellow-200">KL8</span>
+                    <input type="checkbox" class="hidden" id="kl8" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+                <label class="checkbox-label flex w-16 border-2 border-red-400 rounded-lg focus:border-blue-500 hover:border-blue-500 overflow-hidden"
+                       for="kl9">
+                    <span class="flex-1 text-center bg-yellow-200">KL9</span>
+                    <input type="checkbox" class="hidden" id="kl9" checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                </label>
+            </div>
 
-        <div class="grid grid-flow-row place-items-center justify-items-start pb-20">
-            <input id="rd" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                   placeholder="D"
-                   readonly>
-            <input id="rc" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                   placeholder="C"
-                   readonly>
-            <input id="rb" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                   placeholder="B"
-                   readonly>
-            <input id="ra" class="text-center border border-2 border-gray-400 rounded w-20" type="text"
-                   placeholder="A"
-                   readonly>
+            <object class="flex justify-self-center self-center" id="decimal-to-8421-converter-schema"
+                    data="/svg/schema/decimal-to-8421-converter/decimal-to-8421-converter-schema.svg"
+                    type="image/svg+xml">
+            </object>
+
+            <div class="grid grid-flow-row place-items-center justify-items-start pb-20">
+                <label class="checkbox-label flex w-14 border-2 border-red-400 rounded-lg overflow-hidden" for="rd">
+                    <input type="checkbox" class="hidden" id="rd" disabled checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">D</span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-red-400 rounded-lg overflow-hidden" for="rc">
+                    <input type="checkbox" class="hidden" id="rc" disabled checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">C</span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-red-400 rounded-lg overflow-hidden" for="rb">
+                    <input type="checkbox" class="hidden" id="rb" disabled checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">B</span>
+                </label>
+                <label class="checkbox-label flex w-14 border-2 border-red-400 rounded-lg overflow-hidden" for="ra">
+                    <input type="checkbox" class="hidden" id="ra" disabled checked/>
+                    <span class="flex-1 text-center bg-white"></span>
+                    <span class="flex-1 text-center bg-orange-200">A</span>
+                </label>
+            </div>
         </div>
     </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <p>
+    </p>
 </div>

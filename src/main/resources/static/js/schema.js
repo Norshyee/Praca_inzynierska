@@ -1015,6 +1015,96 @@ const bcdToAikenConverter = {
     }
 };
 
+const decimalTo8421Converter = {
+    converterOutput: function(inputs) {
+        this.decimalTo8421Output(inputs);
+        resetInputs(['kl0', 'kl1', 'kl2', 'kl3', 'kl4', 'kl5', 'kl6', 'kl7', 'kl8', 'kl9', 'rd', 'rc', 'rb', 'ra']);
+    },
+
+    decimalTo8421Output: function(inputs) {
+        const kl0 = inputs[0];
+        const kl1 = inputs[1];
+        const kl2 = inputs[2];
+        const kl3 = inputs[3];
+        const kl4 = inputs[4];
+        const kl5 = inputs[5];
+        const kl6 = inputs[6];
+        const kl7 = inputs[7];
+        const kl8 = inputs[8];
+        const kl9 = inputs[9];
+
+        document.getElementById("kl0").checked = kl0;
+        document.getElementById("kl1").checked = kl1;
+        document.getElementById("kl2").checked = kl2;
+        document.getElementById("kl3").checked = kl3;
+        document.getElementById("kl4").checked = kl4;
+        document.getElementById("kl5").checked = kl5;
+        document.getElementById("kl6").checked = kl6;
+        document.getElementById("kl7").checked = kl7;
+        document.getElementById("kl8").checked = kl8;
+        document.getElementById("kl9").checked = kl9;
+
+        const nandD = !(kl0 & kl1 & kl2 & kl3 & kl4 & kl5 & kl6 & kl7);
+        const nandC = !(kl0 & kl1 & kl2 & kl3 & kl8 & kl9);
+        const nandB = !(kl0 & kl1 & kl4 & kl5 & kl8 & kl9);
+        const nandA = !(kl0 & kl2 & kl4 & kl6 & kl8);
+
+        const notD = !nandD;
+        const notC = !nandC;
+        const notB = !nandB;
+        const notA = !nandA;
+
+        document.getElementById("rd").checked = notD;
+        document.getElementById("rc").checked = notC;
+        document.getElementById("rb").checked = notB;
+        document.getElementById("ra").checked = notA;
+
+        var decimalTo8421ConverterSvg = document.getElementById("decimal-to-8421-converter-schema").contentDocument;
+        decimalTo8421ConverterSvg.getElementById("kl0").style.stroke = (kl0 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl0-dot").style.fill = (kl0 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl0-dot-2").style.fill = (kl0 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl1").style.stroke = (kl1 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl1-dot").style.fill = (kl1 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl2").style.stroke = (kl2 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl2-dot").style.fill = (kl2 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl2-dot-2").style.fill = (kl2 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl3").style.stroke = (kl3 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl3-dot").style.fill = (kl3 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl4").style.stroke = (kl4 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl4-dot").style.fill = (kl4 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl4-dot-2").style.fill = (kl4 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl5").style.stroke = (kl5 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl5-dot").style.fill = (kl5 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl6").style.stroke = (kl6 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl6-dot").style.fill = (kl6 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl7").style.stroke = (kl7 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl8").style.stroke = (kl8 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl8-dot").style.fill = (kl8 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl8-dot-2").style.fill = (kl8 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("kl9").style.stroke = (kl9 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl9-dot").style.fill = (kl9 ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("nandDs").style.stroke = (nandD ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("nandCs").style.stroke = (nandC ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("nandBs").style.stroke = (nandB ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("nandAs").style.stroke = (nandA ? "red" : "black");
+
+        decimalTo8421ConverterSvg.getElementById("notDs").style.stroke = (notD ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("notCs").style.stroke = (notC ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("notBs").style.stroke = (notB ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("notAs").style.stroke = (notA ? "red" : "black");
+    }
+};
+
 function resetInputs(checkboxes) {
     checkboxes.forEach(id => {
         const checkbox = document.getElementById(id);
