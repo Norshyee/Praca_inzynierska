@@ -1063,9 +1063,11 @@ const decimalTo8421Converter = {
         decimalTo8421ConverterSvg.getElementById("kl0").style.stroke = (kl0 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl0-dot").style.fill = (kl0 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl0-dot-2").style.fill = (kl0 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl0-dot-3").style.fill = (kl0 ? "red" : "black");
 
         decimalTo8421ConverterSvg.getElementById("kl1").style.stroke = (kl1 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl1-dot").style.fill = (kl1 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl1-dot-2").style.fill = (kl1 ? "red" : "black");
 
         decimalTo8421ConverterSvg.getElementById("kl2").style.stroke = (kl2 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl2-dot").style.fill = (kl2 ? "red" : "black");

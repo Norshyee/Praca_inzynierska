@@ -4,14 +4,16 @@
             <g>
                 <circle id="kl0-dot" stroke="none" fill="black" cx="150" cy="50" r="4"/>
                 <path id="kl0" fill="none" stroke="black" stroke-width="2.5"
-                      d="M 50,50 L 150,50 M 150,25 L 482,25 M 150,25 L 150,470 L 482,470 M 150,285 L 482,285"/>
+                      d="M 50,50 L 150,50 M 150,25 L 482,25 M 150,25 L 150,470 L 482,470 M 150,285 L 482,285 M 150,200 L 486,200"/>
                 <circle id="kl0-dot-2" stroke="none" fill="black" cx="150" cy="285" r="4"/>
+                <circle id="kl0-dot-3" stroke="none" fill="black" cx="150" cy="200" r="4"/>
             </g>
 
             <g>
                 <circle id="kl1-dot" stroke="none" fill="black" cx="180" cy="95" r="4"/>
                 <path id="kl1" fill="none" stroke="black" stroke-width="2.5"
-                      d="M 50,95 L 180,95 L 180,35 L 482,35 M 180,95 L 180,330 L 482,330"/>
+                      d="M 50,95 L 180,95 L 180,35 L 482,35 M 180,95 L 180,330 L 482,330 M 180,165 L 486,165"/>
+                <circle id="kl1-dot-2" stroke="none" fill="black" cx="180" cy="165" r="4"/>
             </g>
 
             <g>
@@ -66,11 +68,9 @@
             <g>
                 <text x="450" y="520" text-anchor="middle" stroke="red" font-size="20">1</text>
                 <path fill="none" stroke="red" stroke-width="2.5"
-                      d="M 450,500 L 450,145 L 482,145 M 450,155 L 482,155 M 450,165 L 482,165 M 450,200 L 482,200 M 450,265 L 482,265 M 450,275 L 482,275 M 450,385 L 482,385 M 450,395 L 482,395 M 450,405 L 482,405"/>
+                      d="M 450,500 L 450,145 L 482,145 M 450,155 L 482,155 M 450,265 L 482,265 M 450,275 L 482,275 M 450,385 L 482,385 M 450,395 L 482,395 M 450,405 L 482,405"/>
                 <circle stroke="none" fill="red" cx="450" cy="145" r="4"/>
                 <circle stroke="none" fill="red" cx="450" cy="155" r="4"/>
-                <circle stroke="none" fill="red" cx="450" cy="165" r="4"/>
-                <circle stroke="none" fill="red" cx="450" cy="200" r="4"/>
                 <circle stroke="none" fill="red" cx="450" cy="265" r="4"/>
                 <circle stroke="none" fill="red" cx="450" cy="275" r="4"/>
                 <circle stroke="none" fill="red" cx="450" cy="385" r="4"/>
