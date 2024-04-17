@@ -137,7 +137,19 @@
     <hr>
     <br>
 
-    <p>
-        Sumator jednobitowy jest układem cyfrowym, który posiada dwa wejścia dla sumowanych bitów A i B, wejście przeniesienia z poprzedniego sumatora Cn (ważne w układach sumujących więcej niż jeden bit), wyjście sumy Σ oraz wyjście przeniesienia do następnego sumatora Cn+1.
-    </p>
+    <div class="p-4 bg-gray-100 rounded-lg shadow-md mb-6">
+        <h1 class="text-xl font-bold text-gray-800 mb-4">Definicja Sumatora 1-bitowego (Full Adder)</h1>
+        <p class="text-gray-700 mb-2">
+            Sumator 1-bitowy to układ, który dodaje trzy bity wejściowe: dwa główne bity sumowane oraz bit przeniesienia z poprzedniej cyfry (C<sub>n</sub>), generując bit sumy (S) oraz bit przeniesienia na kolejny bit (C<sub>n+1</sub>).
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Równania</h2>
+        <p class="text-gray-700 mb-2">
+            Suma: <code class="bg-gray-200 p-1 rounded">S = A XOR B XOR C<sub>n</sub></code><br>
+            Przeniesienie: <code class="bg-gray-200 p-1 rounded">C<sub>n+1</sub> = (A AND B) OR (B AND C<sub>n</sub>) OR (A AND C<sub>n</sub>)</code>
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Zastosowanie</h2>
+        <p class="text-gray-700 mb-2">
+            Sumatory 1-bitowe są kluczowym elementem układów dodawania w komputerach i innych urządzeniach cyfrowych, umożliwiając składanie większych jednostek arytmetycznych.
+        </p>
+    </div>
 </div>

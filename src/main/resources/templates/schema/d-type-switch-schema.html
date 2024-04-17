@@ -111,13 +111,18 @@
     <hr>
     <br>
 
-    <p>
-        Przerzutnik typu D, znany również jako przerzutnik przechowujący danych (Data Latch), jest jednym z podstawowych rodzajów przerzutników używanych w elektronice cyfrowej. Przerzutnik D przechowuje jeden bit informacji i jest podstawowym elementem pamięciowym w wielu układach cyfrowych.
-    </p>
-
-    <br>
-
-    <p>
-        Przerzutnik D ma dwa wejścia: wejście danych (D) oraz wejście zegarowe (CLK). Wyjścia to zazwyczaj Q oraz Q' (negacja Q). Stan na wejściu danych (D) jest przechwytywany i przekazywany na wyjście Q w momencie zbocza zegara na wejściu CLK (zazwyczaj zbocze narastające, czyli przejście sygnału zegara z niskiego na wysoki poziom). Wyjście Q' jest zawsze negacją Q.
-    </p>
+    <div class="p-4 bg-gray-100 rounded-lg shadow-md mb-6">
+        <h1 class="text-xl font-bold text-gray-800 mb-4">Definicja Przerzutnika Typu D (D Flip-Flop)</h1>
+        <p class="text-gray-700 mb-2">
+            Przerzutnik typu D jest urządzeniem cyfrowym, które przechowuje stan bitu danych. Dane na wejściu D są przenoszone na wyjście Q przy każdym narastającym zboczu sygnału zegarowego.
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Równanie</h2>
+        <p class="text-gray-700 mb-2">
+            <code class="bg-gray-200 p-1 rounded">Q(next) = D</code> przy narastającym zboczu sygnału zegarowego
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Zastosowanie</h2>
+        <p class="text-gray-700 mb-2">
+            Wykorzystywane w systemach, gdzie potrzebna jest synchronizacja danych, np. w rejestrach przesuwających i pamięciach.
+        </p>
+    </div>
 </div>
