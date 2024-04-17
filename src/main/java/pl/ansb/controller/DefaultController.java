@@ -21,4 +21,9 @@ public class DefaultController {
 
         return "index";
     }
+
+    @GetMapping("/main")
+    public String homePageFragment(Model model) {
+        return "main :: main-fragment";
+    }
 }

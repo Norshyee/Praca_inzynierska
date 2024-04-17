@@ -31,32 +31,32 @@
             <table id="boardOfTruth" class="border-separate border border-slate-400 table-auto text-center">
                 <thead>
                 <tr>
-                    <th class="border border-slate-300 w-10">A</th>
-                    <th class="border border-slate-300 w-10">B</th>
-                    <th class="border border-slate-300 w-10">Q</th>
+                    <th class="border border-slate-300 w-10 bg-yellow-200">A</th>
+                    <th class="border border-slate-300 w-10 bg-yellow-200">B</th>
+                    <th class="border border-slate-300 w-10 bg-orange-200">Q</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <td class="border border-slate-300">0</td>
-                    <td class="border border-slate-300">0</td>
-                    <td class="border border-slate-300">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
                 </tr>
                 <tr>
-                    <td class="border border-slate-300">1</td>
-                    <td class="border border-slate-300">0</td>
-                    <td class="border border-slate-300">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
                 </tr>
                 <tr>
-                    <td class="border border-slate-300">0</td>
-                    <td class="border border-slate-300">1</td>
-                    <td class="border border-slate-300">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">1</td>
                 </tr>
                 <tr>
-                    <td class="border border-slate-300">1</td>
-                    <td class="border border-slate-300">1</td>
-                    <td class="border border-slate-300">0</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-yellow-100">1</td>
+                    <td class="border border-slate-300 bg-orange-100">0</td>
                 </tr>
                 </tbody>
             </table>
@@ -66,25 +66,36 @@
     <div class="flex gap-4 justify-center mt-2 size-auto">
         <button type="button"
                 class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
-                onclick="randomInputs()">
-            Losuj
+                onclick="randomInputs()"
+                title="Kliknij, aby wygenerować losowe wartości wejściowe dla bramki logicznej NAND">
+            Losuj wejścia
         </button>
         <button class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
-                onclick="nandGateOutput()">
-            Generuj
+                onclick="nandGateOutput()"
+                title="Kliknij, aby zobaczyć wynik operacji bramki logicznej NAND na podstawie bieżących wejść">
+            Pokaż wynik
         </button>
     </div>
 
-    <br>
-    <hr>
-    <br>
+    <div class="flex items-center gap-2 mt-4 mb-2">
+        <svg onclick="toggleDescription()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke-width="2" id="toggleArrow" style="transform: rotate(90deg);">
+            <path stroke="#4a5568" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <hr class="flex-grow">
+    </div>
 
-    <p>
-        Bramka NAND (ang. NOT-AND gate) to jedna z podstawowych bramek logicznych, która ma dwa lub więcej wejść oraz
-        jedno wyjście. Wyjście bramki NAND jest ustawione na stan niski (0), tylko wtedy gdy wszystkie jej wejścia są
-        ustawione na stan wysoki (1). W pozostałych przypadkach wyjście bramki NAND przyjmuje stan wysoki (1).
-
-        Bramka NAND jest funkcjonalnie równoważna z połączeniem bramek NOT i AND. Można ją zapisać za pomocą symbolu
-        graficznego, który przedstawia kształt bramki z dwoma lub więcej wejściami oraz jednym wyjściem.
-    </p>
+    <div id="description" class="gate-description active p-4 bg-gray-100 rounded-lg shadow-md">
+        <h1 class="text-xl font-bold text-gray-800 mb-4">Definicja Bramki NAND</h1>
+        <p class="text-gray-700 mb-2">
+            Bramka NAND to bramka logiczna, będąca negacją bramki AND. Zwraca <span class="font-bold">false</span> tylko wtedy, gdy wszystkie jej wejścia są <span class="font-bold">true</span>.
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Równanie</h2>
+        <p class="text-gray-700 mb-2">
+            Równanie dla bramki NAND może być przedstawione jako: <code class="bg-gray-200 p-1 rounded">Y = NOT(A AND B)</code> lub <code class="bg-gray-200 p-1 rounded">Y = &#172;(A AND B)</code>
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Zastosowanie</h2>
+        <p class="text-gray-700 mb-2">
+            Bramka NAND jest podstawą dla większości układów cyfrowych, w tym komputerów, ponieważ pozwala na budowę pozostałych funkcji logicznych.
+        </p>
+    </div>
 </div>

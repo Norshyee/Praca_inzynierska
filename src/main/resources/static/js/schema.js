@@ -275,12 +275,14 @@ const BaseSwitch = {
         if (!this.running) {
             this.running = true;
             toggleBtn.textContent = 'Stop';
+            toggleBtn.title = 'Kliknij, aby zatzymać zegar';
             toggleBtn.classList.remove('bg-green-500', 'hover:bg-green-700');
             toggleBtn.classList.add('bg-red-500', 'hover:bg-red-700');
             moveLine();
         } else {
             this.running = false;
             toggleBtn.textContent = 'Start';
+            toggleBtn.title = 'Kliknij, aby uruchomić zegar oraz pokażać wynik operacji układu logicznego na podstawie bieżących wejść';
             toggleBtn.classList.remove('bg-red-500', 'hover:bg-red-700');
             toggleBtn.classList.add('bg-green-500', 'hover:bg-green-700');
             cancelAnimationFrame(this.requestId);
@@ -1063,9 +1065,11 @@ const decimalTo8421Converter = {
         decimalTo8421ConverterSvg.getElementById("kl0").style.stroke = (kl0 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl0-dot").style.fill = (kl0 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl0-dot-2").style.fill = (kl0 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl0-dot-3").style.fill = (kl0 ? "red" : "black");
 
         decimalTo8421ConverterSvg.getElementById("kl1").style.stroke = (kl1 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl1-dot").style.fill = (kl1 ? "red" : "black");
+        decimalTo8421ConverterSvg.getElementById("kl1-dot-2").style.fill = (kl1 ? "red" : "black");
 
         decimalTo8421ConverterSvg.getElementById("kl2").style.stroke = (kl2 ? "red" : "black");
         decimalTo8421ConverterSvg.getElementById("kl2-dot").style.fill = (kl2 ? "red" : "black");

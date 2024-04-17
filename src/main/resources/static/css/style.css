@@ -39,3 +39,14 @@
     content: '1';
     transition: content 0.3s;
 }
+
+.gate-description {
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 0; /* start with max-height set to 0 */
+    opacity: 0;
+}
+
+.gate-description.active {
+    max-height: 1000px; /* maximum content height */
+    opacity: 1;
+}

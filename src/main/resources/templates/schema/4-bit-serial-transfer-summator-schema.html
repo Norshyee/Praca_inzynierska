@@ -160,24 +160,36 @@
     <div class="flex gap-4 justify-center mt-2 size-auto">
         <button type="button"
                 class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
-                onclick="randomInputs()">
-            Losuj
+                onclick="randomInputs()"
+                title="Kliknij, aby wygenerować losowe wartości wejściowe dla układu logicznego">
+            Losuj wejścia
         </button>
         <button class="px-4 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
-                onclick="fourBitSumatorOutput()">
-            Generuj
+                onclick="fourBitSumatorOutput()"
+                title="Kliknij, aby zobaczyć wynik operacji układu logicznego na podstawie bieżących wejść">
+            Pokaż wynik
         </button>
     </div>
 
-    <br>
-    <hr>
-    <br>
+    <div class="flex items-center gap-2 mt-4 mb-2">
+        <svg onclick="toggleDescription()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke-width="2" id="toggleArrow" style="transform: rotate(90deg);">
+            <path stroke="#4a5568" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <hr class="flex-grow">
+    </div>
 
-    <p>
-        4-bitowy sumator z przeniesieniem szeregowym to cyfrowe urządzenie kombinacyjne, które jest w stanie zsumować dwie czterobitowe liczby binarne razem z przeniesieniem wejściowym. Zwraca wynik w postaci czterobitowej sumy oraz przeniesienia wyjściowego, które może być przekazane do kolejnego sumatora w przypadku łańcuchowej konfiguracji sumatorów.
-
-        W uproszczeniu, sumator taki składa się z czterech 1-bitowych sumatorów pełnych (ang. full adder), gdzie każdy sumator sumuje dwa bity wejściowe i przeniesienie z poprzedniego sumatora. Pierwszy sumator otrzymuje przeniesienie wejściowe, a każdy następny otrzymuje przeniesienie wyjściowe z poprzednika, przekazując je do kolejnego sumatora. Ostatnie przeniesienie jest przeniesieniem wyjściowym całego urządzenia.
-
-        Takie urządzenie znajduje zastosowanie w układach cyfrowych, gdzie potrzebna jest możliwość sumowania wielobitowych liczb, na przykład w procesorach i innych układach logicznych.
-    </p>
+    <div id="description" class="gate-description active p-4 bg-gray-100 rounded-lg shadow-md">
+        <h1 class="text-xl font-bold text-gray-800 mb-4">Definicja 4-bitowego Sumatora z Przeniesieniem Szeregowym</h1>
+        <p class="text-gray-700 mb-2">
+            4-bitowy sumator z przeniesieniem szeregowym to układ, który dodaje dwie 4-bitowe liczby binarne oraz ewentualne przeniesienie wejściowe, generując 4-bitową sumę i przeniesienie wyjściowe.
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Równanie</h2>
+        <p class="text-gray-700 mb-2">
+            Równania dla każdego bitu są takie same jak dla sumatora 1-bitowego, z sekwencyjnym przekazywaniem przeniesień między kolejnymi bitami.
+        </p>
+        <h2 class="text-lg font-bold text-gray-800 mb-2">Zastosowanie</h2>
+        <p class="text-gray-700 mb-2">
+            Te sumatory są stosowane w większości procesorów i systemów mikrokontrolerowych do realizacji operacji arytmetycznych na większych grupach bitów.
+        </p>
+    </div>
 </div>
