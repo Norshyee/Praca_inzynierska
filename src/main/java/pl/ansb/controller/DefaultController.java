@@ -1,5 +1,6 @@
 package pl.ansb.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,10 @@ public class DefaultController {
     private String commitId;
 
     @GetMapping("/")
-    public String homePage(Model model) {
+    public String homePage(HttpServletResponse response, Model model) {
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "0");
         model.addAttribute("version", projectVersion);
         model.addAttribute("commitId", commitId);
 
