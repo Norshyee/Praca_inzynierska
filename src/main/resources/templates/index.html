@@ -11,7 +11,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            loadContent('/gate/not');
+            loadContent('/main');
         });
     </script>
 </head>
@@ -45,10 +45,12 @@
             </div>
 
             <div class="flex-grow flex justify-end md:justify-center items-center">
-                <span class="text-white text-end md:text-center font-semibold lg:font-bold text-sm md:text-base lg:text-xl xl:text-3xl whitespace-nowrap">
-                    Wizualizacja działania bramek
-                    <span class="block md:inline">i wybranych układów logicznych</span>
-                </span>
+                <a onclick="loadContent('/main')" class="cursor-pointer">
+                    <span class="text-white text-end md:text-center font-semibold lg:font-bold text-sm md:text-base lg:text-xl xl:text-3xl whitespace-nowrap">
+                        Wizualizacja działania bramek
+                        <span class="block md:inline">i wybranych układów logicznych</span>
+                    </span>
+                </a>
             </div>
         </div>
     </div>
