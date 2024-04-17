@@ -81,3 +81,15 @@ function updateAfterContent() {
     console.log("Checkbox state changed. Update UI accordingly.");
 }
 
+function toggleDescription() {
+    var description = document.getElementById("description");
+    var arrow = document.getElementById("toggleArrow");
+    if (description.classList.contains('active')) {
+        description.classList.remove('active');
+        arrow.style.transform = "rotate(0deg)";
+    } else {
+        description.classList.add('active');
+        arrow.style.transform = "rotate(90deg)";
+    }
+}
+
