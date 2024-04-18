@@ -188,27 +188,28 @@
 
     <div class="flex items-center gap-2 mt-4 mb-2">
         <svg onclick="toggleDescription()" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 cursor-pointer transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke-width="2" id="toggleArrow" style="transform: rotate(90deg);">
+            <title>Wciśnij aby pokazać/ukryć opis</title>
             <path stroke="#4a5568" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
         </svg>
         <hr class="flex-grow">
     </div>
 
     <div id="description" class="gate-description active p-4 bg-gray-100 rounded-lg shadow-md">
-        <h1 class="text-xl font-bold text-gray-800 mb-4">Definicja Przerzutnika Asynchronicznego Typu RS (Asynchronous RS Flip-Flop)</h1>
+        <h1 class="text-xl font-bold text-gray-800 mb-4">Charakterystyka przerzutnika asynchronicznego typu RS</h1>
         <p class="text-gray-700 mb-2">
             Przerzutnik asynchroniczny typu RS używa bramek NAND lub NOR do przechowywania bitów danych bez zależności od sygnału zegarowego. Stan zastrzeżony występuje, gdy oba wejścia S i R są jednocześnie aktywne (wysokie dla NAND, niskie dla NOR).
         </p>
         <h2 class="text-lg font-bold text-gray-800 mb-2">Równania (NAND)</h2>
         <p class="text-gray-700 mb-2">
-            <code class="bg-gray-200 p-1 rounded">Q = not(S and Q)</code><br>
-            <code class="bg-gray-200 p-1 rounded">notQ = not(R and notQ)</code><br>
-            <code class="bg-gray-200 p-1 rounded">Stan zastrzeżony: S = 0 i R = 0</code>
+            <code class="bg-gray-200 p-1 rounded">Q = NOT(S AND Q)</code><br>
+            <code class="bg-gray-200 p-1 rounded">NOT(Q) = NOT(R AND NOT(Q))</code><br>
+            Stan zastrzeżony: S = 0 i R = 0.
         </p>
         <h2 class="text-lg font-bold text-gray-800 mb-2">Równania (NOR)</h2>
         <p class="text-gray-700 mb-2">
-            <code class="bg-gray-200 p-1 rounded">Q = not(S or Q)</code><br>
-            <code class="bg-gray-200 p-1 rounded">notQ = not(R or notQ)</code><br>
-            <code class="bg-gray-200 p-1 rounded">Stan zastrzeżony: S = 1 i R = 1</code>
+            <code class="bg-gray-200 p-1 rounded">Q = NOT(S OR Q)</code><br>
+            <code class="bg-gray-200 p-1 rounded">NOT(Q) = NOT(R OR NOT(Q))</code><br>
+            Stan zastrzeżony: S = 1 i R = 1.
         </p>
         <h2 class="text-lg font-bold text-gray-800 mb-2">Zastosowanie</h2>
         <p class="text-gray-700 mb-2">
