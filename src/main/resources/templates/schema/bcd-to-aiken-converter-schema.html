@@ -31,7 +31,7 @@
             </div>
 
             <object class="flex justify-self-center self-center" id="bcd-to-aiken-converter-schema"
-                    data="/svg/schema/bcd-to-aiken-converter/bcd-to-aiken-converter-schema.svg"
+                    th:data="@{/svg/schema/bcd-to-aiken-converter/bcd-to-aiken-converter-schema.svg(v=${@environment.getProperty('info.app.version')})}"
                     type="image/svg+xml">
             </object>
 

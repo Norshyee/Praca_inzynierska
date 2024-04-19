@@ -31,7 +31,7 @@
             </div>
 
             <object class="flex justify-self-center self-center" id="8421-to-gray-converter-schema"
-                    data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-schema.svg"
+                    th:data="@{/svg/schema/8421-to-gray-converter/8421-to-gray-converter-schema.svg(v=${@environment.getProperty('info.app.version')})}"
                     type="image/svg+xml">
             </object>
 
@@ -65,7 +65,7 @@
 
         <object class="flex justify-self-center self-center"
                 id="8421-to-gray-converter-symbol"
-                data="/svg/schema/8421-to-gray-converter/8421-to-gray-converter-symbol.svg"
+                th:data="@{/svg/schema/8421-to-gray-converter/8421-to-gray-converter-symbol.svg(v=${@environment.getProperty('info.app.version')})}"
                 type="image/svg+xml">
         </object>
 
