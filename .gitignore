@@ -38,6 +38,7 @@ nbdist/
 
 # Node modules and package lock
 node_modules/
+node/
 
 # Tailwind CSS Output
 src/main/resources/static/css/output.css
