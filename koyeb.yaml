@@ -1,0 +1,10 @@
+ports:
+  - port: 8080
+hooks:
+  prebuild:
+    - npm install
+    - npm run build
+build:
+  type: buildpack
+  buildpacks:
+    - heroku/java
