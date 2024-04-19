@@ -37,7 +37,7 @@ nbdist/
 .vscode/
 
 # Node modules and package lock
-node/
+node/**
 
 # Tailwind CSS Output
 src/main/resources/static/css/output.css
