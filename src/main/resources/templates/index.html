@@ -3,10 +3,11 @@
 <head>
     <title th:text="${title}">Bramki logiczne i schematy</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script th:src="@{/js/main.js(v=${@environment.getProperty('info.app.version')})}"></script>
     <script th:src="@{/js/gate.js(v=${@environment.getProperty('info.app.version')})}"></script>
     <script th:src="@{/js/schema.js(v=${@environment.getProperty('info.app.version')})}"></script>
-    <link rel="stylesheet" th:href="@{/css/output.css(v=${@environment.getProperty('info.app.version')})}">
+    <link rel="stylesheet" th:href="@{/css/style.css(v=${@environment.getProperty('info.app.version')})}">
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
