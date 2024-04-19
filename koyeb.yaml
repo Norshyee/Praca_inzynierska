@@ -7,4 +7,5 @@ hooks:
 build:
   type: buildpack
   buildpacks:
+    - heroku/nodejs
     - heroku/java
