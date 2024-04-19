@@ -36,7 +36,3 @@ build/
 
 ### Tailwind - npm ###
 node_modules/
-package.json
-package-lock.json
-postcss.config.js
-tailwind.config.js
