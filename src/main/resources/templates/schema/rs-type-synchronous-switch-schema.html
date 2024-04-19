@@ -22,7 +22,7 @@
             </div>
 
             <object class="flex justify-self-center self-center" id="rs-synchronous-switch-schema"
-                    data="/svg/schema/rs-synchronous-switch/rs-synchronous-switch-schema.svg"
+                    th:data="@{/svg/schema/rs-synchronous-switch/rs-synchronous-switch-schema.svg(v=${@environment.getProperty('info.app.version')})}"
                     type="image/svg+xml">
             </object>
 
@@ -51,12 +51,12 @@
             <div class="grid grid-flow-row place-items-center justify-items-start">
                 <object class="col-span-2 xl:col-span-1 flex justify-self-center self-center"
                         id="rs-synchronous-switch-symbol"
-                        data="/svg/schema/rs-synchronous-switch/rs-synchronous-switch-symbol.svg"
+                        th:data="@{/svg/schema/rs-synchronous-switch/rs-synchronous-switch-symbol.svg(v=${@environment.getProperty('info.app.version')})}"
                         type="image/svg+xml">
                 </object>
 
                 <object class="col-span-2 xl:col-span-1 flex justify-self-center self-center" id="signal-clock"
-                        data="/svg/schema/signal-clock.svg"
+                        th:data="@{/svg/schema/signal-clock.svg(v=${@environment.getProperty('info.app.version')})}"
                         type="image/svg+xml">
                 </object>
             </div>

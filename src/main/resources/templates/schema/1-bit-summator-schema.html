@@ -22,7 +22,7 @@
             </div>
 
             <object class="flex justify-self-center self-center" id="1-bit-summator-schema"
-                    data="/svg/schema/1-bit-summator/1-bit-summator-schema.svg"
+                    th:data="@{/svg/schema/1-bit-summator/1-bit-summator-schema.svg(v=${@environment.getProperty('info.app.version')})}"
                     type="image/svg+xml">
             </object>
 
@@ -42,7 +42,7 @@
 
         <div class="grid grid-cols-2 gap-4">
             <object class="flex justify-self-center self-center" id="1-bit-summator-schema-symbol"
-                    data="/svg/schema/1-bit-summator/1-bit-summator-schema-symbol.svg"
+                    th:data="@{/svg/schema/1-bit-summator/1-bit-summator-schema-symbol.svg(v=${@environment.getProperty('info.app.version')})}"
                     type="image/svg+xml">
             </object>
 

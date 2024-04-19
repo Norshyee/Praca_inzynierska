@@ -18,7 +18,7 @@
             </div>
 
             <object class="flex justify-self-center self-center" id="semi-summator-schema"
-                    data="/svg/schema/semi-summator/semi-summator-schema.svg"
+                    th:data="@{/svg/schema/semi-summator/semi-summator-schema.svg(v=${@environment.getProperty('info.app.version')})}"
                     type="image/svg+xml">
             </object>
 
@@ -38,7 +38,7 @@
 
         <div class="grid grid-cols-2 gap-4">
             <object class="flex justify-self-center self-center" id="semi-summator-schema-symbol"
-                    data="/svg/schema/semi-summator/semi-summator-schema-symbol.svg"
+                    th:data="@{/svg/schema/semi-summator/semi-summator-schema-symbol.svg(v=${@environment.getProperty('info.app.version')})}"
                     type="image/svg+xml">
             </object>
 

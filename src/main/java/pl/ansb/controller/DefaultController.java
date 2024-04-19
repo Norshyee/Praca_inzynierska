@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DefaultController {
 
-    @Value("${project.version}")
+    @Value("${info.app.version}")
     private String projectVersion;
 
     @Value("${git.commit.id.abbrev}")

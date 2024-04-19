@@ -1,0 +1,23 @@
+info:
+  app:
+    version: @project.version@
+
+server:
+  port: 8080
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  compression:
+    enabled: true
+    mime-types: "text/html,text/svg,text/js,text/css"
+    min-response-size: 120
+  resources:
+    cache:
+      cachecontrol:
+        must-revalidate: true
+        cache-public: true
+        max-age: 120
+
+spring:
+  thymeleaf:
+    cache: false

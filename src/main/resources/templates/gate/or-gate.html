@@ -15,7 +15,7 @@
             </label>
         </div>
 
-        <object class="flex justify-self-center self-center" id="or-gate" data="/svg/gate/or-gate.svg"
+        <object class="flex justify-self-center self-center" id="or-gate" th:data="@{/svg/gate/or-gate.svg(v=${@environment.getProperty('info.app.version')})}"
                 type="image/svg+xml">
             <!--Plik svg-->
         </object>

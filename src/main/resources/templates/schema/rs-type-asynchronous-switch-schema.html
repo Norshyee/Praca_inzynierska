@@ -22,7 +22,7 @@
                 </div>
 
                 <object class="flex justify-self-center self-center" id="rs-asynchronous-switch-nand-schema"
-                        data="/svg/schema/rs-asynchronous-switch/rs-asynchronous-switch-nand-schema.svg"
+                        th:data="@{/svg/schema/rs-asynchronous-switch/rs-asynchronous-switch-nand-schema.svg(v=${@environment.getProperty('info.app.version')})}"
                         type="image/svg+xml">
                 </object>
 
@@ -107,7 +107,7 @@
                 </div>
 
                 <object class="flex justify-self-center self-center" id="rs-asynchronous-switch-nor-schema"
-                        data="/svg/schema/rs-asynchronous-switch/rs-asynchronous-switch-nor-schema.svg"
+                        th:data="@{/svg/schema/rs-asynchronous-switch/rs-asynchronous-switch-nor-schema.svg(v=${@environment.getProperty('info.app.version')})}"
                         type="image/svg+xml">
                 </object>
 
