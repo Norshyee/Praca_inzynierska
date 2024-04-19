@@ -1,15 +1,23 @@
+# Maven and Gradle build directories
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-### IntelliJ IDEA ###
+# Maven wrapper
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+
+# IntelliJ IDEA
 .idea/**
 *.iws
 *.iml
 *.ipr
 
-### Eclipse ###
+# Eclipse
 .apt_generated
 .classpath
 .factorypath
@@ -18,18 +26,25 @@ target/
 .springBeans
 .sts4-cache
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
+nbbuild/
+dist/
+nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+# VS Code
 .vscode/
 
-### Mac OS ###
+# Node modules and package lock
+node_modules/
+package-lock.json
+
+# Tailwind CSS Output
+src/main/resources/static/css/output.css
+
+# Mac OS files
 .DS_Store
+
+# Log files
+*.log
