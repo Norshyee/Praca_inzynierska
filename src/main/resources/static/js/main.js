@@ -4,6 +4,7 @@ function loadContent(fragmentUrl) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var contentArea = document.getElementById('contentArea');
             contentArea.innerHTML = xhr.responseText
+            applyCSS(contentArea);
 
             if (fragmentUrl.includes('d_type_switch') && typeof dTypeSwitch.init === 'function') {
                 dTypeSwitch.init();
@@ -18,6 +19,13 @@ function loadContent(fragmentUrl) {
     };
     xhr.open('GET', fragmentUrl, true);
     xhr.send();
+}
+
+function applyCSS(contentArea) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/css/style.css';
+    document.head.appendChild(link);
 }
 
 function initCheckboxBehavior() {
